@@ -33,14 +33,62 @@ body {
   box-shadow: 0 4px 12px #000000c2;
   border-radius: 10px;
 }
-
+.center-swiper-section .swiper-prev{left: 290px;}
+.center-swiper-section .swiper-next{right: 290px !important;}
 .swiper-button-prev .swiper-navigation-icon{display:none;}
 .swiper-button-next .swiper-navigation-icon{display:none;}
 
 .tabing-swiper .swiper-pagination{position: relative !important; margin-top: 20px;} 
-.tabing-swiper .swiper-button-next{right: -50px !important;}
-.tabing-swiper .swiper-button-prev{left: -50px !important;}
-.health-scans-section .swiper-button-next2{right: -50px !important;}
-.health-scans-section .swiper-button-prev2{left: -50px !important;}
+
 .orange-text {position: absolute;left: 0;right: 0; width: 130px;margin: -30px auto 10px auto;}
 .image-card .custom-border{border-top-color: #F16948 !important;}
+@media (min-width:1024px){
+  .tabing-swiper .swiper-button-next{right: -50px !important;}
+.tabing-swiper .swiper-button-prev{left: -50px !important;}
+
+.health-scans-section .swiper-button-next2{right: -50px !important;}
+.health-scans-section .swiper-button-prev2{left: -50px !important;}
+}
+.tabing-swiper .swiper-button-next{right: -10px !important;}
+.tabing-swiper .swiper-button-prev{left: -10px !important;}
+
+.health-scans-section .swiper-button-next2{right: -10px !important;}
+.health-scans-section .swiper-button-prev2{left: -10px !important;}
+.svg-style svg{
+  color: #848484;
+      background-color: #f2f2f2;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    padding: 7px;
+}
+.menu-item{
+  background: linear-gradient(180deg,#00a0a8 0,#20b2ba 71%);
+}
+.hero-swiper .swiper-pagination-clickable{    position: relative;
+    margin-top: 20px;}
+
+    /* Pagination wrapper */
+.hero-swiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Default bullet */
+.hero-swiper .swiper-pagination-bullet {
+  width: 22px !important;
+  height: 4px !important;
+  border-radius: 10px !important;
+  background-color: #cfd8dc;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* Active bullet */
+.hero-swiper .swiper-pagination-bullet-active {
+  background-color: #009688 !important;
+  width: 28px !important;
+}

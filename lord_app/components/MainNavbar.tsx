@@ -103,12 +103,12 @@ export default function MainNavbar() {
   const [activeMenu, setActiveMenu] = useState<MenuItem | null>(null);
 
   return (
-    <nav className="bg-teal-500 relative">
+    <nav className="menu-item relative py-1">
       <div className="max-w-7xl mx-auto px-4">
         <ul className="flex items-center gap-6 text-white py-3 text-sm font-medium">
 
           {/* Home */}
-          <li className="cursor-pointer">
+          <li className="cursor-pointer text-[17px] font-semibold">
             <FaHome />
           </li>
 
@@ -117,7 +117,7 @@ export default function MainNavbar() {
             <li
               key={index}
               onMouseEnter={() => setActiveMenu(item)}
-              className="relative cursor-pointer flex items-center gap-1"
+              className="relative text-[17px] font-semibold cursor-pointer flex items-center gap-1"
             >
               {item.title}
               {(item.megaMenu || item.submenu) && (

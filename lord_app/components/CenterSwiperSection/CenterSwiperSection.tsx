@@ -14,7 +14,7 @@ import { Navigation } from "swiper/modules";
 
 export default function CenterSwiperSection() {
   return (
-    <section className="center-swiper-section relative w-[70%] m-auto py-16 bg-white overflow-hidden">
+    <section className="center-swiper-section relative w-full max-w-6xl m-auto py-16 bg-white overflow-hidden">
 
       {/* LEFT WHITE FADE */}
       <div className="pointer-events-none absolute left-0 top-0 h-full w-40 bg-linear-to-r from-white to-transparent z-10" />
@@ -23,7 +23,7 @@ export default function CenterSwiperSection() {
       <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-linear-to-l from-white to-transparent z-10" />
 
       {/* Swiper Container */}
-      <div className="max-w-6xl mx-auto relative">
+      <div className="w-full max-w-6xl mx-auto relative">
       <Swiper
   modules={[Navigation]}
   navigation={{
@@ -70,12 +70,12 @@ export default function CenterSwiperSection() {
         </Swiper>
 
         {/* Navigation Buttons */}
-        <button className="swiper-prev absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-black shadow-md w-10 h-10 rounded-full flex items-center justify-center">
-          ←
+        <button className="swiper-prev absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-[#00a0a8] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
+          ‹
         </button>
 
-        <button className="swiper-next absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-black shadow-md w-10 h-10 rounded-full flex items-center justify-center">
-          →
+        <button className="swiper-next absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-[#00a0a8] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
+          ›
         </button>
       </div>
     </section>

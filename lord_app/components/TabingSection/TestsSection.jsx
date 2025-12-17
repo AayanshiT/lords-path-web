@@ -41,22 +41,23 @@ export default function TestsSection() {
           ))}
         </div>
 
-          <div className="w-6xl m-auto relative tabing-swiper">
+          <div className="w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-0 relative tabing-swiper">
+
         {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
           navigation={{
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  }}
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
           spaceBetween={20}
           slidesPerView={1} 
           pagination={{ clickable: true }}
           breakpoints={{
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            1024: { slidesPerView: 2 },
           }}
-          key={activeTab} //  forces update on tab change
+          key={activeTab} // forces update on tab change
         >
           {tests.map((item, idx) => (
             <SwiperSlide key={idx}>
