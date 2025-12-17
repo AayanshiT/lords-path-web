@@ -4,6 +4,7 @@ import HeroSlider from "@/components/HeroSlider";
 import ServiceCard from "@/components/ServiceCard";
 import HealthInfoSection from "@/components/HealthInfo";
 import CenterSwiperSection from "@/components/CenterSwiperSection";
+import BodyCheckup from "@/components/BodyCheckup";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ServiceCard/>
       <HealthInfoSection/>
       <CenterSwiperSection/>
+      <BodyCheckup/>
 
     </>
   );
