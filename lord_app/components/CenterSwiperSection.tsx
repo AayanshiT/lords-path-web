@@ -29,7 +29,7 @@ export default function CenterSwiperSection() {
           slidesPerView={2.2}
           spaceBetween={-10}
           centeredSlides
-          loop
+          // loop
           className="!overflow-visible"
         >
           {/* Slide 1 */}
