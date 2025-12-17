@@ -9,6 +9,7 @@ import HealthScansSection from "@/components/HealthScansSection/HealthScansSecti
 import HealthCard from "@/components/healthcards";
 import Phonesection from "@/components/Phonesection";
 import Bottom from "@/components/bottom";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <HealthCard/>
       <Phonesection/>
       <Bottom/>
+      <Footer/>
 
 
     </>
