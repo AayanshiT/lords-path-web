@@ -2,8 +2,9 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+// import "./global.css";
+// import "swiper/css";
+// import "swiper/css/pagination";
 
 export default function HeroSlider() {
   return (
@@ -17,7 +18,7 @@ export default function HeroSlider() {
         {/* Slide 1 */}
         <SwiperSlide>
           <div
-            className="h-[450px] rounded-xl bg-cover bg-center flex items-center"
+            className="h-112.5 rounded-xl bg-cover bg-center flex items-center"
             style={{
               backgroundImage:
                 "url('/cxo_banner_web.webp')",
@@ -41,14 +42,14 @@ export default function HeroSlider() {
         {/* Slide 2 */}
         <SwiperSlide>
           <div
-            className="h-[450px] rounded-xl bg-cover bg-center"
+            className="h-112.5 rounded-xl bg-cover bg-center"
             style={{ backgroundImage: "url('/b_5.webp')" }}
           />
         </SwiperSlide>
         {/* Slide 2 */}
         <SwiperSlide>
           <div
-            className="h-[450px] rounded-xl bg-cover bg-center"
+            className="h-112.5 rounded-xl bg-cover bg-center"
             style={{ backgroundImage: "url('/fi_new_1.webp')" }}
           />
         </SwiperSlide>
