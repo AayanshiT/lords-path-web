@@ -5,6 +5,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -101,14 +102,14 @@ const healthRisks: HealthRisk[] = [
     id: 13,
     title: "Anemia",
     description: "Anemia tests measure hemoglobin and iron levels...",
-    icon: "/heartcards/Anaemia.png", // ✅ FIXED
+    icon: "/heartcards/Anaemia.png",
     href: "/tests/anemia",
   },
 ];
 
 export default function HealthRiskSwiper() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-1 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <h2 className="text-2xl font-bold text-center text-[#1a9ca6] mb-12">
@@ -118,8 +119,11 @@ export default function HealthRiskSwiper() {
         {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: ".swiper-button-prev2",
+            nextEl: ".swiper-button-next2",
+          }}
+          // pagination={{ clickable: true }}
           spaceBetween={24}
           breakpoints={{
             0: { slidesPerView: 1 },
@@ -165,6 +169,13 @@ export default function HealthRiskSwiper() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <button className="swiper-button-prev2  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          ‹
+        </button>
+
+        <button className="swiper-button-next2  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          ›
+        </button>
 
         {/* View All */}
         <div className="flex justify-center mt-12">
