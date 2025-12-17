@@ -1,8 +1,8 @@
 import TopBar from "@/components/TopBar";
 import MainNavbar from "@/components/MainNavbar";
 import HeroSlider from "@/components/HeroSlider";
-import CenterSwiperSection from "@/components/CenterSwiperSection";
-
+import ServiceCard from "@/components/ServiceCard";
+import HealthInfoSection from "@/components/HealthInfo";
 
 export default function Home() {
   return (
@@ -10,7 +10,8 @@ export default function Home() {
       <TopBar />
       <MainNavbar />
       <HeroSlider />
-      <CenterSwiperSection />
+      <ServiceCard/>
+      <HealthInfoSection/>
 
     </>
   );
