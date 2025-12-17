@@ -7,6 +7,7 @@ import CenterSwiperSection from "@/components/CenterSwiperSection/CenterSwiperSe
 import TestsSection from "@/components/TabingSection/TestsSection";
 import HealthScansSection from "@/components/HealthScansSection/HealthScansSection";
 import HealthCard from "@/components/healthcards";
+import Phonesection from "@/components/Phonesection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <TestsSection/>
       <HealthScansSection/>
       <HealthCard/>
+      <Phonesection/>
 
 
     </>
