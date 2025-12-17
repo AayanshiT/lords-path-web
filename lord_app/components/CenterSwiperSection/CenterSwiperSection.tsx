@@ -2,8 +2,8 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "../app/styles/components.css";
-// import "swiper/css";
+// import "../app/styles/components.css";
+// import "./style.css";
 // import "swiper/css/navigation";
 // component.tsx  
 
@@ -13,10 +13,10 @@ export default function CenterSwiperSection() {
     <section className="relative w-[70%] m-auto py-16 bg-white overflow-hidden">
 
       {/* LEFT WHITE FADE */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-40 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-40 bg-linear-to-r from-white to-transparent z-10" />
 
       {/* RIGHT WHITE FADE */}
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-linear-to-l from-white to-transparent z-10" />
 
       {/* Swiper Container */}
       <div className="max-w-6xl mx-auto relative">
