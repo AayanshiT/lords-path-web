@@ -4,7 +4,10 @@ import HeroSlider from "@/components/HeroSlider";
 import ServiceCard from "@/components/ServiceCard";
 import HealthInfoSection from "@/components/HealthInfo";
 import CenterSwiperSection from "@/components/CenterSwiperSection/CenterSwiperSection";
-import BodyCheckup from "@/components/BodyCheckup";
+import TestsSection from "@/components/TabingSection/TestsSection";
+import HealthScansSection from "@/components/HealthScansSection/HealthScansSection";
+
+
 
 export default function Home() {
   return (
@@ -15,7 +18,8 @@ export default function Home() {
       <ServiceCard/>
       <HealthInfoSection/>
       <CenterSwiperSection/>
-      <BodyCheckup/>
+      <TestsSection/>
+      <HealthScansSection/>
 
     </>
   );
