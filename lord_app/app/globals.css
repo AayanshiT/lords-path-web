@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* globals.css */
+@import "swiper/css";
+@import "swiper/css/pagination";
 
 :root {
   --background: #ffffff;
@@ -24,3 +27,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
