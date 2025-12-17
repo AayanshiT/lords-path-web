@@ -1,6 +1,38 @@
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: transform 0.3s ease;
+}
 
-.swiper-slide-active{
+.swiper-slide:hover {
+  transform: scale(1.05);
+}
+
+.swiper-slide-active {
   z-index: 999999;
   box-shadow: 0 4px 12px #000000c2;
   border-radius: 10px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #ff6b6b;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff6b6b;
+  transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #ff3b3b;
 }

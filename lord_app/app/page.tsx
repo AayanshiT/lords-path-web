@@ -6,8 +6,9 @@ import HealthInfoSection from "@/components/HealthInfo";
 import CenterSwiperSection from "@/components/CenterSwiperSection/CenterSwiperSection";
 import TestsSection from "@/components/TabingSection/TestsSection";
 import HealthScansSection from "@/components/HealthScansSection/HealthScansSection";
-
-
+import HealthCard from "@/components/healthcards";
+import Phonesection from "@/components/Phonesection";
+import Bottom from "@/components/bottom";
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
       <CenterSwiperSection/>
       <TestsSection/>
       <HealthScansSection/>
+      <HealthCard/>
+      <Phonesection/>
+      <Bottom/>
+
 
     </>
   );

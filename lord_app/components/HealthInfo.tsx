@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, Clock, FileText, Headphones } from "lucide-react";
+import Link from "next/link";
 
 export default function HealthInfoSection() {
   return (
@@ -6,18 +7,18 @@ export default function HealthInfoSection() {
       {/* Top Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         {/* Left Card */}
-        <div className="rounded-2xl bg-teal-50 border border-teal-100 p-6 flex flex-col justify-between shadow-sm">
+        <div className="rounded-2xl bg-[#f1fffe] border border-teal-100 p-6 flex flex-col justify-between shadow-sm">
           <div className="flex gap-4">
             <img
-              src="/icons/government.png"
+              src="/certificate.png"
               alt="Govt Panel"
               className="w-14 h-14"
             />
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h5 className="text-sm font-semibold text-gray-900">
                 We are now empaneled on Government Panels for Health Tests
-              </h3>
+              </h5>
               <p className="text-sm text-gray-600 mt-1 leading-relaxed">
                 For in-service or retired govt. employees across CGHS & Relevant
                 Dept, DGEHS & Relevant Dept, AIR INDIA, CAPF (Central Armed
@@ -33,16 +34,16 @@ export default function HealthInfoSection() {
         </div>
 
         {/* Right Card */}
-        <div className="rounded-2xl bg-cyan-50 border border-cyan-100 p-6 flex flex-col justify-between shadow-sm">
+        <div className="rounded-2xl bg-[#f1fffe] border border-cyan-100 p-6 flex flex-col justify-between shadow-sm">
           <div className="flex gap-4">
             <img
-              src="/icons/health-meter.png"
+              src="/meter.png"
               alt="Health Score"
               className="w-14 h-14"
             />
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-gray-900">
                 Unlock Your Health Score with HealthKarma!
               </h3>
               <p className="text-sm text-gray-600 mt-1">

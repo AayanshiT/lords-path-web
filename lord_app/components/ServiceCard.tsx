@@ -33,7 +33,7 @@ const services = [
   },
   {
     title: "Upload Prescription",
-    offer: "",
+    offer: "Up to 70% off",
     bg: "bg-sky-50",
     icon: "/icons/heart.png",
   },
@@ -41,15 +41,15 @@ const services = [
 
 export default function ServiceCards() {
   return (
-    <div className="w-full overflow-x-auto">
-      <div className="flex gap-6 min-w-max px-4 py-6">
+    <div className="max-w-7xl mx-auto">
+      <div className="flex flex-wrap gap-4 px-4 py-6 justify-center">
         {services.map((item, index) => (
           <div
             key={index}
-            className="w-[190px] shrink-0 cursor-pointer hover:scale-105 transition-transform"
+            className="w-[190px] cursor-pointer hover:scale-105 transition-transform pb-6"
           >
             <div
-              className={`h-[130px] rounded-2xl flex items-center justify-center ${item.bg} shadow-md`}
+              className={`relative h-[130px] rounded-2xl flex items-center justify-center ${item.bg} shadow-md`}
             >
               {item.icon && (
                 <Image
@@ -60,15 +60,15 @@ export default function ServiceCards() {
                   className="object-contain"
                 />
               )}
+
+              {item.offer && (
+                <p className="  absolute -bottom-0 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-[#00a0a8] bg-[#EBFCFD] px-2 py-1 rounded-full shadow">
+                  {item.offer}
+                </p>
+              )}
             </div>
 
-            {item.offer && (
-              <p className="text-sm font-semibold text-teal-600 mt-2 text-center">
-                {item.offer}
-              </p>
-            )}
-
-            <p className="text-sm font-medium text-gray-900 leading-snug mt-1 text-center">
+            <p className="text-wrap font-medium text-gray-900 leading-snug mt-6 text-center">
               {item.title}
             </p>
           </div>
