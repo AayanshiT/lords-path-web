@@ -13,26 +13,31 @@ import Footer from "@/components/Footer";
 import MobileSection from "@/components/MobileSection";
 import MidSection from "@/components/MidSection";
 import HealthiansReviews from "@/components/HealthiansReviews";
-
+import AwardCards from "@/components/AwardsCards";
+import HealthBlogs from "@/components/HealthBlogs";
+import FooterSection from "@/components/FooterSection";
 export default function Home() {
   return (
     <>
       <TopBar />
       <MainNavbar />
       <HeroSlider />
-      <ServiceCard/>
-      <HealthInfoSection/>
-      <CenterSwiperSection/>
-      <TestsSection/>
-      <HealthScansSection/>
-      <HealthCard/>
-      <Phonesection/>
-      <MobileSection/>
-      <MidSection/>
-      <HealthiansReviews/>
-      <Footer/>
-      <Bottom/>
-      
+      <ServiceCard />
+      <HealthInfoSection />
+      <CenterSwiperSection />
+      <TestsSection />
+      <HealthScansSection />
+      <HealthCard />
+      <Phonesection />
+      <MobileSection />
+      <MidSection />
+      <AwardCards />
+      <HealthBlogs />
+      <FooterSection />
+      <HealthiansReviews />
+      <Footer />
+      <Bottom />
+
 
 
     </>
