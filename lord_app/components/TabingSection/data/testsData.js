@@ -11,6 +11,17 @@ export const TABS = [
   ];
   
   export const TESTS_BY_TAB = {
+    "Full Body Checkup": [
+      {
+        title: "Full Body Checkup",
+        testCount: 2,
+        description:
+          "Full Body Checkup Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        price: 301,
+        oldPrice: 1005,
+        reportTime: "18 Hours",
+      },
+    ],
     Fever: [
       {
         title: "Malaria Test",
@@ -82,6 +93,50 @@ export const TABS = [
         price: 1299,
         oldPrice: 3999,
         reportTime: "24 Hours",
+      },
+    ],
+    Vitamins: [
+      {
+        title: "Vitamins",
+        testCount: 2,
+        description:
+          "Vitamins Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        price: 301,
+        oldPrice: 1005,
+        reportTime: "18 Hours",
+      },
+    ],
+    Diabetes: [
+      {
+        title: "Diabetes",
+        testCount: 2,
+        description:
+          "Diabetes Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        price: 301,
+        oldPrice: 1005,
+        reportTime: "18 Hours",
+      },
+    ],
+    Heart: [
+      {
+        title: "Heart",
+        testCount: 2,
+        description:
+          "Heart Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        price: 301,
+        oldPrice: 1005,
+        reportTime: "18 Hours",
+      },
+    ],
+    Thyroid: [
+      {
+        title: "Thyroid",
+        testCount: 2,
+        description:
+          "Thyroid Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        price: 301,
+        oldPrice: 1005,
+        reportTime: "18 Hours",
       },
     ],
   };

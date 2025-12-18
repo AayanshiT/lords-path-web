@@ -5,6 +5,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -101,28 +102,29 @@ const healthRisks: HealthRisk[] = [
     id: 13,
     title: "Anemia",
     description: "Anemia tests measure hemoglobin and iron levels...",
-    icon: "/heartcards/Anaemia.png", // ✅ FIXED
+    icon: "/heartcards/Anaemia.png",
     href: "/tests/anemia",
   },
 ];
 
 export default function HealthRiskSwiper() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-1 bg-white health-risk-swiper">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-center text-[#1a9ca6] mb-12">
+        <h2 className="section-heading text-2xl font-bold text-center text-[#1a9ca6] mb-12">
           Health Risk
         </h2>
 
+<div className="relative">
         {/* Swiper */}
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation]}
           navigation={{
             prevEl: ".swiper-button-prev3",
             nextEl: ".swiper-button-next3",
           }} 
-          pagination={{ clickable: true }}
+          // pagination={{ clickable: true }}
           spaceBetween={24}
           breakpoints={{
             0: { slidesPerView: 1 },
@@ -167,15 +169,17 @@ export default function HealthRiskSwiper() {
               </div>
             </SwiperSlide>
           ))}
-          <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          
+        </Swiper>
+        <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ‹
         </button>
 
         <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ›
         </button>
-        </Swiper>
-        
+        </div>
+         
 
         {/* View All */}
         <div className="flex justify-center mt-12">

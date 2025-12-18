@@ -5,9 +5,9 @@ export const IMAGING_TESTS = [
     oldPrice: 4000,
     price: 1350,
     description:
-      "An echocardiogram (ECHO) is a type of ultrasound scan that is conducted to evaluate the heart and the nearby blood vessels.",
+      "An echocardiogram (ECHO) is a type of ultrasound scan that is conducted to evaluate the heart and the nearby blood vessels is conducted to evaluate the heart and the nearby blood.",
     features: [
-      "High-resolution image quality for accurate diagnosis",
+      "High-resolution image for accurate diagnosis",
       "100% non-invasive",
     ],
   },
@@ -17,7 +17,7 @@ export const IMAGING_TESTS = [
     oldPrice: 3500,
     price: 1109,
     description:
-      "A TMT test, also known as the treadmill test, is an important health test conducted to evaluate heart function.",
+      "A TMT test, also known as the treadmill test, is an important health test conducted to evaluate heart function is an important health test conducted.",
     features: [
       "High-performance treadmill machines",
       "Read-to-assist support staff",
@@ -29,7 +29,7 @@ export const IMAGING_TESTS = [
     oldPrice: 2000,
     price: 630,
     description:
-      "Pulmonary function tests or PFT tests are an assortment of painless and non-invasive diagnostic tests.",
+      "Pulmonary function tests or PFT tests are an assortment of painless and non-invasive diagnostic tests painless and non-invasive diagnostic tests.",
     features: [
       "Quick & painless procedure",
       "100% non-invasive",
@@ -41,7 +41,7 @@ export const IMAGING_TESTS = [
     oldPrice: 2000,
     price: 630,
     description:
-      "Pulmonary function tests or PFT tests are an assortment of painless and non-invasive diagnostic tests.",
+      "Electromyography (EMG) and nerve conduction studies (NCV) are a set of electrodiagnostic tests that are conducted to evaluate the electrical activity of the nerves and muscles.&nbsp; This test is spe....",
     features: [
       "Quick & painless procedure",
       "100% non-invasive",

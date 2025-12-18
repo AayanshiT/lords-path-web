@@ -20,10 +20,10 @@ export default function HealthAdvisorBar() {
   return (
     <div className="fixed w-6xl m-auto bottom-0 left-0 right-0 z-50 shadow-lg">
       {/* Main bar */}
-      <div className="bg-[#00a0a8] px-4 py-4 md:py-3 rounded-t-lg relative">
-        <div className="max-w-7xl mx-auto flex flex-col  items-center justify-between gap-4">
+      <div className="bg-[#00a0a8] px-4 py-1 md:py-2 rounded-t-lg relative">
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-2">
           {/* Left side - Text */}
-          <div className="flex  items-center gap-2">
+          <div className="flex  items-center gap-1">
             <Phone className="w-5 h-5 text-white animate-pulse" />
             <h3 className="text-white text-lg md:text-xl font-semibold">
               Get a Callback from our Health Advisor
@@ -31,18 +31,18 @@ export default function HealthAdvisorBar() {
           </div>
 
           {/* Right side - Input */}
-          <div className="flex items-center gap-2 w-full md:w-auto bg-white rounded-lg px-3 py-2">
+          <div className="flex items-center gap-2 w-full md:w-auto bg-white rounded-lg px-3 py-1">
             <input
               type="tel"
               value={mobile}
               onChange={(e) => setMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
               placeholder="Enter your 10 digit mobile number"
-              className="px-4 py-3 rounded-lg w-full md:w-80 text-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
+              className="px-4 py-1 rounded-lg w-full md:w-80 text-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
               maxLength={10}
             />
             <button
               onClick={handleSubmit}
-              className="bg-[#ee5152] hover:bg-[#ee5152]/80 text-white px-6 py-3 rounded-lg font-semibold whitespace-nowrap transition-colors"
+              className="bg-[#ee5152] hover:bg-[#ee5152]/80 text-white px-6 py-1 rounded-lg font-semibold whitespace-nowrap transition-colors"
             >
               Get a Call Back
             </button>
@@ -51,7 +51,7 @@ export default function HealthAdvisorBar() {
       </div>
 
       {/* Mobile chat button */}
-      <button className="md:hidden w-full bg-gray-800 text-white py-3 flex items-center justify-center gap-2">
+      <button className="md:hidden w-full bg-gray-800 text-white py-2 flex items-center justify-center gap-2">
         <MessageCircle className="w-4 h-4" />
         <span className="text-sm font-medium">Chat With Us</span>
       </button>

@@ -10,33 +10,34 @@ export default function ImagingCard({ data }) {
 
       {/* Content */}
       <div className="p-5 text-center">
-        <h3 className="font-semibold text-lg text-gray-800 mb-2">
+        <h3 className="font-semibold font-['Poppins',sans-serif] text-[#393939] text-[22px] mb-2">
           {data.title}
         </h3>
 
         <p className="text-sm mb-3">
-          <span className="text-gray-400 line-through mr-2">
+         
+          <span className="font-medium font-['Poppins',sans-serif] text-[#00A0A8] text-[20px]">
+            Starting @  <span className=" line-through mr-2">
             ₹{data.oldPrice}
-          </span>
-          <span className="text-teal-600 font-semibold">
-            Starting @ ₹{data.price}
+          </span> ₹{data.price}
           </span>
         </p>
 
-        <p className="text-sm text-gray-600 mb-6 line-clamp-3">
+        <p className="text-[12px] font-['Poppins',sans-serif] text-[#5a5a5a] font-normal leading-[18px] 
+ mb-6 line-clamp-3">
           {data.description}
         </p>
       </div>
 
       {/* Feature Box */}
       <div className="custom-border bg-teal-50 border-t px-5 py-4 text-sm relative">
-        <span className="orange-text inline-block bg-orange-500 text-white text-xs px-4 py-1 rounded-full mb-3">
+        <span className="orange-text inline-block bg-[#F16948] text-white font-medium text-[12px] px-4 py-1 rounded-full mb-3">
           Salient Features
         </span>
 
-        <ul className="text-gray-700 space-y-1">
+        <ul className="text-gray-800 text-[12px] space-y-1">
           {data.features.map((feature, idx) => (
-            <li key={idx}>• {feature}</li>
+            <li key={idx}> {feature}</li>
           ))}
         </ul>
       </div>

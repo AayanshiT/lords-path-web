@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function DownloadAppSection() {
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    <section className="bg-[#fcfcfc] pt-10">
+      <div className="max-w-full mx-auto  grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         
         {/* LEFT : IMAGE */}
         <div className="flex justify-center md:justify-start">
@@ -18,11 +18,11 @@ export default function DownloadAppSection() {
 
         {/* RIGHT : CONTENT */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-teal-600 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a9ca6] mb-4">
             Download Our App Now
           </h2>
 
-          <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed max-w-lg">
+          <p className="text-[#848484] text-base md:text-lg mb-8 max-w-lg">
             Tracking health status made easy with the app. Now available on both
             Google Play Store and App Store. Book health tests and access your
             smart reports and health trackers anytime anywhere.
