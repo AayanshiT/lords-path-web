@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 import { JSX } from "react";
 
 type HealthRisk = {

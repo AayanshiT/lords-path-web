@@ -7,10 +7,12 @@ import {
   FaYoutube,
   FaInstagram,
 } from "react-icons/fa6";
+import bottom from "./bottom.tsx";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <>
+    <footer className="bg-white border-t border-gray-200 pb-[100px]">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* COLUMN 1 */}
@@ -38,31 +40,30 @@ export default function Footer() {
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="text-lg font-semibold mb-6 text-[20px] font-bold color-[#000000]">
+          <h4 className="text-lg font-semibold mb-6 text-[20px] font-bold !color-[#000]">
             IMPORTANT LINKS
           </h4>
 
           <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-sm text-gray-700">
-            <Link href="#">About Us</Link>
-            <Link href="#">Our Labs</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">About Us</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Our Labs</Link>
 
-            <Link href="#">Media</Link>
-            <Link href="#">Contact Us</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Media</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Contact Us</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Career</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Blog</Link>
 
-            <Link href="#">Career</Link>
-            <Link href="#">Blog</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Money Back Policy</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Investors</Link>
 
-            <Link href="#">Money Back Policy</Link>
-            <Link href="#">Investors</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Query/Complaints</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Scan Lab</Link>
 
-            <Link href="#">Query/Complaints</Link>
-            <Link href="#">Scan Lab</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Our Corporate Clients</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">FAQ</Link>
 
-            <Link href="#">Our Corporate Clients</Link>
-            <Link href="#">FAQ</Link>
-
-            <Link href="#">Rating & Reviews</Link>
-            <Link href="#">Become Business Partner</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Rating & Reviews</Link>
+            <Link className=" hover:text-[#00a0a8]" href="#">Become Business Partner</Link>
           </div>
         </div>
 
@@ -89,19 +90,21 @@ export default function Footer() {
             GET THE HEALTHIANS APP
           </h4>
 
-          <div className="flex gap-3">
-            {/* <Image
-              src="https://cdn2.healthians.com/img/google_play.png"
+          <div className="flex gap-4 flex-wrap">
+            <Image
+              src="/mockups/google_play.png" // Google Play badge
               alt="Google Play"
-              width={130}
-              height={40}
+              width={120}
+              height={54}
+              className="cursor-pointer"
             />
             <Image
-              src="https://cdn2.healthians.com/img/appstore.png"
+              src="/mockups/appstore.png" // App Store badge
               alt="App Store"
-              width={130}
-              height={40}
-            /> */}
+              width={120}
+              height={54}
+              className="cursor-pointer"
+            />
           </div>
         </div>
       </div>
@@ -109,11 +112,13 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="border-t bg-[#f8f8f8] border-gray-200 py-3 text-center text-sm text-gray-600">
         © 2025 Healthians.com  |{" "}
-        <Link href="#">Terms & Conditions</Link>  |{" "}
-        <Link href="#">Privacy Policy</Link>  |{" "}
-        <Link href="#">Statutory Compliance</Link>  |{" "}
-        <Link href="#">Programs & Policies</Link>
+        <Link className=" hover:text-[#00a0a8]" href="#">Terms & Conditions</Link>  |{" "}
+        <Link className=" hover:text-[#00a0a8]" href="#">Privacy Policy</Link>  |{" "}
+        <Link className=" hover:text-[#00a0a8]" href="#">Statutory Compliance</Link>  |{" "}
+        <Link className=" hover:text-[#00a0a8]" href="#">Programs & Policies</Link>
       </div>
     </footer>
+    {/* <bottom/> */}
+    </>
   );
 }

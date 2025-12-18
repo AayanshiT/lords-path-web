@@ -28,8 +28,8 @@ export default function Home() {
       <Phonesection/>
       <MobileSection/>
       <MidSection/>
-      <Bottom/>
       <Footer/>
+      <Bottom/>
       
 
 
