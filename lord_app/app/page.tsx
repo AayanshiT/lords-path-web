@@ -12,6 +12,10 @@ import Bottom from "@/components/bottom";
 import Footer from "@/components/Footer";
 import MobileSection from "@/components/MobileSection";
 import MidSection from "@/components/MidSection";
+import AwardCards from "@/components/AwardsCards";
+import FooterSection from "@/components/FooterSection";
+import HealthBlogs
+ from "@/components/HealthBlogs";
 
 export default function Home() {
   return (
@@ -28,6 +32,11 @@ export default function Home() {
       <Phonesection/>
       <MobileSection/>
       <MidSection/>
+      <AwardCards/>
+      <HealthBlogs/>
+      <FooterSection/>
+
+      {/* footer */}
       <Bottom/>
       <Footer/>
       
