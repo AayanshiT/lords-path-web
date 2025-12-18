@@ -139,15 +139,15 @@ export default function HealthRiskSwiper() {
                   <Image
                     src={risk.icon}
                     alt={risk.title}
-                    width={56}
-                    height={56}
+                    width={60}
+                    height={60}
                     className="mx-auto mb-3 object-contain cursor-pointer"
                   />
                 </Link>
 
                 {/* Title */}
                 <h3
-                  className="text-base font-semibold mb-2"
+                  className="text-xl font-semibold mb-2"
                   style={{ color: "#1a9ca6" }}
                 >
                   {risk.title}

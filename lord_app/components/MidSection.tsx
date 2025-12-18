@@ -1,0 +1,52 @@
+export default function HealthiansHero() {
+    return (
+        <section className="bg-[#00a0a8] py-10 px-4 sm:px-6 lg:px-8">
+            <h1 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-center mb-10 text-[rgb(255,255,255)] ">
+                The Excellence of{" "}
+                <span className="text-[#fcbe57]">Healthians Labs</span>
+            </h1>
+            <div className="max-w-5xl mx-auto">
+
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+                    {/* Left Content */}
+                    <div className="text-[#fff] space-y-4">
+
+                        <p className="text-sm sm:text-base font-medium text-[#ffff]/95">
+                            Healthians is one of the most trusted players in diagnostics
+                            today, with a network of fully automated labs across major
+                            cities in India, that are hardcoded with innovative technology,
+                            advanced robotics and intelligent digital solutions.
+                        </p>
+
+                        <p className="text-sm sm:text-base font-medium  text-[#ffff]/95">
+                            With an extensive team of highly qualified lab technicians and
+                            pathologists, our single-minded purpose is to follow the
+                            strictest of quality measures to maintain accuracy for each test
+                            we perform.
+                        </p>
+
+                        <button className="mt-2 bg-white  text-gray-800 font-normal px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                            Know more
+                        </button>
+                    </div>
+
+                    {/* Right Content - Video */}
+                    <div className="relative -mt-10">
+                        <div className="relative rounded-lg overflow-hidden shadow-2xl aspect-video bg-black">
+                            <iframe
+                                className="absolute inset-0 h-full w-full"
+                                src="https://www.youtube.com/embed/6w7bJJw2Xtc?rel=0"
+                                title="Healthians Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+}
