@@ -10,7 +10,7 @@ import { TestCard } from "@/components/TabingSection/TestCard";
 
 import { TABS, TESTS_BY_TAB } from "@/components/TabingSection/data/testsData";
 
-export default function TestsSection({data}) {
+export default function TestsSection() {
   const [activeTab, setActiveTab] = useState("Fever");
 
   const tests = TESTS_BY_TAB[activeTab] || [];
@@ -20,7 +20,7 @@ export default function TestsSection({data}) {
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-6">
-        Tests for {data?.title} in Gurgaon
+        Tests for Fever in Gurgaon
         </h2>
 
         {/* Tabs */}
@@ -65,12 +65,12 @@ export default function TestsSection({data}) {
             </SwiperSlide>
           ))}
         </Swiper>
-         <button className="swiper-button-prev-tab  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-black shadow-md w-10 h-10 rounded-full flex items-center justify-center">
-          ‹
+         <button className="swiper-button-prev-tab  absolute left-[200px] top-1/2 -translate-y-1/2 z-20  text-black  w-12 h-10 rounded-full flex items-center justify-center">
+           <img src="https://cdn1.healthians.com/img/svg_assets/group-prev-nav.svg" alt="left" />
         </button>
 
-        <button className="swiper-button-next-tab  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-black shadow-md w-10 h-10 rounded-full flex items-center justify-center">
-          ›
+        <button className="swiper-button-next-tab  absolute right-[200px] top-1/2 -translate-y-1/2 z-20  text-black  w-12 h-10 rounded-full flex items-center justify-center">
+          <img src="https://cdn1.healthians.com/img/svg_assets/group-next-nav.svg" alt="right" />
         </button>
         </div>
 

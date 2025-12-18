@@ -81,3 +81,7 @@ body {background: var(--background);/* color: var(--foreground); */font-family: 
 .health-risk-swiper .swiper-button-next3{right: -20px;}
 .health-risk-swiper .swiper-button-prev3 {left: -20px;}
 .border{border: 1px solid #E3E3E3;}
+
+.tabing-card .test-count{
+  background: linear-gradient(180deg, rgba(39, 196, 204, 0.21) 0.41%, rgba(254, 254, 254, 0.00) 110.22%) !important;
+}
