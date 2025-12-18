@@ -10,6 +10,8 @@ import HealthCard from "@/components/healthcards";
 import Phonesection from "@/components/Phonesection";
 import Bottom from "@/components/bottom";
 import Footer from "@/components/Footer";
+import MobileSection from "@/components/MobileSection";
+import MidSection from "@/components/MidSection";
 
 export default function Home() {
   return (
@@ -24,8 +26,11 @@ export default function Home() {
       <HealthScansSection/>
       <HealthCard/>
       <Phonesection/>
+      <MobileSection/>
+      <MidSection/>
       <Bottom/>
       <Footer/>
+      
 
 
     </>
