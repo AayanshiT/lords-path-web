@@ -109,20 +109,21 @@ const healthRisks: HealthRisk[] = [
 
 export default function HealthRiskSwiper() {
   return (
-    <section className="py-1 bg-white">
+    <section className="py-1 bg-white health-risk-swiper">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-center text-[#1a9ca6] mb-12">
+        <h2 className="section-heading text-2xl font-bold text-center text-[#1a9ca6] mb-12">
           Health Risk
         </h2>
 
+<div className="relative">
         {/* Swiper */}
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation]}
           navigation={{
-            prevEl: ".swiper-button-prev2",
-            nextEl: ".swiper-button-next2",
-          }}
+            prevEl: ".swiper-button-prev3",
+            nextEl: ".swiper-button-next3",
+          }} 
           // pagination={{ clickable: true }}
           spaceBetween={24}
           breakpoints={{
@@ -168,14 +169,17 @@ export default function HealthRiskSwiper() {
               </div>
             </SwiperSlide>
           ))}
+          
         </Swiper>
-        <button className="swiper-button-prev2  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ‹
         </button>
 
-        <button className="swiper-button-next2  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ›
         </button>
+        </div>
+         
 
         {/* View All */}
         <div className="flex justify-center mt-12">

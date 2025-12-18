@@ -4,23 +4,12 @@
 @import "swiper/css/pagination";
 
 .swiper-button-next,
-.swiper-button-prev {
-  background: #ff7a45;
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+.swiper-button-prev {background: #ff7a45;color: white;width: 40px;height: 40px;border-radius: 50%;}
 
 .swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 14px;
-}
+.swiper-button-prev::after {font-size: 14px;}
 
-.swiper-pagination-bullet-active {
-  background: #ff7a45;
-}
-
+.swiper-pagination-bullet-active {background: #ff7a45;}
 
 :root {
   --background: #ffffff;
@@ -41,17 +30,16 @@
   }
 }
 
-body {
-  background: var(--background);
-  /* color: var(--foreground); */
-  font-family: Arial, Helvetica, sans-serif;
-}
+body {background: var(--background);/* color: var(--foreground); */font-family: Arial, Helvetica, sans-serif;}
 
-.center-swiper-section .swiper-slide-active{
-  z-index: 999999;
-  box-shadow: 0 4px 12px #000000c2;
-  border-radius: 10px;
-}
+.section-heading{    font-size: 28px !important;
+    /* margin: 0px 0px 30px 0px; */
+    text-align: center;
+    font-weight: 700 !important;
+    color: #00A0A8 !important;
+    font-family: 'Poppins', sans-serif;}
+
+.center-swiper-section .swiper-slide-active{z-index: 999999;box-shadow: 0 4px 12px #000000c2;border-radius: 10px;}
 .center-swiper-section .swiper-prev{left: 290px;}
 .center-swiper-section .swiper-next{right: 290px !important;}
 .swiper-button-prev .swiper-navigation-icon{display:none;}
@@ -68,46 +56,32 @@ body {
 .health-scans-section .swiper-button-next2{right: -50px !important;}
 .health-scans-section .swiper-button-prev2{left: -50px !important;}
 }
-.tabing-swiper .swiper-button-next{right: -10px !important;}
-.tabing-swiper .swiper-button-prev{left: -10px !important;}
+.tabing-swiper .swiper-button-next-tab{right: -50px !important; font-size: 30px;}
+.tabing-swiper .swiper-button-prev-tab{left: -50px !important; font-size: 30px;}
+.tabing-swiper .swiper-pagination-bullet{width: 14px; height: 14px; border-radius: 50%;}
+.tabing-swiper .swiper-pagination-bullet-active{background-color: #00a0a8 !important;}
 
-.health-scans-section .swiper-button-next2{right: -10px !important;}
-.health-scans-section .swiper-button-prev2{left: -10px !important;}
-.svg-style svg{
-  color: #848484;
-      background-color: #f2f2f2;
-    border-radius: 100%;
-    width: 28px;
-    height: 28px;
-    padding: 7px;
-}
-.menu-item{
-  background: linear-gradient(180deg,#00a0a8 0,#20b2ba 71%);
-}
-.hero-swiper .swiper-pagination-clickable{    position: relative;
-    margin-top: 20px;}
 
-    /* Pagination wrapper */
-.hero-swiper .swiper-pagination {
-  position: relative !important;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
+
+.health-scans-section .swiper-button-next2{right: -50px !important;}
+.health-scans-section .swiper-button-prev2{left: -50px !important;}
+.svg-style svg{color: #848484;background-color: #f2f2f2;border-radius: 100%;width: 28px;height: 28px;padding: 7px;}
+.menu-item{background: linear-gradient(180deg,#00a0a8 0,#20b2ba 71%);}
+.hero-swiper .swiper-pagination-clickable{position: relative;margin-top: 20px;}
+
+/* Pagination wrapper */
+.hero-swiper .swiper-pagination {position: relative !important;margin-top: 20px; display: flex;justify-content: center;gap: 8px;}
 
 /* Default bullet */
-.hero-swiper .swiper-pagination-bullet {
-  width: 22px !important;
-  height: 4px !important;
-  border-radius: 10px !important;
-  background-color: #cfd8dc;
-  opacity: 1;
-  transition: all 0.3s ease;
-}
+.hero-swiper .swiper-pagination-bullet {width: 22px !important;height: 4px !important;border-radius: 10px !important;background-color: #cfd8dc;opacity: 1;transition: all 0.3s ease;}
 
 /* Active bullet */
-.hero-swiper .swiper-pagination-bullet-active {
-  background-color: #009688 !important;
-  width: 28px !important;
+.hero-swiper .swiper-pagination-bullet-active {background-color: #009688 !important;width: 28px !important;}
+
+.health-risk-swiper .swiper-button-next3{right: -20px;}
+.health-risk-swiper .swiper-button-prev3 {left: -20px;}
+.border{border: 1px solid #E3E3E3;}
+
+.tabing-card .test-count{
+  background: linear-gradient(180deg, rgba(39, 196, 204, 0.21) 0.41%, rgba(254, 254, 254, 0.00) 110.22%) !important;
 }
