@@ -12,9 +12,7 @@ import Bottom from "@/components/bottom";
 import Footer from "@/components/Footer";
 import MobileSection from "@/components/MobileSection";
 import MidSection from "@/components/MidSection";
-import AwardCards from "@/components/AwardsCards";
-import FooterSection from "@/components/FooterSection";
-import HealthBlogs from "@/components/HealthBlogs";
+import HealthiansReviews from "@/components/HealthiansReviews";
 
 export default function Home() {
   return (
@@ -22,21 +20,19 @@ export default function Home() {
       <TopBar />
       <MainNavbar />
       <HeroSlider />
-      <ServiceCard />
-      <HealthInfoSection />
-      <CenterSwiperSection />
-      <TestsSection />
-      <HealthScansSection />
-      <HealthCard />
-      <Phonesection />
-      <MobileSection />
-      <MidSection />
-      <AwardCards />
-      <HealthBlogs />
-      <FooterSection />
-      <Footer />
-      <Bottom />
-
+      <ServiceCard/>
+      <HealthInfoSection/>
+      <CenterSwiperSection/>
+      <TestsSection/>
+      <HealthScansSection/>
+      <HealthCard/>
+      <Phonesection/>
+      <MobileSection/>
+      <MidSection/>
+      <HealthiansReviews/>
+      <Footer/>
+      <Bottom/>
+      
 
 
     </>

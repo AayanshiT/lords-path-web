@@ -37,7 +37,7 @@ export default function HealthAdvisorBar() {
               value={mobile}
               onChange={(e) => setMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
               placeholder="Enter your 10 digit mobile number"
-              className="px-4 py-2 w-full md:w-80 text-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
+              className="px-4 py-2 w-full md:w-80 text-gray-700 focus:outline-none "
               maxLength={10}
             />
             <button
