@@ -31,10 +31,10 @@ export default function Home() {
       <Phonesection />
       <MobileSection />
       <MidSection />
+      <HealthiansReviews />
       <AwardCards />
       <HealthBlogs />
       <FooterSection />
-      <HealthiansReviews />
       <Footer />
       <Bottom />
 
