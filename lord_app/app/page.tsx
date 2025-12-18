@@ -12,6 +12,7 @@ import Bottom from "@/components/bottom";
 import Footer from "@/components/Footer";
 import MobileSection from "@/components/MobileSection";
 import MidSection from "@/components/MidSection";
+import HealthiansReviews from "@/components/HealthiansReviews";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <Phonesection/>
       <MobileSection/>
       <MidSection/>
+      <HealthiansReviews/>
       <Footer/>
       <Bottom/>
       

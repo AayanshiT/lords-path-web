@@ -85,3 +85,108 @@ body {background: var(--background);/* color: var(--foreground); */font-family: 
 .tabing-card .test-count{
   background: linear-gradient(180deg, rgba(39, 196, 204, 0.21) 0.41%, rgba(254, 254, 254, 0.00) 110.22%) !important;
 }
+
+
+
+.reviews-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0aa6a6;
+  margin-bottom: 40px;
+}
+
+/* Video Card */
+.video-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+/* Play Button */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0aa6a6;
+  font-size: 22px;
+}
+
+/* Card Info */
+.card-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  text-align: left;
+}
+
+.card-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-info p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
