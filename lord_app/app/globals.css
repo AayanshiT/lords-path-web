@@ -78,8 +78,8 @@ body {background: var(--background);/* color: var(--foreground); */font-family: 
 /* Active bullet */
 .hero-swiper .swiper-pagination-bullet-active {background-color: #009688 !important;width: 28px !important;}
 
-.health-risk-swiper .swiper-button-next3{right: -20px;}
-.health-risk-swiper .swiper-button-prev3 {left: -20px;}
+.health-risk-swiper .swiper-button-next3{right: -50px;}
+.health-risk-swiper .swiper-button-prev3 {left: -50px;}
 .border{border: 1px solid #E3E3E3;}
 
 .tabing-card .test-count{

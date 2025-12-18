@@ -1,16 +1,16 @@
 export default function HealthiansHero() {
     return (
-        <section className="bg-[#00a0a8] py-10 px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#00a0a8] py-14 px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-center mb-10 text-[rgb(255,255,255)] ">
                 The Excellence of{" "}
                 <span className="text-[#fcbe57]">Healthians Labs</span>
             </h1>
             <div className="max-w-5xl mx-auto">
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="  !flex   gap-12 items-center justify-center">
 
                     {/* Left Content */}
-                    <div className="text-[#fff] space-y-4">
+                    <div className="text-[#fff] space-y-4 mr-24">
 
                         <p className="text-sm sm:text-base font-medium text-[#ffff]/95">
                             Healthians is one of the most trusted players in diagnostics
@@ -33,12 +33,11 @@ export default function HealthiansHero() {
 
                     {/* Right Content - Video */}
                     <div className="relative -mt-10">
-                        <div className="relative rounded-lg overflow-hidden shadow-2xl aspect-video bg-black">
+                        <div className="relative overflow-hidden shadow-2xl aspect-video bg-black w-72">
                             <iframe
-                                className="absolute inset-0 h-full w-full"
+                                className="absolute inset-0 h-full w-full border !border-[#f9bb55]"
                                 src="https://www.youtube.com/embed/6w7bJJw2Xtc?rel=0"
-                                title="Healthians Video"
-                                frameBorder="0"
+                                title="Healthians Video" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
                             ></iframe>

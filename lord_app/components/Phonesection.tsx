@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function DownloadAppSection() {
   return (
     <section className="bg-[#fcfcfc] pt-10">
-      <div className="max-w-full mx-auto  grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <div className="max-w-full mx-auto  grid grid-cols-1 md:grid-cols-2 items-center">
         
         {/* LEFT : IMAGE */}
         <div className="flex justify-center md:justify-start">
@@ -17,7 +17,7 @@ export default function DownloadAppSection() {
         </div>
 
         {/* RIGHT : CONTENT */}
-        <div>
+        <div className="flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1a9ca6] mb-4">
             Download Our App Now
           </h2>

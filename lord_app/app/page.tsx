@@ -32,13 +32,8 @@ export default function Home() {
       <Phonesection/>
       <MobileSection/>
       <MidSection/>
-      <AwardCards/>
-      <HealthBlogs/>
-      <FooterSection/>
-
-      {/* footer */}
-      <Bottom/>
       <Footer/>
+      <Bottom/>
       
 
 

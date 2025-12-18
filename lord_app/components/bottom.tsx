@@ -31,18 +31,18 @@ export default function HealthAdvisorBar() {
           </div>
 
           {/* Right side - Input */}
-          <div className="flex items-center gap-2 w-full md:w-auto bg-white rounded-lg px-3 py-1">
+          <div className="flex items-center gap-2 w-full md:w-auto bg-white rounded-[4px]">
             <input
               type="tel"
               value={mobile}
               onChange={(e) => setMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
               placeholder="Enter your 10 digit mobile number"
-              className="px-4 py-1 rounded-lg w-full md:w-80 text-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
+              className="px-4 py-2 w-full md:w-80 text-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
               maxLength={10}
             />
             <button
               onClick={handleSubmit}
-              className="bg-[#ee5152] hover:bg-[#ee5152]/80 text-white px-6 py-1 rounded-lg font-semibold whitespace-nowrap transition-colors"
+              className="bg-[#ee5152] hover:bg-[#ee5152]/80 text-white px-6 py-2 rounded-tr-[4px] rounded-br-[4px] rounded-tl-0 rounded-bl-0 font-semibold whitespace-nowrap transition-colors"
             >
               Get a Call Back
             </button>

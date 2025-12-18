@@ -5,7 +5,7 @@ export default function ImagingCard({ data }) {
       <img
         src={data.image}
         alt={data.title}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover border-b border-[#00A0A8]"
       />
 
       {/* Content */}

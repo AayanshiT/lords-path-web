@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 import { JSX } from "react";
 
 type HealthRisk = {
@@ -112,11 +112,11 @@ export default function HealthRiskSwiper() {
     <section className="py-1 bg-white health-risk-swiper">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="section-heading text-2xl font-bold text-center text-[#1a9ca6] mb-12">
+        <h2 className="section-heading text-2xl font-[800] text-center text-[#1a9ca6] mb-8">
           Health Risk
-        </h2>
+        </h2> 
 
-<div className="relative">
+<div className="relative max-w-6xl mx-auto">
         {/* Swiper */}
         <Swiper
           modules={[Navigation]}
@@ -125,7 +125,7 @@ export default function HealthRiskSwiper() {
             nextEl: ".swiper-button-next3",
           }} 
           // pagination={{ clickable: true }}
-          spaceBetween={24}
+          spaceBetween={20}
           breakpoints={{
             0: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -133,36 +133,36 @@ export default function HealthRiskSwiper() {
           }}
         >
           {healthRisks.map((risk) => (
-            <SwiperSlide key={risk.id}>
-              <div className="bg-white rounded-xl border shadow-sm hover:shadow-md transition p-5 h-full flex flex-col items-center text-center">
+            <SwiperSlide key={risk.id} className="!mx-3">
+              <div className="bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.12)] my-3 transition p-10 h-full flex flex-col items-center text-center border">
                 {/* Icon / Link */}
                 <Link href={risk.href}>
                   <Image
                     src={risk.icon}
                     alt={risk.title}
-                    width={60}
-                    height={60}
-                    className="mx-auto mb-3 object-contain cursor-pointer"
+                    width={100}
+                    height={100}
+                    className="mx-auto mb-2 object-contain cursor-pointer"
                   />
                 </Link>
 
                 {/* Title */}
                 <h3
-                  className="text-xl font-semibold mb-2"
+                  className="text-[24px] font-semibold mb-2"
                   style={{ color: "#1a9ca6" }}
                 >
                   {risk.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                <p className="text-black text-[14px] leading-[20px] mb-4 line-clamp-3">
                   {risk.description}
                 </p>
 
                 {/* CTA */}
                 <button
-                  className="mt-auto text-sm font-medium hover:underline"
-                  style={{ color: "#1a9ca6" }}
+                  className="mt-auto text-sm hover:underline text-[#00a0a8] font-poppins font-semibold text-[16px]"
+                  style={{ color: "#00a0a8" }}
                 >
                   View More
                 </button>
@@ -183,7 +183,7 @@ export default function HealthRiskSwiper() {
 
         {/* View All */}
         <div className="flex justify-center mt-12">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition">
+          <button className="bg-[#f16948] py-[10px] pr-[60px] pl-[40px] text-white  rounded-full font-semibold transition">
             View All →
           </button>
         </div>
