@@ -11,43 +11,63 @@ const reviews = [
   {
     name: "Avni",
     location: "Vadodara",
-    thumbnail: "/images/reviews/avni.jpg",
-    youtubeId: "VIDEO_ID_1",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb048fca7bb.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/Xvby-8yO4yg?si=-uzyRKUXY6Um--Ef",
   },
-  
   {
     name: "Bahadur",
     location: "Mohali",
-    thumbnail: "/images/reviews/bahadur.jpg",
-    youtubeId: "VIDEO_ID_2",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb03c3388d9.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/rTA7q5Q-pvs?si=AfvHmfqdk0Jr4zfd",
   },
   {
     name: "Mukesh",
     location: "Bhopal",
-    thumbnail: "/images/reviews/mukesh.jpg",
-    youtubeId: "VIDEO_ID_3",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb05161a147.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/S9BrSXsHCGY?si=UHvtj8eg9k1vW2FH",
   },
   {
-    name: "Anna",
-    location: "Bengaluru",
-    thumbnail: "/images/reviews/anna.jpg",
-    youtubeId: "VIDEO_ID_4",
+    name: "Mukesh",
+    location: "Bhopal",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb05161a147.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/S9BrSXsHCGY?si=UHvtj8eg9k1vW2FH",
+  },
+  {
+    name: "Mukesh",
+    location: "Bhopal",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb05161a147.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/S9BrSXsHCGY?si=UHvtj8eg9k1vW2FH",
+  },
+  {
+    name: "Mukesh",
+    location: "Bhopal",
+    thumbnail: "https://helma.healthians.com/stationery/mailer-assets/61bb05161a147.jpg",
+    videoType: "youtube",
+    video: "https://www.youtube.com/embed/S9BrSXsHCGY?si=UHvtj8eg9k1vW2FH",
   },
 ];
 
+
 export default function HealthiansReviews() {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeVideo, setActiveVideo] = useState<any>(null);
+const siteOrigin =
+  typeof window !== "undefined" ? window.location.origin : "";
 
   return (
     <>
-      {/* Section */}
       <section className="reviews-section">
         <h2 className="section-title">Healthians Reviews</h2>
 
+        <div className="max-w-6xl m-auto">
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
-          spaceBetween={24}
+          spaceBetween={30}
           slidesPerView={4}
           breakpoints={{
             320: { slidesPerView: 1.1 },
@@ -59,7 +79,7 @@ export default function HealthiansReviews() {
             <SwiperSlide key={index}>
               <div
                 className="video-card"
-                onClick={() => setActiveVideo(item.youtubeId)}
+                onClick={() => setActiveVideo(item)}
               >
                 <img src={item.thumbnail} alt={item.name} />
 
@@ -75,9 +95,10 @@ export default function HealthiansReviews() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       </section>
 
-      {/* Video Modal */}
+      {/* VIDEO POPUP */}
       {activeVideo && (
         <div className="video-modal">
           <div className="modal-content">
@@ -85,11 +106,19 @@ export default function HealthiansReviews() {
               ✕
             </button>
 
-            <iframe
-              src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+            {activeVideo.videoType === "youtube" ? (
+              <iframe
+                src={activeVideo.video}
+                title="Customer Review"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                />
+            ) : (
+              <video controls autoPlay>
+                <source src={activeVideo.video} type="video/mp4" />
+              </video>
+            )}
           </div>
         </div>
       )}

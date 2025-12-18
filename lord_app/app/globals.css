@@ -190,3 +190,10 @@ body {background: var(--background);/* color: var(--foreground); */font-family: 
   height: 34px;
   cursor: pointer;
 }
+
+
+.reviews-section .swiper-pagination{
+      position: relative;
+    margin-top: 20px;
+}
+.reviews-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
