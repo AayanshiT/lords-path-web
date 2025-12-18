@@ -118,7 +118,10 @@ export default function HealthRiskSwiper() {
         {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation
+          navigation={{
+            prevEl: ".swiper-button-prev3",
+            nextEl: ".swiper-button-next3",
+          }} 
           pagination={{ clickable: true }}
           spaceBetween={24}
           breakpoints={{
@@ -164,7 +167,15 @@ export default function HealthRiskSwiper() {
               </div>
             </SwiperSlide>
           ))}
+          <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          ‹
+        </button>
+
+        <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          ›
+        </button>
         </Swiper>
+        
 
         {/* View All */}
         <div className="flex justify-center mt-12">
