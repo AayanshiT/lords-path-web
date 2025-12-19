@@ -42,7 +42,7 @@ const awards: Award[] = [
 
 export default function RewardsRecognition() {
     return (
-        <section className="w-full bg-gray-50 py-16">
+        <section className="w-full bg-[#fff] py-1 awards-section">
             <div className="mx-auto max-w-7xl px-6">
                 <h2 className="mb-12 text-center text-3xl font-semibold text-[#1a9ca6]">
                     Rewards & Recognition
@@ -68,15 +68,15 @@ export default function RewardsRecognition() {
                 >
                     {awards.map((award) => (
                         <SwiperSlide key={award.id}>
-                            <div className="h-full rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md">
-                                <div className="flex h-full items-center gap-6">
+                            <div className="h-full rounded-xl border bg-white py-6 px-6 shadow-sm transition hover:shadow-md">
+                                <div className="flex h-full items-center gap-4">
 
                                     {/* IMAGE */}
                                     <div className="flex-shrink-0">
                                         <Image
                                             src={award.image}
                                             alt={award.title}
-                                            width={90}
+                                            width={100}
                                             height={120}
                                             className="object-contain"
                                         />

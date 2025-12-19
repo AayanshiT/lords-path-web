@@ -4,9 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-import "swiper/css";
-import "swiper/css/pagination";
-
 type Blog = {
   id: number;
   title: string;
@@ -30,20 +27,21 @@ const blogs: Blog[] = [
       "Breathe Better: How to Protect Your Health from the Impact of Air Pollution?",
     image: "/blogs/blog6.webp",
   },
-    {
+  {
     id: 4,
     title:
-      "10 Real Health Benefits of Giloy",
+      "Top 10 Real Health Benefits of Giloy",
     image: "/blogs/blog3.webp",
   },
+  
 ];
 
 export default function HealthBlogsArticles() {
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-[#fafafa] py-6 blogs-section">
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
-        <h2 className="mb-12 text-center text-4xl font-semibold text-teal-600">
+        <h2 className="mb-12 text-center text-3xl font-semibold text-[#1a9ca6]">
           Health Blogs & Articles
         </h2>
 
@@ -80,8 +78,8 @@ export default function HealthBlogsArticles() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-base font-semibold text-gray-800 leading-snug">
+                <div className="p-5 group">
+                  <h3 className="text-base font-medium text-[#333]  group-hover:text-[#1a9ca6] transition-colors duration-300">
                     {blog.title}
                   </h3>
                 </div>
