@@ -23,7 +23,7 @@ export default function NewsletterSubscription() {
         <div className="flex justify-center mb-12">
           <div className="flex items-center gap-2">
             <div className="h-0.5 w-16 bg-gray-300"></div>
-            <div className="h-0.5 w-16 bg-orange-500"></div>
+            <div className="h-0.5 w-16 bg-[#f27d27]"></div>
             <div className="h-0.5 w-16 bg-gray-300"></div>
           </div>
         </div>

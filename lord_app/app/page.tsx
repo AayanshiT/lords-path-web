@@ -16,6 +16,10 @@ import HealthiansReviews from "@/components/HealthiansReviews";
 import AwardCards from "@/components/AwardsCards";
 import HealthBlogs from "@/components/HealthBlogs";
 import FooterSection from "@/components/FooterSection";
+import ImageSection from "@/components/ImageSection";
+
+
+
 export default function Home() {
   return (
     <>
@@ -29,6 +33,7 @@ export default function Home() {
       <HealthScansSection />
       <HealthCard />
       <Phonesection />
+      <ImageSection />
       <MobileSection />
       <MidSection />
       <HealthiansReviews />
