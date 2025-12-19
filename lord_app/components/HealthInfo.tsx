@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HealthInfoSection() {
   return (
-    <section className="w-full px-4 md:px-10 py-10 bg-white">
+    <section className="max-w-[85rem] mx-auto bg-white">
       {/* Top Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         {/* Left Card */}
@@ -16,7 +16,7 @@ export default function HealthInfoSection() {
             />
 
             <div>
-              <h5 className="text-sm font-semibold text-gray-900">
+              <h5 className="text-[14px] font-semibold text-gray-900">
                 We are now empaneled on Government Panels for Health Tests
               </h5>
               <p className="text-sm text-gray-600 mt-1 leading-relaxed">
@@ -24,13 +24,13 @@ export default function HealthInfoSection() {
                 Dept, DGEHS & Relevant Dept, AIR INDIA, CAPF (Central Armed
                 Police Forces)
               </p>
-            </div>
-          </div>
-
-          <button className="mt-5 inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-5 py-3 rounded-xl w-fit">
+          <button className="mt-5 inline-flex items-center gap-2 bg-[#efb752] hover:bg-[#dca543] text-black font-semibold px-5 py-3 rounded-xl w-fit">
             <Phone size={18} />
             Call us: +91-9289902266
           </button>
+            </div>
+          </div>
+
         </div>
 
         {/* Right Card */}
@@ -39,19 +39,19 @@ export default function HealthInfoSection() {
             <img src="/meter.png" alt="Health Score" className="w-14 h-14" />
 
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-[14px] font-semibold text-gray-900">
                 Unlock Your Health Score with HealthKarma!
               </h3>
               <p className="text-sm text-gray-600 mt-1">
                 Uncover potential health risks and get custom test
                 recommendation based on your lifestyle and habits.
               </p>
+          <button className="mt-5 inline-flex items-center gap-2 bg-[#F36A46] hover:bg-[#006d73] text-white font-semibold px-5 py-3 rounded-xl w-fit">
+            Check your health score →
+          </button>
             </div>
           </div>
 
-          <button className="mt-5 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-3 rounded-xl w-fit">
-            Check your health score →
-          </button>
         </div>
       </div>
 
@@ -60,10 +60,10 @@ export default function HealthInfoSection() {
         className="rounded-2xl bg-[linear-gradient(0deg,#faffff_0%,#ebfcff_100%)] px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div className="text-center md:text-left">
-          <h3 className="text-xl font-semibold text-gray-900">
-            Why <span className="text-teal-600">8.5 Million Indians</span>
+          <h3 className="text-[19px] font-semibold text-gray-900">
+            Why <span className="text-teal-600 font-bold">8.5 Million</span> Indians
           </h3>
-          <p className="text-gray-700 font-medium">Trust Healthians Labs</p>
+          <p className="text-gray-700 font-medium text-[17px]">Trust Healthians Labs</p>
         </div>
 
         <div className="flex flex-wrap justify-center text-gray-700">

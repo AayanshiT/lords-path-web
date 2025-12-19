@@ -41,12 +41,12 @@ const services = [
 
 export default function ServiceCards() {
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="flex flex-wrap gap-4 px-4 py-6 justify-center">
+    <div className="max-w-[85rem] mx-auto">
+      <div className="flex flex-wrap gap-4 px-4 py-6 justify-between">
         {services.map((item, index) => (
           <div
             key={index}
-            className="w-[190px] cursor-pointer hover:scale-105 transition-transform pb-6"
+            className="w-[180px] cursor-pointer hover:scale-105 transition-transform pb-6"
           >
             <div
               className={`relative h-[130px] rounded-2xl flex items-center justify-center ${item.bg} shadow-md`}
@@ -62,13 +62,13 @@ export default function ServiceCards() {
               )}
 
               {item.offer && (
-                <p className="  absolute -bottom-0 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-[#00a0a8] bg-[#EBFCFD] px-2 py-1 rounded-full shadow">
+                <p className="absolute -bottom-0 left-1/2 transform -translate-x-1/2 text-[13px] font-medium text-[#00a0a8] bg-[#EBFCFD] px-7 py-1 rounded-full shadow w-max">
                   {item.offer}
                 </p>
               )}
             </div>
 
-            <p className="text-wrap font-medium text-gray-900 leading-snug mt-6 text-center">
+            <p className="text-wrap font-medium text-gray-900 leading-snug mt-6 text-center text-[15px]">
               {item.title}
             </p>
           </div>
