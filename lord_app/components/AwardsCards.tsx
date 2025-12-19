@@ -68,7 +68,7 @@ export default function RewardsRecognition() {
                 >
                     {awards.map((award) => (
                         <SwiperSlide key={award.id}>
-                            <div className="h-full rounded-xl border bg-white py-6 px-6 shadow-sm transition hover:shadow-md">
+                            <div className="h-full rounded-xl border bg-white py-16 px-6 shadow-sm transition hover:shadow-md">
                                 <div className="flex h-full items-center gap-4">
 
                                     {/* IMAGE */}

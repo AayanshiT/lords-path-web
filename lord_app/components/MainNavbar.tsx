@@ -104,7 +104,7 @@ export default function MainNavbar() {
 
   return (
     <nav className="menu-item relative py-1">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-[85rem] mx-auto px-4">
         <ul className="flex items-center gap-6 text-white py-3 text-sm font-medium">
 
           {/* Home */}
@@ -117,7 +117,7 @@ export default function MainNavbar() {
             <li
               key={index}
               onMouseEnter={() => setActiveMenu(item)}
-              className="relative text-[17px] font-semibold cursor-pointer flex items-center gap-1"
+              className="relative text-[16.6px] font-semibold cursor-pointer flex items-center gap-1"
             >
               {item.title}
               {(item.megaMenu || item.submenu) && (
