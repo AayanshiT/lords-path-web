@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import React from "react";
 import "./globals.css";
+import { Poppins } from "next/font/google";
 
-const geist = Geist({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Your App Title",
-  description: "Your app description",
-};
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -16,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${geist.className} font-sans`}>{children}</body>
+    <html lang="en" className={poppins.variable}>
+      <body>{children}</body>
     </html>
   );
 }
