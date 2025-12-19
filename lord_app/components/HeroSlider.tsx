@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 export default function HeroSlider() {
   return (
-    <div className="hero-swiper max-w-7xl mx-auto mt-6 px-4">
+    <div className="hero-swiper max-w-[85rem] mx-auto mt-6 px-4">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000 }}
