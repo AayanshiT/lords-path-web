@@ -201,3 +201,5 @@ body {
     margin-top: 20px;
 }
 .reviews-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
+.blogs-section .swiper-pagination-bullet-active {background-color: #009688 !important; }
+.awards-section .swiper-pagination-bullet-active {background-color: #009688 !important;}

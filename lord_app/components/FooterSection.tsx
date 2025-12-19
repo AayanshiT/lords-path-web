@@ -41,7 +41,7 @@ export default function NewsletterSubscription() {
             />
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-12 py-4 rounded-full transition-colors duration-300"
+              className="bg-[#f27d27] text-white font-semibold px-12 py-4 rounded-full transition-colors duration-300"
             >
               Submit
             </button>
