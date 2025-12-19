@@ -66,7 +66,7 @@ export default function HealthBlogsArticles() {
         >
           {blogs.map((blog, index) => (
             <SwiperSlide key={`${blog.id}-${index}`}>
-              <div className="h-full p-3 rounded-xl border bg-white shadow-sm transition hover:shadow-md">
+              <div className="h-full rounded-xl border bg-white shadow-sm transition hover:shadow-md">
                 {/* Image */}
                 <div className="relative h-52 w-full overflow-hidden rounded-t-xl">
                   <Image 
