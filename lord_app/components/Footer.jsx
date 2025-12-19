@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* COLUMN 1 */}
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 border-r border-[#c3c3c3]">
           <Image
             src="https://cdn3.healthians.com/img/Healthians-Group.svg"
             alt="Healthians"
@@ -28,7 +28,7 @@ export default function Footer() {
             <Image
               src="https://cdn3.healthians.com/img/unit-no1.svg"
               alt="Award Badge"
-              width={150}
+              width={200}
               height={150}
             />
           </div>

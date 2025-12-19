@@ -87,9 +87,9 @@ const siteOrigin =
                   <FaPlay />
                 </div>
 
-                <div className="card-info">
-                  <h4>{item.name}</h4>
-                  <p>{item.location}</p>
+                <div className="card-info w-4/5">
+                  <h4 className="border-b border-white pb-2">{item.name}</h4>
+                  <p className="pt-2">{item.location}</p>
                 </div>
               </div>
             </SwiperSlide>
