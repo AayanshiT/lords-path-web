@@ -173,7 +173,7 @@ body {
   max-width: 900px;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .modal-content iframe {

@@ -69,11 +69,11 @@ export default function HealthBlogsArticles() {
               <div className="h-full rounded-xl border bg-white shadow-sm transition hover:shadow-md">
                 {/* Image */}
                 <div className="relative h-52 w-full overflow-hidden rounded-t-xl">
-                  <Image
+                  <Image 
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover"
+                    className="object-cover p-3 rounded-2xl"
                   />
                 </div>
 

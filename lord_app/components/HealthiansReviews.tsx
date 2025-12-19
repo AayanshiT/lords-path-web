@@ -60,7 +60,7 @@ const siteOrigin =
 
   return (
     <>
-      <section className="reviews-section">
+      <section className="reviews-section bg-[#fafafa]">
         <h2 className="section-title">Healthians Reviews</h2>
 
         <div className="max-w-6xl m-auto">
