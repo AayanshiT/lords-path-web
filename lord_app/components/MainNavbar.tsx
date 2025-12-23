@@ -132,7 +132,7 @@ export default function MainNavbar() {
               {item.submenu && activeMenu?.title === item.title && (
                 <ul
                   onMouseLeave={() => setActiveMenu(null)}
-                  className="absolute left-0 top-full mt-2 w-[90%] bg-white text-gray-700 rounded-md shadow-lg z-50"
+                  className="absolute left-0 top-full w-auto bg-white text-gray-700 rounded-md shadow-lg z-50"
                 >
                   {item.submenu.map((sub, i) => (
                     <li
@@ -159,7 +159,6 @@ export default function MainNavbar() {
             left-1/2
             -translate-x-1/2
             top-full
-            mt-3
             w-6xl
             max-w-[95vw]
             bg-white
