@@ -110,7 +110,7 @@ const healthRisks: HealthRisk[] = [
 export default function HealthRiskSwiper() {
   return (
     <section className="py-1 bg-white health-risk-swiper">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
         <h2 className="section-heading text-2xl font-[800] text-center text-[#1a9ca6] mb-8">
           Health Risk

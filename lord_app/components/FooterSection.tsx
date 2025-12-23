@@ -15,16 +15,16 @@ export default function NewsletterSubscription() {
   return (
     <div className="bg-[#1a9ca6] py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
+        <h2 className="text-white text-2xl md:text-[30px] font-semibold mb-4">
           Subscribe For Healthy Updates
         </h2>
         
         {/* Decorative underline */}
         <div className="flex justify-center mb-12">
           <div className="flex items-center gap-2">
-            <div className="h-0.5 w-16 bg-gray-300"></div>
-            <div className="h-0.5 w-16 bg-[#f27d27]"></div>
-            <div className="h-0.5 w-16 bg-gray-300"></div>
+            <div className="h-0.5 w-2xs bg-gray-300 relative before:h-0.5 before:w-24 before:bg-amber-600 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:m-auto before:z-50"></div>
+            {/* <div className="h-0.5 w-16 bg-[#f27d27]"></div>
+            <div className="h-0.5 w-16 bg-gray-300"></div> */}
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function NewsletterSubscription() {
             />
             <button
               type="submit"
-              className="bg-[#f27d27] text-white font-semibold px-12 py-4 rounded-full transition-colors duration-300"
+              className="bg-[#f27d27] text-white px-15 py-4 rounded-full transition-colors duration-300 md:text-[16px] font-normal"
             >
               Submit
             </button>

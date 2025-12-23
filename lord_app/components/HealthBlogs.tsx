@@ -39,7 +39,7 @@ const blogs: Blog[] = [
 export default function HealthBlogsArticles() {
   return (
     <section className="w-full bg-[#fafafa] py-6 blogs-section">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-[85rem] px-6">
         {/* Heading */}
         <h2 className="mb-12 text-center text-3xl font-semibold text-[#1a9ca6]">
           Health Blogs & Articles

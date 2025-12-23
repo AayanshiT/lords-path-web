@@ -11,7 +11,7 @@ import ImagingCard from "./ImagingCard";
 export default function HealthScansSection() {
   return (
     <section className="py-16 bg-white health-scans-section">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
         <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-10">
           Health Scans & Imaging Tests

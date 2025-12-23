@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function HealthCheckupJourney() {
   return (
     <section className="w-full bg-white py-20 ">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-[85rem] px-6">
 
         {/* Heading */}
         <div className="mb-12 text-center">

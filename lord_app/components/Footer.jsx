@@ -13,10 +13,10 @@ export default function Footer() {
   return (
     <>
     <footer className="bg-white border-t border-gray-200 pb-[100px]">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-[85rem] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* COLUMN 1 */}
-        <div className="flex flex-col items-center gap-3 border-r border-[#c3c3c3]">
+        <div className="flex flex-col items-center gap-3 border-dashed border-r border-[#c3c3c3]">
           <Image
             src="https://cdn3.healthians.com/img/Healthians-Group.svg"
             alt="Healthians"
@@ -40,11 +40,11 @@ export default function Footer() {
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="text-lg font-semibold mb-6 text-[20px] font-bold !color-[#000]">
+          <h4 className="text-lg mb-6 text-[18px] font-bold !color-[#363636]">
             IMPORTANT LINKS
           </h4>
 
-          <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-sm text-gray-700">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-[14px] text-[#848484]">
             <Link className=" hover:text-[#00a0a8]" href="#">About Us</Link>
             <Link className=" hover:text-[#00a0a8]" href="#">Our Labs</Link>
 
@@ -69,7 +69,7 @@ export default function Footer() {
 
         {/* COLUMN 3 */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">
+          <h4 className="text-lg text-[18px] font-bold !color-[#363636] mb-4">
             FOLLOW US
           </h4>
 
@@ -78,7 +78,7 @@ export default function Footer() {
               (Icon, i) => (
                 <span
                   key={i}
-                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#f27d27] text-white cursor-pointer hover:bg-orange-600 transition"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-full bg-[#f27d27] text-white cursor-pointer hover:bg-orange-600 transition"
                 >
                   <Icon size={16} />
                 </span>
@@ -86,23 +86,23 @@ export default function Footer() {
             )}
           </div>
 
-          <h4 className="text-lg font-semibold mb-3">
+          <h4 className="text-lg text-[18px] font-bold !color-[#363636] mb-3">
             GET THE HEALTHIANS APP
           </h4>
 
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-1 flex-wrap">
             <Image
               src="/mockups/google_play.png" // Google Play badge
               alt="Google Play"
-              width={120}
-              height={54}
+              width={128}
+              height={38}
               className="cursor-pointer"
             />
             <Image
               src="/mockups/appstore.png" // App Store badge
               alt="App Store"
-              width={120}
-              height={54}
+              width={128}
+              height={38}
               className="cursor-pointer"
             />
           </div>
