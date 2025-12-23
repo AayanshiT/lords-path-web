@@ -204,3 +204,86 @@ body {
 .reviews-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
 .blogs-section .swiper-pagination-bullet-active {background-color: #009688 !important; }
 .awards-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
+
+.menu-item .navbar-tab {
+  background: linear-gradient(180deg,#fff6eb 0,#d5e6e2 24.04%,#cfbfc8 46.63%,#b7b1bf 62.5%,#92b4b6 100%);
+}
+.menu-item .package-card{
+  background: linear-gradient(132deg,#fff 30.18%,#e4fdfe 90.68%);
+      border-radius: 12px;
+    padding: 14px;
+}
+.sprite-parameter img{
+      background-position: -235px 0;
+    filter: grayscale(100%);
+        display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    margin-left: -5px;
+
+}
+
+.package-meta-item .pkg-icon span{
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.package-meta-item  .package-meta-label{
+  font-size: 11px;
+    color: #444950;
+    display: block;
+}
+.package-meta-item  .package-meta-value{
+  font-size: 13px;
+    color: #2d3748;
+    font-weight: 500;
+}
+.package-meta-item  .package-meta-label{
+  font-size: 11px;
+    color: #444950;
+    display: block;
+}
+.package-meta-item  .package-meta-value{
+      font-size: 13px;
+    color: #2d3748;
+    font-weight: 500;
+}
+.package-meta{
+  border-bottom: 1px dotted #c3c3c3;
+}
+
+.package-pricing .package-offer-label{
+      font-size: 10px;
+    width: 62px;
+    border-right: 1px solid #454545;
+    line-height: 1.1;
+    color: #454545;
+    font-weight: 400;
+}
+.package-pricing .package-price{
+  font-size: 17px;
+    color: #1a202c;
+    font-weight: 600;
+}
+.package-pricing .package-original-price{
+      font-size: 13px;
+    color: #a0aec0;
+    text-decoration: line-through;
+}
+.package-pricing .package-discount{
+  display: inline-flex;
+    align-items: center;
+    background: #01b37A1A;
+    color: #01b37a;
+    padding: 4px 6px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    line-height: 1;
+}

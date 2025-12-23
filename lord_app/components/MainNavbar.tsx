@@ -6,6 +6,7 @@ import { useState } from "react";
 // Types
 type MegaMenu = {
   info: {
+    name: string;
     title: string;
     points: string[];
     cta: string;
@@ -28,6 +29,7 @@ const menuItems: MenuItem[] = [
     title: "Heart",
     megaMenu: {
       info: {
+        name: "Heart",
         title: "Why Heart Checkups Matter:",
         points: [
           "Heart issues often start silently.",
@@ -47,6 +49,7 @@ const menuItems: MenuItem[] = [
     title: "Full Body Checkup",
     megaMenu: {
       info: {
+        name: "Full Body Checkup",
         title: "Why Full Body Checkups Matter:",
         points: [
           "Detect problems early.",
@@ -66,6 +69,7 @@ const menuItems: MenuItem[] = [
     title: "Cancer",
     megaMenu: {
       info: {
+        name: "Cancer",
         title: "Cancer Screening Importance:",
         points: [
           "Early detection saves lives.",
@@ -128,7 +132,7 @@ export default function MainNavbar() {
               {item.submenu && activeMenu?.title === item.title && (
                 <ul
                   onMouseLeave={() => setActiveMenu(null)}
-                  className="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 rounded-md shadow-lg z-50"
+                  className="absolute left-0 top-full mt-2 w-[90%] bg-white text-gray-700 rounded-md shadow-lg z-50"
                 >
                   {item.submenu.map((sub, i) => (
                     <li
@@ -167,46 +171,88 @@ export default function MainNavbar() {
           <div className="grid grid-cols-4">
 
             {/* Left Info */}
-            <div className="col-span-1 bg-gray-50 p-6 rounded-l-xl">
-              <h4 className="font-semibold text-gray-800 mb-4">
+            <div className="navbar-tab col-span-1 bg-gray-50 p-6 rounded-l-xl">
+              <h4 className="font-[600] text-[16px]  text-[#363636] mb-4">
                 {activeMenu.megaMenu.info.title}
               </h4>
 
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul className="shadow-[0_2px_8px_rgba(0,0,0,0.08)] space-y-2 text-gray-600 text-sm bg-white p-[8px] rounded-[10px]">
                 {activeMenu.megaMenu.info.points.map((p, i) => (
-                  <li key={i}>✔ {p}</li>
+                  <li className="flex" key={i}><div className="mr-2 bg-[#36989c] w-[17px] h-[17px] rounded-full text-[10px] text-[#fff] flex items-center justify-center">✔</div> {p}</li>
                 ))}
               </ul>
 
-              <button className="mt-6 bg-orange-500 text-white px-4 py-2 rounded-md text-sm hover:bg-orange-600">
+              <button className="mt-6 bg-[#f36a46] text-white px-7 py-2 rounded-md text-sm hover:bg-[#f36a46]">
                 {activeMenu.megaMenu.info.cta} →
               </button>
             </div>
 
             {/* Right Cards */}
-            <div className="col-span-3 p-6 grid grid-cols-3 gap-4">
+            <div className="col-span-3 p-6 pt-3 grid-cols-3 gap-1 flex flex-col">
+               <h4 className="font-[600] text-[16px]  text-[#363636] mb-2">
+                Preventive Packages for {activeMenu.megaMenu.info.name}
+              </h4>
+              <div className="flex flex-row gap-4">
               {activeMenu.megaMenu.packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="border rounded-lg p-4 hover:shadow-md transition"
+                  className="package-card border rounded-lg p-4 hover:shadow-md transition"
                 >
                   <h5 className="font-semibold text-gray-800 text-sm mb-2">
                     {pkg.name}
                   </h5>
+                  <div className="package-meta flex gap-2 py-5 "> 
+                    <div className="package-meta-item flex"> 
+                      <div className="pkg-icon"> 
+                        <span className="sprite-icon-trending sprite-parameter"><img src="./blood.png" alt="" /></span> 
+                      </div> 
+                    <div> 
+                    <span className="package-meta-label">Test Included</span> 
+                      <div className="package-meta-value">{pkg.tests}</div> 
+                  </div> 
+                </div> 
+                          <div className="package-meta-item flex"> 
+                            <div className="pkg-icon"> 
+                              <span className="sprite-icon-trending sprite-clock"><img src="./clock.png" alt="" /></span> 
+                              </div> 
+                              <div> 
+                                <span className="package-meta-label">Report in</span> 
+                                <div className="package-meta-value">36 Hrs.</div> 
+                                </div> 
+                                </div> 
+                                </div>
 
-                  <p className="text-xs text-gray-500 mb-2">
+
+                    
+                    <div className="package-pricing flex gap-3 py-4"> 
+                      <div> 
+                        <div className="package-offer-label">Limited Time Offer</div> 
+                        </div> <div className="package-price-group">
+                           <span className="package-price">{pkg.price}</span> 
+                           <span className="package-original-price">₹1663</span> 
+                           </div> <div className="package-discount">
+                             <svg width="12" height="12"><use href="#discountnav"></use></svg> 
+                             70% off </div> 
+                             </div>
+
+
+
+
+
+                  {/* <p className="text-xs text-gray-500 mb-2">
                     Test Included: {pkg.tests}
                   </p>
 
                   <p className="text-teal-600 font-bold mb-4">
                     {pkg.price}
-                  </p>
+                  </p> */}
 
-                  <button className="w-full bg-teal-500 text-white text-sm py-2 rounded-md hover:bg-teal-600">
+                  <button className="w-full bg-[#00a0a8] text-white text-sm py-2 rounded-md hover:bg-[#00a0a8]">
                     Book Now
                   </button>
                 </div>
               ))}
+              </div>
             </div>
 
           </div>
