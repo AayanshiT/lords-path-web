@@ -109,7 +109,7 @@ export default function MainNavbar() {
   return (
     <nav className="menu-item relative py-1">
       <div className="max-w-[85rem] mx-auto px-4">
-        <ul className="flex items-center gap-6 text-white py-3 text-sm font-medium">
+        <ul className="flex items-center gap-6 text-white py-1 text-sm font-medium">
 
           {/* Home */}
           <li className="cursor-pointer text-[17px] font-semibold">
@@ -121,7 +121,7 @@ export default function MainNavbar() {
             <li
               key={index}
               onMouseEnter={() => setActiveMenu(item)}
-              className="relative text-[16.6px] font-semibold cursor-pointer flex items-center gap-1"
+              className="lists-item relative text-[16.6px] font-semibold cursor-pointer flex items-center gap-1 py-3"
             >
               {item.title}
               {(item.megaMenu || item.submenu) && (
@@ -132,7 +132,7 @@ export default function MainNavbar() {
               {item.submenu && activeMenu?.title === item.title && (
                 <ul
                   onMouseLeave={() => setActiveMenu(null)}
-                  className="absolute left-0 top-full w-auto bg-white text-gray-700 rounded-md shadow-lg z-50"
+                  className=" absolute left-0 top-[50px] w-auto bg-white text-gray-700 rounded-md shadow-[0_4px_12px_rgba(0,0,0,0.35)] z-50"
                 >
                   {item.submenu.map((sub, i) => (
                     <li
@@ -158,7 +158,7 @@ export default function MainNavbar() {
             absolute
             left-1/2
             -translate-x-1/2
-            top-full
+            top-[60px]
             w-6xl
             max-w-[95vw]
             bg-white
@@ -175,9 +175,9 @@ export default function MainNavbar() {
                 {activeMenu.megaMenu.info.title}
               </h4>
 
-              <ul className="shadow-[0_2px_8px_rgba(0,0,0,0.08)] space-y-2 text-gray-600 text-sm bg-white p-[8px] rounded-[10px]">
+              <ul className="points-lost shadow-[0_2px_8px_rgba(0,0,0,0.08)] space-y-2 text-gray-600 text-sm bg-white p-[8px] rounded-[10px]">
                 {activeMenu.megaMenu.info.points.map((p, i) => (
-                  <li className="flex" key={i}><div className="mr-2 bg-[#36989c] w-[17px] h-[17px] rounded-full text-[10px] text-[#fff] flex items-center justify-center">✔</div> {p}</li>
+                  <li className="flex" key={i}><div className="mr-2 bg-[#36989c] w-[17px] h-[17px] rounded-full text-[9px] text-[#fff] flex items-center justify-center">→</div> {p}</li>
                 ))}
               </ul>
 
