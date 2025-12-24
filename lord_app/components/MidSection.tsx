@@ -26,14 +26,14 @@ export default function HealthiansHero() {
                             we perform.
                         </p>
 
-                        <button className="mt-2 bg-white  text-gray-800 font-normal px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                        <button className="mt-3 bg-white text-[#000] font-normal px-5 py-2 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
                             Know more
                         </button>
                     </div>
 
                     {/* Right Content - Video */}
-                    <div className="relative -mt-10">
-                        <div className="relative overflow-hidden shadow-2xl aspect-video bg-black w-72">
+                    <div className="relative ">
+                        <div className="relative overflow-hidden shadow-2xl aspect-video bg-black w-72 md:w-[400px]">
                             <iframe
                                 className="absolute inset-0 h-full w-full border !border-[#f9bb55]"
                                 src="https://www.youtube.com/embed/6w7bJJw2Xtc?rel=0"

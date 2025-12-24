@@ -3,16 +3,16 @@ import Image from "next/image";
 export default function DownloadAppSection() {
   return (
     <section className="bg-[#fcfcfc] pt-10">
-      <div className="max-w-full mx-auto  grid grid-cols-1 md:grid-cols-2 items-center">
+      <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
         
         {/* LEFT : IMAGE */}
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-start ">
           <Image
             src="/mockups/phone.png"
             alt="Health App"
-            width={500}
-            height={500}
-            className="w-full max-w-md object-contain"
+            width={600}
+            height={600}
+            className="w-full max-w-md md:max-w-lg object-contain"
           />
         </div>
 
