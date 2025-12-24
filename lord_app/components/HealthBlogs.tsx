@@ -18,7 +18,7 @@ const blogs: Blog[] = [
   },
   {
     id: 2,
-    title: "8 Amazing Benefits of Eating Groundnuts Daily",
+    title: "8 Amazing Benefits of Eating Groundnuts Daily Amazing Benefits of Eating",
     image: "/blogs/blogs2.webp",
   },
   {
@@ -36,7 +36,7 @@ const blogs: Blog[] = [
   
 ];
 
-export default function HealthBlogsArticles() {
+export default function HealthBlogs() {
   return (
     <section className="w-full bg-[#fafafa] py-6 blogs-section">
       <div className="mx-auto max-[85rem] px-6">

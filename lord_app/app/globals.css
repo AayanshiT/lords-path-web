@@ -257,33 +257,13 @@ body {
   border-bottom: 1px dotted #c3c3c3;
 }
 
-.package-pricing .package-offer-label{
-      font-size: 10px;
-    width: 62px;
-    border-right: 1px solid #454545;
-    line-height: 1.1;
-    color: #454545;
-    font-weight: 400;
-}
-.package-pricing .package-price{
-  font-size: 17px;
-    color: #1a202c;
-    font-weight: 600;
-}
-.package-pricing .package-original-price{
-      font-size: 13px;
-    color: #a0aec0;
-    text-decoration: line-through;
-}
-.package-pricing .package-discount{
-  display: inline-flex;
-    align-items: center;
-    background: #01b37A1A;
-    color: #01b37a;
-    padding: 4px 6px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: 600;
-    text-wrap: nowrap;
-    line-height: 1;
-}
+.package-pricing .package-offer-label{font-size: 10px;width: 62px;border-right: 1px solid #454545;line-height: 1.1;color: #454545;font-weight: 400;}
+.package-pricing .package-price{font-size: 17px;color: #1a202c;font-weight: 600;}
+.package-pricing .package-original-price{font-size: 13px;color: #a0aec0;text-decoration: line-through;}
+.package-pricing .package-discount{display: inline-flex;align-items: center;background: #01b37A1A;color: #01b37a;padding: 4px 6px;border-radius: 12px;font-size: 10px;font-weight: 600;text-wrap: nowrap;line-height: 1;}
+.points-lost::after{content: "";background: url('https://www.healthians.com/img/webp/bg-wave.png') no-repeat left center;  height: 200px;width: 100%;position: absolute;bottom: 0;left: 0;z-index: 0;}
+.lists-item {background: transparent;border-radius: 2px;}
+.lists-item::after {content: "";position: absolute;left: 0;bottom: 0;width: 0%;height: 3px;background-color: #fcbe57;/*transition: width 0.3s ease-in-out;*/}
+.lists-item:hover {background: #00a0a8;}
+.lists-item:hover::after {width: 100%;}
+
