@@ -256,6 +256,7 @@ body {
 .package-meta{
   border-bottom: 1px dotted #c3c3c3;
 }
+.before\:bg-amber-600:before{padding: 2px;}
 
 .package-pricing .package-offer-label{font-size: 10px;width: 62px;border-right: 1px solid #454545;line-height: 1.1;color: #454545;font-weight: 400;}
 .package-pricing .package-price{font-size: 17px;color: #1a202c;font-weight: 600;}

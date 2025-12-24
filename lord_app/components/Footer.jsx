@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           <h4 className="text-lg text-[18px] font-bold !color-[#363636] mb-3">
-            GET THE HEALTHIANS APP
+            GET THE LORDS PATH APP
           </h4>
 
           <div className="flex gap-1 flex-wrap">
@@ -111,7 +111,7 @@ export default function Footer() {
 
       {/* BOTTOM BAR */}
       <div className="border-t bg-[#f8f8f8] border-gray-200 py-3 text-center text-sm text-gray-600">
-        © 2025 Healthians.com  |{" "}
+        © 2025 Lordspath.com  |{" "}
         <Link className=" hover:text-[#00a0a8]" href="#">Terms & Conditions</Link>  |{" "}
         <Link className=" hover:text-[#00a0a8]" href="#">Privacy Policy</Link>  |{" "}
         <Link className=" hover:text-[#00a0a8]" href="#">Statutory Compliance</Link>  |{" "}
