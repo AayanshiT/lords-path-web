@@ -13,11 +13,7 @@ export default function NewsletterSubscription() {
   };
 
   return (
-<<<<<<< HEAD
     <div className="bg-[#00368C] py-16 px-4">
-=======
-    <div className="bg-[#1a9ca6] py-16 px-4" id='subscribe-section'>
->>>>>>> 8f31f0a508b95773a9d4a6aef34fbe2d99a95ffb
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-white text-2xl md:text-[30px] font-semibold mb-4">
           Subscribe For Healthy Updates
