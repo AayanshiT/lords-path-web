@@ -39,8 +39,8 @@ body {
 .swiper-button-prev .swiper-navigation-icon{display:none;}
 .swiper-button-next .swiper-navigation-icon{display:none;}
 .tabing-swiper .swiper-pagination{position: relative !important; margin-top: 20px;} 
-.orange-text {position: absolute;left: 0;right: 0; width: 130px;margin: -30px auto 10px auto;}
-.image-card .custom-border{border-top-color: #F16948 !important;}
+.orange-text {position: absolute;left: 0;right: 0; width: 130px;margin: -27px auto 0px auto;}
+.image-card .custom-border{border-top-color: #FF3B3B !important;}
 @media (min-width:1024px){
   .tabing-swiper .swiper-button-next{right: -50px !important;}
   .tabing-swiper .swiper-button-prev{left: -50px !important;}
@@ -56,8 +56,8 @@ body {
 
 .health-scans-section .swiper-button-next2{right: -50px !important;}
 .health-scans-section .swiper-button-prev2{left: -50px !important;}
-.svg-style svg{color: #848484;background-color: #f2f2f2;border-radius: 100%;width: 28px;height: 28px;padding: 7px;}
-.menu-item{background: linear-gradient(180deg,#00368C 0,#003366 71%);}
+.svg-style svg{color: #00368c;background-color: #f1f7ff;border-radius: 100%;width: 28px;height: 28px;padding: 7px;}
+.menu-item{background: linear-gradient(#084ebf 0, #036 71%);}
 .hero-swiper .swiper-pagination-clickable{position: relative;margin-top: 20px;}
 /* Pagination wrapper */
 .hero-swiper .swiper-pagination {position: relative !important;margin-top: 20px; display: flex;justify-content: center;gap: 8px;}

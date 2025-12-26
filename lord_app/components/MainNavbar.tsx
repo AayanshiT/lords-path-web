@@ -137,7 +137,7 @@ export default function MainNavbar() {
                   {item.submenu.map((sub, i) => (
                     <li
                       key={i}
-                      className="px-4 py-2 hover:bg-teal-50 hover:[#00368C]"
+                      className="px-4 py-2 hover:bg-[#E8EEFF] hover:[#00368C]"
                     >
                       {sub}
                     </li>
@@ -181,7 +181,7 @@ export default function MainNavbar() {
                 ))}
               </ul>
 
-              <button className="mt-6 bg-[#f36a46] text-white px-7 py-2 rounded-md text-sm hover:bg-[#f36a46]">
+              <button className="mt-6 bg-[#FF3B3B] text-white px-7 py-2 rounded-md text-sm hover:bg-[#FF3B3B]/90">
                 {activeMenu.megaMenu.info.cta} →
               </button>
             </div>

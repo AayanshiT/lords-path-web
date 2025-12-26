@@ -15,13 +15,13 @@ export default function HeroSlider() {
         <div className="  p-4">
           
           {/* Search input */}
-          <div className="flex overflow-hidden rounded-lg border bg-white shadow-lg">
+          <div className="flex overflow-hidden rounded-lg border-0 bg-white shadow-lg">
             <input
               type="text"
               placeholder="Find your Package / Test / Scans"
               className="flex-1 px-2 py-3 outline-none text-gray-700"
             />
-            <button className="bg-[#f36a46] px-6 py-3 font-semibold text-white">
+            <button className="bg-[#FF3B3B] px-6 py-3 font-semibold text-white">
               Search
             </button>
           </div>

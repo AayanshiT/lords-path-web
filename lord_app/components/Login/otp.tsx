@@ -3,60 +3,43 @@
 import { useState, useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function HealthiansOTP() {
+// Define props interface
+interface HealthiansOTPProps {
+  phone: string;
+  onBack: () => void;
+}
+
+export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [timer, setTimer] = useState(28);
   const [whatsappAlerts, setWhatsappAlerts] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Explicitly type inputRefs as an array of HTMLInputElement or null
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const slides = [
-    {
-      title: 'Cost Effective',
-      subtitle: 'Honest Price Guaranteed',
-      icon: '💰'
-    },
-    {
-      title: 'Convenient',
-      subtitle: 'Free Home Sample Collection',
-      icon: '🚑'
-    },
-    {
-      title: 'Reliable',
-      subtitle: 'NABL Certified Labs',
-      icon: '✓'
-    },
-    {
-      title: 'Fast',
-      subtitle: 'Reports in 24-48 Hours',
-      icon: '⚡'
-    }
+    { title: 'Cost Effective', subtitle: 'Honest Price Guaranteed', icon: '💰' },
+    { title: 'Convenient', subtitle: 'Free Home Sample Collection', icon: '🚑' },
+    { title: 'Reliable', subtitle: 'NABL Certified Labs', icon: '✓' },
+    { title: 'Fast', subtitle: 'Reports in 24-48 Hours', icon: '⚡' }
   ];
 
   useEffect(() => {
     if (timer > 0) {
-      const interval = setInterval(() => {
-        setTimer((prev) => prev - 1);
-      }, 1000);
+      const interval = setInterval(() => setTimer((prev) => prev - 1), 1000);
       return () => clearInterval(interval);
     }
   }, [timer]);
 
   const handleChange = (index: number, value: string) => {
-    if (value.length > 1) {
-      value = value.slice(-1);
-    }
+    if (value.length > 1) value = value.slice(-1);
 
     if (/^\d*$/.test(value)) {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
 
-      if (value && index < 5) {
-        inputRefs.current[index + 1]?.focus();
-      }
+      if (value && index < 5) inputRefs.current[index + 1]?.focus();
     }
   };
 
@@ -72,12 +55,8 @@ export default function HealthiansOTP() {
     if (/^\d+$/.test(pastedData)) {
       const newOtp = pastedData.split('').concat(Array(6).fill('')).slice(0, 6);
       setOtp(newOtp);
-      const nextEmpty = newOtp.findIndex(val => !val);
-      if (nextEmpty !== -1) {
-        inputRefs.current[nextEmpty]?.focus();
-      } else {
-        inputRefs.current[5]?.focus();
-      }
+      const nextEmpty = newOtp.findIndex((val) => !val);
+      inputRefs.current[nextEmpty !== -1 ? nextEmpty : 5]?.focus();
     }
   };
 
@@ -103,7 +82,7 @@ export default function HealthiansOTP() {
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left Side - Carousel */}
-          <div className="bg-gradient-to-br from-teal-500 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="bg-[#00368C] p-12 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
@@ -116,15 +95,11 @@ export default function HealthiansOTP() {
             <div className="relative z-10 mb-8">
               <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-xl relative">
                 <div className="text-7xl">💰</div>
-                <div className="absolute -top-4 -right-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
-                    <span className="text-2xl">✨</span>
-                  </div>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
+                  <span className="text-2xl">✨</span>
                 </div>
-                <div className="absolute -bottom-4 -left-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse" style={{ animationDelay: '0.5s' }}>
-                    <span className="text-2xl">✨</span>
-                  </div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse" style={{ animationDelay: '0.5s' }}>
+                  <span className="text-2xl">✨</span>
                 </div>
               </div>
             </div>
@@ -132,7 +107,7 @@ export default function HealthiansOTP() {
             {/* Slide Content */}
             <div className="text-center text-white z-10 mb-8">
               <h2 className="text-4xl font-bold mb-3">{slides[currentSlide].title}</h2>
-              <p className="text-xl text-teal-50">{slides[currentSlide].subtitle}</p>
+              <p className="text-xl text-[#E8EEFF]">{slides[currentSlide].subtitle}</p>
             </div>
 
             {/* Carousel Dots */}
@@ -141,9 +116,7 @@ export default function HealthiansOTP() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index ? 'bg-white w-8' : 'bg-white/50'}`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
@@ -171,8 +144,15 @@ export default function HealthiansOTP() {
                 Please enter verification code (OTP) sent to
               </p>
               <p className="text-center text-gray-900 font-semibold text-lg">
-                +91 9116901768
+                {phone}
               </p>
+
+              <button
+                onClick={onBack}
+                className="mt-2 text-sm text-gray-500 underline hover:text-gray-700"
+              >
+                Change Number
+              </button>
             </div>
 
             {/* OTP Input */}
@@ -188,7 +168,7 @@ export default function HealthiansOTP() {
                     value={digit}
                     onChange={(e) => handleChange(index, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
-                    className="w-12 h-14 text-center text-2xl font-semibold border-2 border-gray-300 rounded-lg focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
+                    className="w-12 h-14 text-center text-2xl font-semibold border-2 border-gray-300 rounded-lg focus:border-[#E8EEFF]0 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
                   />
                 ))}
               </div>
@@ -201,10 +181,7 @@ export default function HealthiansOTP() {
                   Get OTP again in <span className="font-semibold [#00368C]">{timer} seconds</span>
                 </p>
               ) : (
-                <button
-                  onClick={handleResend}
-                  className="[#00368C] font-semibold hover:text-teal-700 underline"
-                >
+                <button onClick={handleResend} className="[#00368C] font-semibold hover:text-teal-700 underline">
                   Resend OTP
                 </button>
               )}
@@ -213,7 +190,7 @@ export default function HealthiansOTP() {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-6"
+              className="w-full bg-gradient-to-r from-[#FF3B3B] to-[#FF3B3B] text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-6"
             >
               Submit
               <ArrowRight className="w-5 h-5" />
@@ -227,28 +204,18 @@ export default function HealthiansOTP() {
               <span className="text-gray-700">Get alerts on WhatsApp</span>
               <button
                 onClick={() => setWhatsappAlerts(!whatsappAlerts)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  whatsappAlerts ? 'bg-green-500' : 'bg-gray-300'
-                }`}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${whatsappAlerts ? 'bg-green-500' : 'bg-gray-300'}`}
               >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    whatsappAlerts ? 'translate-x-6' : 'translate-x-1'
-                  }`}
-                />
+                <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${whatsappAlerts ? 'translate-x-6' : 'translate-x-1'}`} />
               </button>
             </div>
 
             {/* Terms and Conditions */}
             <p className="text-center text-xs text-gray-500">
               By proceeding, you agree with our{' '}
-              <a href="#" className="text-orange-500 hover:underline">
-                Terms and Conditions
-              </a>{' '}
+              <a href="#" className="text-[#FF3B3B] hover:underline">Terms and Conditions</a>{' '}
               &{' '}
-              <a href="#" className="text-orange-500 hover:underline">
-                Privacy Policy
-              </a>
+              <a href="#" className="text-[#FF3B3B] hover:underline">Privacy Policy</a>
             </p>
           </div>
         </div>

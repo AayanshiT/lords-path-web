@@ -30,8 +30,8 @@ export default function ImagingCard({ data }) {
       </div>
 
       {/* Feature Box */}
-      <div className="custom-border bg-teal-50 border-t px-5 py-4 text-sm relative">
-        <span className="orange-text inline-block bg-[#F16948] text-white font-medium text-[12px] px-4 py-1 rounded-full mb-3">
+      <div className="custom-border bg-[#E8EEFF] border-t px-5 py-4 text-sm relative">
+        <span className="orange-text inline-block bg-[#FF3B3B] text-white font-medium text-[12px] px-4 py-1 rounded-full mb-3">
           Salient Features
         </span>
 
