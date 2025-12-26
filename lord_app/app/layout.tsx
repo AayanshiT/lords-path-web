@@ -7,6 +7,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
+export const metadata = {
+  title: "Lords Path - Home Health Checkup Tests & Packages",
+  icons: {
+    icon: "/lordspath_flaticon.png", 
+  },
+};
 
 export default function RootLayout({
   children,

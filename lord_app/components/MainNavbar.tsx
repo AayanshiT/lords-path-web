@@ -107,7 +107,7 @@ export default function MainNavbar() {
   const [activeMenu, setActiveMenu] = useState<MenuItem | null>(null);
 
   return (
-    <nav className="menu-item relative py-1">
+    <nav className="menu-item relative py-1" id="main-navbar">
       <div className="max-w-[85rem] mx-auto px-4">
         <ul className="flex items-center gap-6 text-white py-1 text-sm font-medium">
 
