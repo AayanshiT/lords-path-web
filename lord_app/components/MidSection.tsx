@@ -7,7 +7,7 @@ export default function HealthiansHero() {
             </h1>
             <div className="max-w-5xl mx-auto">
 
-                <div className="  !flex   gap-12 items-center justify-center">
+                <div className="  !flex   gap-12 items-start justify-center">
 
                     {/* Left Content */}
                     <div className="text-[#fff] space-y-4 mr-24">
@@ -33,7 +33,7 @@ export default function HealthiansHero() {
 
                     {/* Right Content - Video */}
                     <div className="relative ">
-                        <div className="relative overflow-hidden shadow-2xl aspect-video bg-black w-72 md:w-[400px]">
+                        <div className="relative overflow-hidden shadow-2xl aspect-video bg-black w-72 md:w-[350px]">
                             <iframe
                                 className="absolute inset-0 h-full w-full border !border-[#f9bb55]"
                                 src="https://www.youtube.com/embed/6w7bJJw2Xtc?rel=0"
