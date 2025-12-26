@@ -18,7 +18,7 @@ export default function Footer() {
         {/* COLUMN 1 */}
         <div className="flex flex-col items-center gap-3 border-dashed border-r border-[#c3c3c3]">
           <Image
-            src="https://cdn3.healthians.com/img/Healthians-Group.svg"
+            src="/lords_path_logo.png"
             alt="Healthians"
             width={160}
             height={50}
