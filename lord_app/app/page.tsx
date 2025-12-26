@@ -17,6 +17,7 @@ import AwardCards from "@/components/AwardsCards";
 import HealthBlogs from "@/components/HealthBlogs";
 import FooterSection from "@/components/FooterSection";
 import ImageSection from "@/components/ImageSection";
+import LabTests from "@/components/LabTests/labtests";
 
 
 
@@ -36,6 +37,7 @@ export default function Home() {
       <ImageSection />
       <MobileSection />
       <MidSection />
+      <LabTests />
       <HealthiansReviews />
       <AwardCards />
       <HealthBlogs />
