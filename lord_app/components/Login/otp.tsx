@@ -82,7 +82,7 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left Side - Carousel */}
-          <div className="bg-gradient-to-br from-[#E8EEFF]0 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="bg-[#00368C] p-12 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
@@ -190,7 +190,7 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-6"
+              className="w-full bg-gradient-to-r from-[#FF3B3B] to-[#FF3B3B] text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-6"
             >
               Submit
               <ArrowRight className="w-5 h-5" />
@@ -213,9 +213,9 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
             {/* Terms and Conditions */}
             <p className="text-center text-xs text-gray-500">
               By proceeding, you agree with our{' '}
-              <a href="#" className="text-orange-500 hover:underline">Terms and Conditions</a>{' '}
+              <a href="#" className="text-[#FF3B3B] hover:underline">Terms and Conditions</a>{' '}
               &{' '}
-              <a href="#" className="text-orange-500 hover:underline">Privacy Policy</a>
+              <a href="#" className="text-[#FF3B3B] hover:underline">Privacy Policy</a>
             </p>
           </div>
         </div>

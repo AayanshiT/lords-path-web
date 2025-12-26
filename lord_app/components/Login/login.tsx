@@ -48,7 +48,7 @@ export default function HealthiansLogin() {
             <div className="max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="grid md:grid-cols-2 gap-0">
                     {/* Left Side - Carousel */}
-                    <div className="bg-gradient-to-br from-[#E8EEFF]0 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+                    <div className="bg-[#00368C] p-12 flex flex-col items-center justify-center relative overflow-hidden">
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-10">
                             <div className="absolute inset-0" style={{
@@ -96,7 +96,7 @@ export default function HealthiansLogin() {
                         ) : (
                             <>
                                 <div className="mb-8">
-                                    <h1 className="text-3xl font-bold text-gray-800 mb-2">Login/Sign Up</h1>
+                                    <h1 className="text-3xl font-semibold text-gray-800 mb-2">Login/Sign Up</h1>
                                     <p className="text-gray-600">Please enter your Mobile Number to proceed</p>
                                 </div>
 
@@ -119,7 +119,7 @@ export default function HealthiansLogin() {
                                     </div>
                                     <button
                                         onClick={() => router.push("/login/otp")}
-                                        className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                        className="w-full bg-[#FF3B3B] text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                     >
                                         Login
                                         <ArrowRight className="w-5 h-5" />
@@ -142,11 +142,11 @@ export default function HealthiansLogin() {
                                 {/* Terms and Conditions */}
                                 <p className="text-center text-xs text-gray-500 mt-6">
                                     By proceeding, you agree with our{' '}
-                                    <a href="#" className="text-orange-500 hover:underline">
+                                    <a href="#" className="text-[#FF3B3B] hover:underline">
                                         Terms and Conditions
                                     </a>{' '}
                                     &{' '}
-                                    <a href="#" className="text-orange-500 hover:underline">
+                                    <a href="#" className="text-[#FF3B3B] hover:underline">
                                         Privacy Policy
                                     </a>
                                 </p>

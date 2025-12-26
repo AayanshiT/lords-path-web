@@ -9,7 +9,7 @@ import Bottom from '@/components/bottom';
 
 export default function LoginPage() {
   const [showOTP, setShowOTP] = useState(false);
-  const [mobileNumber, setMobileNumber] = useState('+91 9116901768');
+  const [mobileNumber, setMobileNumber] = useState('+91 9123456789'); // Example mobile number
 
   return (
     <>
