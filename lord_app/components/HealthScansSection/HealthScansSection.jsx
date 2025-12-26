@@ -47,7 +47,7 @@ export default function HealthScansSection() {
 
         {/* Bottom CTA */}
         <div className="flex justify-center mt-12">
-          <button className="bg-[#FF3B3B] text-white px-8 py-3 rounded-full font-medium hover:bg-[#FF3B3B]/80 transition">
+          <button className="bg-[#FF3B3B] text-white px-8 py-3 rounded-full font-medium hover:bg-[#FF3B3B] transition">
             View All  →
           </button>
         </div>

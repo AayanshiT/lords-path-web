@@ -25,7 +25,7 @@ export default function HealthInfoSection() {
                 Dept, DGEHS & Relevant Dept, AIR INDIA, CAPF (Central Armed
                 Police Forces)
               </p>
-              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] text-white font-semibold px-5 py-3 rounded-xl w-fit">
+              <button className="mt-5 inline-flex items-center gap-2 bg-[#00368C] hover:bg-[#FF3B3B] hover:cursor-pointer text-white font-semibold px-5 py-3 rounded-xl w-fit">
                 <Phone size={18} />
                 Call us: +91-9289902266
               </button>
@@ -48,7 +48,7 @@ export default function HealthInfoSection() {
                 Uncover potential health risks and get custom test
                 recommendation based on your lifestyle and habits.
               </p>
-              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] text-white font-semibold px-5 py-3 rounded-xl w-fit">
+              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] hover:cursor-pointer text-white font-semibold px-5 py-3 rounded-xl w-fit">
                 Check your health score →
               </button>
             </div>
@@ -58,8 +58,7 @@ export default function HealthInfoSection() {
       </div>
 
       {/* Trust Bar */}
-      <div
-        className="rounded-2xl bg-[linear-gradient(0deg,#f9fbff_0%,#f3f7ff_100%)] px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      <div className="rounded-2xl bg-[linear-gradient(0deg,#f9fbff_0%,#f3f7ff_100%)] px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div className="text-center md:text-left">
           <h3 className="text-[19px] font-semibold text-gray-900">
@@ -68,7 +67,7 @@ export default function HealthInfoSection() {
           <p className="text-gray-700 font-medium text-[17px]">Trust Healthians Labs</p>
         </div>
 
-        <div className="flex flex-wrap justify-center text-gray-700">
+        <div className="flex flex-wrap justify-center text-gray-700 gap-2">
           <Feature icon={<img src="/call.svg" alt="call" className="w-8 h-8" />} text="CAP & NABL Accredited Labs" />
           <Feature icon={<img src="/clock.svg" alt="clock" className="w-8 h-8" />} text="On Time Sample Collection" />
           <Feature icon={<img src="/report.svg" alt="report" className="w-8 h-8" />} text="Smart Reports in 6 Hours" />
@@ -81,7 +80,7 @@ export default function HealthInfoSection() {
 
 function Feature({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="flex items-center gap-3 text-sm font-medium">
+    <div className="flex items-center gap-2 text-sm font-medium">
       <div className="[#00368C]">{icon}</div>
       <span className="text-sm">{text}</span>
     </div>
