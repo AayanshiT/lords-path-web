@@ -66,7 +66,7 @@ export function TestCard({ data }) {
               </div>
             </div>
   
-            <button className="bg-[#00368C] text-white px-8 py-2 rounded-lg text-sm hover:bg-blue-700 transition">
+            <button className="bg-[#00368C] text-white px-8 py-2 rounded-lg text-sm hover:bg-[#0f49a7] transition">
               Book Now →
             </button>
           </div>
