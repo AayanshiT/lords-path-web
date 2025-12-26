@@ -8,7 +8,9 @@ export default function TopBar() {
 
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src="https://cdn1.healthians.com/img/healthians-logo.svg" alt="Logo" className="h-16" />
+          <a href="/">
+          <img src="/lords_path_logo.png" alt="Logo" className="h-16" />
+          </a>
         </div>
 
         {/* Right Info */}
