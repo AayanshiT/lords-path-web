@@ -1,10 +1,8 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
 import { IMAGING_TESTS } from "./data/imagingTests";
 import ImagingCard from "./ImagingCard";
 
@@ -13,10 +11,7 @@ export default function HealthScansSection() {
     <section className="py-16 bg-white health-scans-section">
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
-        <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-10">
-          Health Scans & Imaging Tests
-        </h2>
-
+        <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-10"> Health Scans & Imaging Tests</h2>
         <div className="max-w-6xl mx-auto relative">
         {/* Swiper */}
         <Swiper
@@ -39,10 +34,10 @@ export default function HealthScansSection() {
           ))}
         </Swiper>
         {/* Custom Navigation */}
-        <button className="swiper-button-prev2  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#f27d27] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-prev2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#f27d27] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
           ‹
         </button>
-        <button className="swiper-button-next2  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#F16948] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-next2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#F16948] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
           ›
         </button>
         </div>
