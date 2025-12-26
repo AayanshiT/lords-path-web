@@ -62,7 +62,7 @@ export default function ServiceCards() {
               )}
 
               {item.offer && (
-                <p className="absolute -bottom-0 left-1/2 transform -translate-x-1/2 text-[13px] font-medium text-[#00368C] bg-[#EBFCFD] px-7 py-1 rounded-full shadow w-max">
+                <p className="absolute -bottom-0 left-1/2 transform -translate-x-1/2 text-[13px] font-medium text-[#00368C] bg-[#f1f7ff] px-7 py-1 rounded-full shadow w-max">
                   {item.offer}
                 </p>
               )}

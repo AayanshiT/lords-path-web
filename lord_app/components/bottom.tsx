@@ -42,7 +42,7 @@ export default function HealthAdvisorBar() {
             />
             <button
               onClick={handleSubmit}
-              className="bg-[#ee5152] hover:bg-[#ee5152]/80 text-white px-6 py-3 rounded-tr-[4px] rounded-br-[4px] rounded-tl-0 rounded-bl-0 font-semibold whitespace-nowrap transition-colors text-[16px]"
+              className="bg-[#FF3B3B] hover:bg-[#ee5152]/80 text-white px-6 py-3 rounded-tr-[4px] rounded-br-[4px] rounded-tl-0 rounded-bl-0 font-semibold whitespace-nowrap transition-colors text-[16px]"
             >
               Get a Call Back
             </button>
