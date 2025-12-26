@@ -149,7 +149,7 @@ export default function HealthRiskSwiper() {
                 {/* Title */}
                 <h3
                   className="text-[24px] font-semibold mb-2"
-                  style={{ color: "#1a9ca6" }}
+                  style={{ color: "#00368C" }}
                 >
                   {risk.title}
                 </h3>
@@ -162,7 +162,7 @@ export default function HealthRiskSwiper() {
                 {/* CTA */}
                 <button
                   className="mt-auto text-sm hover:underline text-[#00368C] font-poppins font-semibold text-[16px]"
-                  style={{ color: "#00a0a8" }}
+                  style={{ color: "#00368C"  }}
                 >
                   View More
                 </button>
@@ -171,11 +171,11 @@ export default function HealthRiskSwiper() {
           ))}
           
         </Swiper>
-        <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ‹
         </button>
 
-        <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-orange-500 text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
           ›
         </button>
         </div>
