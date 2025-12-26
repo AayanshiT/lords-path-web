@@ -12,7 +12,7 @@ import bottom from "./bottom.tsx";
 export default function Footer() {
   return (
     <>
-    <footer className="bg-white border-t border-gray-200 pb-[100px]">
+    <footer className="bg-white border-t border-gray-200">
       <div className="max-[85rem] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* COLUMN 1 */}
@@ -110,7 +110,7 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="border-t bg-[#f8f8f8] border-gray-200 py-3 text-center text-sm text-gray-600">
+      <div className="border-t bg-[#f8f8f8] border-gray-200 py-3 text-center text-sm text-gray-600 pb-[110px]">
         © 2025 Lordspath.com  |{" "}
         <Link className=" hover:text-[#00368C]" href="#">Terms & Conditions</Link>  |{" "}
         <Link className=" hover:text-[#00368C]" href="#">Privacy Policy</Link>  |{" "}

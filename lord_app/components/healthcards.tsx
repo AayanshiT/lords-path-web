@@ -32,7 +32,7 @@ const healthRisks: HealthRisk[] = [
     id: 3,
     title: "Vitamins",
     description:
-      "A vitamin test checks the levels of essential vitamins in your body...",
+      "A vitamin test checks the levels of vitamins in your body...",
     icon: "/heartcards/Vitamins.png",
     href: "/tests/vitamins",
   },
@@ -40,7 +40,7 @@ const healthRisks: HealthRisk[] = [
     id: 4,
     title: "Diabetes",
     description:
-      "Diabetes is a chronic condition that affects how your body processes blood sugar...",
+      "Diabetes is a chronic condition how your body processes blood sugar...",
     icon: "/heartcards/Diabetes.png",
     href: "/tests/diabetes",
   },
@@ -133,7 +133,7 @@ export default function HealthRiskSwiper() {
           }}
         >
           {healthRisks.map((risk) => (
-            <SwiperSlide key={risk.id} className="!mx-3">
+            <SwiperSlide key={risk.id} className="h-full">
               <div className="bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.12)] my-3 transition p-10 h-full flex flex-col items-center text-center border">
                 {/* Icon / Link */}
                 <Link href={risk.href}>
