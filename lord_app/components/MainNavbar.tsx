@@ -137,7 +137,7 @@ export default function MainNavbar() {
                   {item.submenu.map((sub, i) => (
                     <li
                       key={i}
-                      className="px-4 py-2 hover:bg-teal-50 hover:text-teal-600"
+                      className="px-4 py-2 hover:bg-teal-50 hover:[#00368C]"
                     >
                       {sub}
                     </li>
@@ -242,11 +242,11 @@ export default function MainNavbar() {
                     Test Included: {pkg.tests}
                   </p>
 
-                  <p className="text-teal-600 font-bold mb-4">
+                  <p className="[#00368C] font-bold mb-4">
                     {pkg.price}
                   </p> */}
 
-                  <button className="w-full bg-[#00a0a8] text-white text-sm py-2 rounded-md hover:bg-[#00a0a8]">
+                  <button className="w-full bg-[#00368C] text-white text-sm py-2 rounded-md hover:bg-[#00368C]">
                     Book Now
                   </button>
                 </div>

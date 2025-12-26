@@ -19,7 +19,7 @@ export default function TestsSection() {
     <section className="bg-[#fafaf7] py-14">
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
-        <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-6">
+        <h2 className="section-heading text-center text-2xl font-semibold [#00368C] mb-6">
         Tests for Fever in Gurgaon
         </h2>
 
@@ -32,8 +32,8 @@ export default function TestsSection() {
               className={`px-5 py-2 rounded-full border text-sm transition !text-[13px]
                 ${
                   activeTab === tab
-                    ? "!bg-[#F4FEFF] !border-[#00a0a8] !text-[#00a0a8] !font-semibold"
-                    : "bg-white text-gray-600 hover:border-teal-600"
+                    ? "!bg-[#F4FEFF] !border-[#00368C] !text-[#00368C] !font-semibold"
+                    : "bg-white text-gray-600 hover:border-blue-700"
                 }`}
             >
               {tab}
@@ -77,13 +77,13 @@ export default function TestsSection() {
         {/* Bottom CTA */}
         {activeTab === "STD" && (
           <div className="text-center mt-10">
-            <button className="text-teal-600 font-medium hover:underline">
+            <button className="[#00368C] font-medium hover:underline">
               View all tests for STD →
             </button>
           </div>
         )}
       </div>
-      <button className="mt-10 mx-auto block bg-[#D9F1F2] text-teal-600 rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#D9F1F3] transition">
+      <button className="mt-10 mx-auto block bg-[#E8EEFF] [#00368C] rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#E8EEFF] transition">
         View All Health Packages
       </button>
     </section>

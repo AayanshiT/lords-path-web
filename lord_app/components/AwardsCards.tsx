@@ -44,7 +44,7 @@ export default function RewardsRecognition() {
     return (
         <section className="w-full bg-[#fff] py-1 awards-section">
             <div className="mx-auto max-[85rem] px-6">
-                <h2 className="mb-12 text-center text-3xl font-semibold text-[#1a9ca6]">
+                <h2 className="mb-12 text-center text-3xl font-semibold text-[#00368C]">
                     Rewards & Recognition
                 </h2>
 

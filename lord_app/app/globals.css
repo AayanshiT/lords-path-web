@@ -40,7 +40,7 @@ body {
     /* margin: 0px 0px 30px 0px; */
     text-align: center;
     font-weight: 700 !important;
-    color: #00A0A8 !important;
+    color: #00368C !important;
     font-family: 'Poppins', sans-serif;}
 
 .center-swiper-section .swiper-slide-active{z-index: 999999;box-shadow: 0 4px 12px #000000c2;border-radius: 10px;}
@@ -63,14 +63,14 @@ body {
 .tabing-swiper .swiper-button-next-tab{right: -50px !important; font-size: 30px;}
 .tabing-swiper .swiper-button-prev-tab{left: -50px !important; font-size: 30px;}
 .tabing-swiper .swiper-pagination-bullet{width: 14px; height: 14px; border-radius: 50%;}
-.tabing-swiper .swiper-pagination-bullet-active{background-color: #00a0a8 !important;}
+.tabing-swiper .swiper-pagination-bullet-active{background-color: #00368C !important;}
 
 
 
 .health-scans-section .swiper-button-next2{right: -50px !important;}
 .health-scans-section .swiper-button-prev2{left: -50px !important;}
 .svg-style svg{color: #848484;background-color: #f2f2f2;border-radius: 100%;width: 28px;height: 28px;padding: 7px;}
-.menu-item{background: linear-gradient(180deg,#00a0a8 0,#20b2ba 71%);}
+.menu-item{background: linear-gradient(180deg,#00368C 0,#003366 71%);}
 .hero-swiper .swiper-pagination-clickable{position: relative;margin-top: 20px;}
 
 /* Pagination wrapper */
@@ -80,7 +80,7 @@ body {
 .hero-swiper .swiper-pagination-bullet {width: 22px !important;height: 4px !important;border-radius: 10px !important;background-color: #cfd8dc;opacity: 1;transition: all 0.3s ease;}
 
 /* Active bullet */
-.hero-swiper .swiper-pagination-bullet-active {background-color: #009688 !important;width: 28px !important;}
+.hero-swiper .swiper-pagination-bullet-active {background-color: #00368C !important;width: 28px !important;}
 
 .health-risk-swiper .swiper-button-next3{right: -50px;}
 .health-risk-swiper .swiper-button-prev3 {left: -50px;}
@@ -100,7 +100,7 @@ body {
 .section-title {
   font-size: 32px;
   font-weight: 700;
-  color: #0aa6a6;
+  color: #00368C;
   margin-bottom: 40px;
 }
 
@@ -201,9 +201,9 @@ body {
       position: relative;
     margin-top: 20px;
 }
-.reviews-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
-.blogs-section .swiper-pagination-bullet-active {background-color: #009688 !important; }
-.awards-section .swiper-pagination-bullet-active {background-color: #009688 !important;}
+.reviews-section .swiper-pagination-bullet-active {background-color: #00368C !important;}
+.blogs-section .swiper-pagination-bullet-active {background-color: #00368C !important; }
+.awards-section .swiper-pagination-bullet-active {background-color: #00368C !important;}
 
 .menu-item .navbar-tab {
   background: linear-gradient(180deg,#fff6eb 0,#d5e6e2 24.04%,#cfbfc8 46.63%,#b7b1bf 62.5%,#92b4b6 100%);
@@ -261,10 +261,10 @@ body {
 .package-pricing .package-offer-label{font-size: 10px;width: 62px;border-right: 1px solid #454545;line-height: 1.1;color: #454545;font-weight: 400;}
 .package-pricing .package-price{font-size: 17px;color: #1a202c;font-weight: 600;}
 .package-pricing .package-original-price{font-size: 13px;color: #a0aec0;text-decoration: line-through;}
-.package-pricing .package-discount{display: inline-flex;align-items: center;background: #01b37A1A;color: #01b37a;padding: 4px 6px;border-radius: 12px;font-size: 10px;font-weight: 600;text-wrap: nowrap;line-height: 1;}
+.package-pricing .package-discount{display: inline-flex;align-items: center;background: #01b37A1A;color: #00368C;padding: 4px 6px;border-radius: 12px;font-size: 10px;font-weight: 600;text-wrap: nowrap;line-height: 1;}
 .points-lost::after{content: "";background: url('https://www.healthians.com/img/webp/bg-wave.png') no-repeat left center;  height: 200px;width: 100%;position: absolute;bottom: 0;left: 0;z-index: 0;}
 .lists-item {background: transparent;border-radius: 2px;}
 .lists-item::after {content: "";position: absolute;left: 0;bottom: 0;width: 0%;height: 3px;background-color: #fcbe57;/*transition: width 0.3s ease-in-out;*/}
-.lists-item:hover {background: #00a0a8;}
+.lists-item:hover {background: #00368C;}
 .lists-item:hover::after {width: 100%;}
 

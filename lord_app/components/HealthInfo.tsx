@@ -7,7 +7,8 @@ export default function HealthInfoSection() {
       {/* Top Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         {/* Left Card */}
-        <div className="rounded-2xl bg-[#f1fffe] border border-teal-100 p-6 flex flex-col justify-between shadow-sm">
+        <div className="rounded-2xl bg-[#f3f7ff] border border-[#00368C]/15 p-6 flex flex-col justify-between shadow-sm">
+
           <div className="flex gap-4">
             <img
               src="/certificate.png"
@@ -24,17 +25,18 @@ export default function HealthInfoSection() {
                 Dept, DGEHS & Relevant Dept, AIR INDIA, CAPF (Central Armed
                 Police Forces)
               </p>
-          <button className="mt-5 inline-flex items-center gap-2 bg-[#efb752] hover:bg-[#dca543] text-black font-semibold px-5 py-3 rounded-xl w-fit">
-            <Phone size={18} />
-            Call us: +91-9289902266
-          </button>
+              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] text-white font-semibold px-5 py-3 rounded-xl w-fit">
+                <Phone size={18} />
+                Call us: +91-9289902266
+              </button>
             </div>
           </div>
 
         </div>
 
         {/* Right Card */}
-        <div className="rounded-2xl bg-[#f1fffe] border border-cyan-100 p-6 flex flex-col justify-between shadow-sm">
+        <div className="rounded-2xl bg-[#f3f7ff] border border-[#00368C]/15 p-6 flex flex-col justify-between shadow-sm">
+
           <div className="flex gap-4">
             <img src="/meter.png" alt="Health Score" className="w-14 h-14" />
 
@@ -46,9 +48,9 @@ export default function HealthInfoSection() {
                 Uncover potential health risks and get custom test
                 recommendation based on your lifestyle and habits.
               </p>
-          <button className="mt-5 inline-flex items-center gap-2 bg-[#F36A46] hover:bg-[#006d73] text-white font-semibold px-5 py-3 rounded-xl w-fit">
-            Check your health score →
-          </button>
+              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] text-white font-semibold px-5 py-3 rounded-xl w-fit">
+                Check your health score →
+              </button>
             </div>
           </div>
 
@@ -57,11 +59,11 @@ export default function HealthInfoSection() {
 
       {/* Trust Bar */}
       <div
-        className="rounded-2xl bg-[linear-gradient(0deg,#faffff_0%,#ebfcff_100%)] px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
+        className="rounded-2xl bg-[linear-gradient(0deg,#f9fbff_0%,#f3f7ff_100%)] px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div className="text-center md:text-left">
           <h3 className="text-[19px] font-semibold text-gray-900">
-            Why <span className="text-teal-600 font-bold">8.5 Million</span> Indians
+            Why <span className="[#00368C] font-bold">8.5 Million</span> Indians
           </h3>
           <p className="text-gray-700 font-medium text-[17px]">Trust Healthians Labs</p>
         </div>
@@ -80,7 +82,7 @@ export default function HealthInfoSection() {
 function Feature({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
     <div className="flex items-center gap-3 text-sm font-medium">
-      <div className="text-teal-600">{icon}</div>
+      <div className="[#00368C]">{icon}</div>
       <span className="text-sm">{text}</span>
     </div>
   );

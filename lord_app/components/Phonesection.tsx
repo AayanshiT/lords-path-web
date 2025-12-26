@@ -18,7 +18,7 @@ export default function DownloadAppSection() {
 
         {/* RIGHT : CONTENT */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a9ca6] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00368C] mb-4">
             Download Our App Now
           </h2>
 

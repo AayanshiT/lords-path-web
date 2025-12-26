@@ -112,7 +112,7 @@ export default function HealthRiskSwiper() {
     <section className="py-1 bg-white health-risk-swiper">
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
-        <h2 className="section-heading text-2xl font-[800] text-center text-[#1a9ca6] mb-8">
+        <h2 className="section-heading text-2xl font-[800] text-center text-[#00368C] mb-8">
           Health Risk
         </h2> 
 
@@ -161,7 +161,7 @@ export default function HealthRiskSwiper() {
 
                 {/* CTA */}
                 <button
-                  className="mt-auto text-sm hover:underline text-[#00a0a8] font-poppins font-semibold text-[16px]"
+                  className="mt-auto text-sm hover:underline text-[#00368C] font-poppins font-semibold text-[16px]"
                   style={{ color: "#00a0a8" }}
                 >
                   View More
