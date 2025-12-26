@@ -53,15 +53,11 @@ export default function CenterSwiperSection() {
           </SwiperSlide>
         </Swiper>
         {/* Navigation Buttons */}
-        <button className="swiper-prev absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-[#00368C] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
+        <button className="swiper-prev absolute top-1/2 -translate-y-1/2 z-20 bg-white text-[#00368C] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
           ‹
         </button>
-<<<<<<< HEAD
-        <button className="swiper-next absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-[#00a0a8] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
-=======
 
-        <button className="swiper-next absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-white text-[#00368C] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
->>>>>>> 13ffe1611dc462472573c55f9ef20c360410c73c
+        <button className="swiper-next absolute top-1/2 -translate-y-1/2 z-20 bg-white text-[#00368C] shadow-md w-10 h-10 rounded-full flex items-center justify-center">
           ›
         </button>
       </div>

@@ -11,14 +11,10 @@ export default function HealthScansSection() {
     <section className="py-16 bg-white health-scans-section">
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
-<<<<<<< HEAD
-        <h2 className="section-heading text-center text-2xl font-semibold text-teal-600 mb-10"> Health Scans & Imaging Tests</h2>
-=======
         <h2 className="section-heading text-center text-2xl font-semibold [#00368C] mb-10">
           Health Scans & Imaging Tests
         </h2>
 
->>>>>>> 13ffe1611dc462472573c55f9ef20c360410c73c
         <div className="max-w-6xl mx-auto relative">
         {/* Swiper */}
         <Swiper
