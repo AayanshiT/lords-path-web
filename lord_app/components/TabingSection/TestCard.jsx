@@ -58,7 +58,7 @@ export function TestCard({ data }) {
               
               <div className="text-[18px] font-medium text-[#4f4f4f]">
                 <span className="text-lg font-semibold ">
-                ₹{data.price}
+                ₹{data.defaultPrice}
                 </span>
                 <span className="text-sm text-gray-400 line-through ml-2">
                 ₹{data.oldPrice}

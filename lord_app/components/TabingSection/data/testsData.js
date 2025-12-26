@@ -17,6 +17,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Full Body Checkup Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
@@ -28,6 +29,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Malaria Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
@@ -37,6 +39,7 @@ export const TABS = [
         testCount: 29,
         description:
           "COMPLETE BLOOD COUNT, Typhi Dot IgM, Widal Profile",
+        defaultPrice: 1000,
         price: 459,
         oldPrice: 1529,
         reportTime: "21 Hours",
@@ -46,6 +49,7 @@ export const TABS = [
         testCount: 54,
         description:
           "Chikungunya IgM Antibody, CBC, CRP Quantitative, Dengue IgM...",
+        defaultPrice: 4400,
         price: 2201,
         oldPrice: 7338,
         reportTime: "20 Hours",
@@ -55,6 +59,7 @@ export const TABS = [
         testCount: 54,
         description:
           "Chikungunya IgM Antibody, CBC, CRP Quantitative, Dengue IgM...",
+        defaultPrice: 4400,
         price: 2201,
         oldPrice: 7338,
         reportTime: "20 Hours",
@@ -66,6 +71,7 @@ export const TABS = [
         title: "STD Basic Panel",
         testCount: 12,
         description: "HIV, Syphilis, Gonorrhea, Chlamydia",
+        defaultPrice: 2500,
         price: 1299,
         oldPrice: 3999,
         reportTime: "24 Hours",
@@ -74,6 +80,7 @@ export const TABS = [
         title: "STD Basic Panel",
         testCount: 12,
         description: "HIV, Syphilis, Gonorrhea, Chlamydia",
+        defaultPrice: 2500,
         price: 1299,
         oldPrice: 3999,
         reportTime: "24 Hours",
@@ -82,6 +89,7 @@ export const TABS = [
         title: "STD Basic Panel",
         testCount: 12,
         description: "HIV, Syphilis, Gonorrhea, Chlamydia",
+        defaultPrice: 2500,
         price: 1299,
         oldPrice: 3999,
         reportTime: "24 Hours",
@@ -90,6 +98,7 @@ export const TABS = [
         title: "STD Basic Panel",
         testCount: 12,
         description: "HIV, Syphilis, Gonorrhea, Chlamydia",
+        defaultPrice: 2500,
         price: 1299,
         oldPrice: 3999,
         reportTime: "24 Hours",
@@ -101,6 +110,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Vitamins Parasite detection by Malarial Antigen, Vivax & Falciparum",
+          defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
@@ -112,6 +122,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Diabetes Parasite detection by Malarial Antigen, Vivax & Falciparum",
+        defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
@@ -123,6 +134,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Heart Parasite detection by Malarial Antigen, Vivax & Falciparum",
+          defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
@@ -134,6 +146,7 @@ export const TABS = [
         testCount: 2,
         description:
           "Thyroid Parasite detection by Malarial Antigen, Vivax & Falciparum",
+          defaultPrice: 600,
         price: 301,
         oldPrice: 1005,
         reportTime: "18 Hours",
