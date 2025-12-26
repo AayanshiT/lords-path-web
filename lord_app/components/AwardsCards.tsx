@@ -42,8 +42,8 @@ const awards: Award[] = [
 
 export default function RewardsRecognition() {
     return (
-        <section className="w-full bg-[#fff] py-1 awards-section">
-            <div className="mx-auto max-[85rem] px-6">
+        <section className=" bg-[#fff] py-1 awards-section">
+            <div className="mx-auto max-w-[85rem] px-6">
                 <h2 className="mb-12 text-center text-3xl font-semibold text-[#00368C]">
                     Rewards & Recognition
                 </h2>
