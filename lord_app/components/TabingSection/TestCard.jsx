@@ -1,6 +1,6 @@
 export function TestCard({ data }) {
     return (
-      <div className="tabing-card bg-white rounded-xl shadow-sm border h-full flex flex-col justify-between">
+      <div className="tabing-card bg-white rounded-xl shadow-sm border h-full flex flex-col justify-between overflow-hidden">
         {/* <div> */}
           <div className="flex justify-between items-start">
             <h3 className="p-5 font-semibold text-gray-800">{data.title}</h3>
@@ -18,7 +18,7 @@ export function TestCard({ data }) {
           <div className="text-xs text-gray-500 flex justify-between mb-2 ">
             <span className="tracking-[0.01em] text-center text-[#00368C] font-medium leading-[18px] text-[13px]"><a href="#">+ Know more</a></span>
             {/* <span>Report in {data.reportTime}</span> */}
-            <select className="border-none outline-none text-[13px] text-[#333] h-[36px] flex items-center justify-between px-[15px] py-[6px] rounded-[10px] cursor-pointer bg-[#E8EEFF] w-auto mr-[6px] text-center leading-[21px] border border-[#e0f6f6]
+            <select className="border-none outline-none text-[13px] text-[#333] h-[36px] flex items-center justify-between px-[15px] py-[6px] rounded-[10px] cursor-pointer bg-[#f1f7ff] w-auto mr-[6px] text-center leading-[21px] border border-[#e0f6f6]
 ">
               <option value="gurgaon">2 member</option>
               <option value="delhi">1 member</option>

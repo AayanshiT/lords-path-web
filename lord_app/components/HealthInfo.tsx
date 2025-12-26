@@ -67,7 +67,7 @@ export default function HealthInfoSection() {
           <p className="text-gray-700 font-medium text-[17px]">Trust Healthians Labs</p>
         </div>
 
-        <div className="flex flex-wrap justify-center text-gray-700 gap-2">
+        <div className="flex flex-wrap justify-center text-gray-700 gap-3">
           <Feature icon={<img src="/call.svg" alt="call" className="w-8 h-8" />} text="CAP & NABL Accredited Labs" />
           <Feature icon={<img src="/clock.svg" alt="clock" className="w-8 h-8" />} text="On Time Sample Collection" />
           <Feature icon={<img src="/report.svg" alt="report" className="w-8 h-8" />} text="Smart Reports in 6 Hours" />
@@ -80,7 +80,7 @@ export default function HealthInfoSection() {
 
 function Feature({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="flex items-center gap-2 text-sm font-medium">
+    <div className="flex items-center gap-1 text-sm font-medium">
       <div className="[#00368C]">{icon}</div>
       <span className="text-sm">{text}</span>
     </div>
