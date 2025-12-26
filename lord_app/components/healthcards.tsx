@@ -133,7 +133,7 @@ export default function HealthRiskSwiper() {
           }}
         >
           {healthRisks.map((risk) => (
-            <SwiperSlide key={risk.id} className="!mx-3">
+            <SwiperSlide key={risk.id} className="h-full">
               <div className="bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.12)] my-3 transition p-10 h-full flex flex-col items-center text-center border">
                 {/* Icon / Link */}
                 <Link href={risk.href}>
@@ -149,7 +149,7 @@ export default function HealthRiskSwiper() {
                 {/* Title */}
                 <h3
                   className="text-[24px] font-semibold mb-2"
-                  style={{ color: "#1a9ca6" }}
+                  style={{ color: "#00368c " }}
                 >
                   {risk.title}
                 </h3>
@@ -162,7 +162,7 @@ export default function HealthRiskSwiper() {
                 {/* CTA */}
                 <button
                   className="mt-auto text-sm hover:underline text-[#00368C] font-poppins font-semibold text-[16px]"
-                  style={{ color: "#00a0a8" }}
+                  style={{ color: "#00368c " }}
                 >
                   View More
                 </button>
