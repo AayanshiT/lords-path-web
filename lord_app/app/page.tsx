@@ -37,7 +37,7 @@ export default function Home() {
       <ImageSection />
       <MobileSection />
       <MidSection />
-      <LabTests />
+      {/* <LabTests /> */}
       <HealthiansReviews />
       <AwardCards />
       <HealthBlogs />
