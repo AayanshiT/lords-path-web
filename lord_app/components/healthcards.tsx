@@ -183,7 +183,7 @@ export default function HealthRiskSwiper() {
 
         {/* View All */}
         <div className="flex justify-center mt-12">
-          <button className="bg-[#f16948] py-[10px] pr-[60px] pl-[40px] text-white  rounded-full font-semibold transition">
+          <button className="bg-[#FF3B3B] py-[10px] pr-[60px] pl-[40px] text-white  rounded-full font-semibold transition">
             View All →
           </button>
         </div>

@@ -48,7 +48,7 @@ export default function HealthiansLogin() {
             <div className="max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="grid md:grid-cols-2 gap-0">
                     {/* Left Side - Carousel */}
-                    <div className="bg-gradient-to-br from-teal-500 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#E8EEFF]0 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-10">
                             <div className="absolute inset-0" style={{
@@ -72,7 +72,7 @@ export default function HealthiansLogin() {
                         {/* Slide Content */}
                         <div className="text-center text-white z-10 mb-8">
                             <h2 className="text-4xl font-bold mb-3">{slides[currentSlide].title}</h2>
-                            <p className="text-xl text-teal-50">{slides[currentSlide].subtitle}</p>
+                            <p className="text-xl text-[#E8EEFF]">{slides[currentSlide].subtitle}</p>
                         </div>
 
                         {/* Carousel Dots */}
@@ -103,7 +103,7 @@ export default function HealthiansLogin() {
                                 <div>
                                     <div className="mb-6">
                                         <div className="flex gap-3">
-                                            <div className="flex items-center gap-2 px-4 py-3 border-b-2 border-teal-500">
+                                            <div className="flex items-center gap-2 px-4 py-3 border-b-2 border-[#E8EEFF]0">
                                                 <span className="text-2xl">🇮🇳</span>
                                                 <span className="text-gray-700 font-medium">+ 91</span>
                                             </div>
@@ -112,7 +112,7 @@ export default function HealthiansLogin() {
                                                 value={mobileNumber}
                                                 onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, '').slice(0, 10))}
                                                 placeholder="Enter your Mobile Number"
-                                                className="flex-1 px-4 py-3 border-b-2 border-gray-300 focus:border-teal-500 outline-none text-gray-700 transition-colors"
+                                                className="flex-1 px-4 py-3 border-b-2 border-gray-300 focus:border-[#E8EEFF]0 outline-none text-gray-700 transition-colors"
                                                 maxLength={10}
                                             />
                                         </div>
@@ -127,8 +127,8 @@ export default function HealthiansLogin() {
                                 </div>
 
                                 {/* Sign-up Bonus */}
-                                <div className="mt-6 bg-gradient-to-r from-teal-50 to-green-50 border border-teal-200 rounded-xl p-4 flex items-center gap-3">
-                                    <div className="bg-teal-500 p-2 rounded-lg">
+                                <div className="mt-6 bg-gradient-to-r from-[#E8EEFF] to-green-50 border border-teal-200 rounded-xl p-4 flex items-center gap-3">
+                                    <div className="bg-[#E8EEFF]0 p-2 rounded-lg">
                                         <Wallet className="w-6 h-6 text-white" />
                                     </div>
                                     <div>

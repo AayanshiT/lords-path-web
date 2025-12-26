@@ -78,7 +78,7 @@ export default function Footer() {
               (Icon, i) => (
                 <span
                   key={i}
-                  className="w-[30px] h-[30px] flex items-center justify-center rounded-full bg-[#f27d27] text-white cursor-pointer hover:bg-orange-600 transition"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-full bg-[#FF3B3B] text-white cursor-pointer hover:bg-orange-600 transition"
                 >
                   <Icon size={16} />
                 </span>

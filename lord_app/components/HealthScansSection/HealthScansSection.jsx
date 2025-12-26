@@ -37,17 +37,17 @@ export default function HealthScansSection() {
           ))}
         </Swiper>
         {/* Custom Navigation */}
-        <button className="swiper-button-prev2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#f27d27] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+        <button className="swiper-button-prev2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
           ‹
         </button>
-        <button className="swiper-button-next2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#F16948] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+        <button className="swiper-button-next2  absolute top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
           ›
         </button>
         </div>
 
         {/* Bottom CTA */}
         <div className="flex justify-center mt-12">
-          <button className="bg-[#F16948] text-white px-8 py-3 rounded-full font-medium hover:bg-[#F16948] transition">
+          <button className="bg-[#FF3B3B] text-white px-8 py-3 rounded-full font-medium hover:bg-[#FF3B3B]/80 transition">
             View All  →
           </button>
         </div>

@@ -22,8 +22,8 @@ export default function NewsletterSubscription() {
         {/* Decorative underline */}
         <div className="flex justify-center mb-12">
           <div className="flex items-center gap-2">
-            <div className="new-border h-0.5 w-2xs bg-gray-300 relative before:h-0.5 before:w-24 before:bg-amber-600 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:m-auto before:z-50"></div>
-            {/* <div className="h-0.5 w-16 bg-[#f27d27]"></div>
+            <div className="new-border h-0.5 w-2xs bg-gray-300 relative before:h-0.5 before:w-24 before:bg-[#FF3B3B] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:m-auto before:z-50"></div>
+            {/* <div className="h-0.5 w-16 bg-[#FF3B3B]"></div>
             <div className="h-0.5 w-16 bg-gray-300"></div> */}
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function NewsletterSubscription() {
             />
             <button
               type="submit"
-              className="bg-[#f27d27] text-white px-15 py-4 rounded-full transition-colors duration-300 md:text-[16px] font-normal"
+              className="bg-[#FF3B3B] text-white px-15 py-4 rounded-full transition-colors duration-300 md:text-[16px] font-normal"
             >
               Submit
             </button>

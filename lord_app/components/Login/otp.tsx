@@ -82,7 +82,7 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left Side - Carousel */}
-          <div className="bg-gradient-to-br from-teal-500 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#E8EEFF]0 to-teal-600 p-12 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
@@ -107,7 +107,7 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
             {/* Slide Content */}
             <div className="text-center text-white z-10 mb-8">
               <h2 className="text-4xl font-bold mb-3">{slides[currentSlide].title}</h2>
-              <p className="text-xl text-teal-50">{slides[currentSlide].subtitle}</p>
+              <p className="text-xl text-[#E8EEFF]">{slides[currentSlide].subtitle}</p>
             </div>
 
             {/* Carousel Dots */}
@@ -168,7 +168,7 @@ export default function HealthiansOTP({ phone, onBack }: HealthiansOTPProps) {
                     value={digit}
                     onChange={(e) => handleChange(index, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
-                    className="w-12 h-14 text-center text-2xl font-semibold border-2 border-gray-300 rounded-lg focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
+                    className="w-12 h-14 text-center text-2xl font-semibold border-2 border-gray-300 rounded-lg focus:border-[#E8EEFF]0 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
                   />
                 ))}
               </div>
