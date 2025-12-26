@@ -13,7 +13,7 @@ export default function NewsletterSubscription() {
   };
 
   return (
-    <div className="bg-[#1a9ca6] py-16 px-4">
+    <div className="bg-[#1a9ca6] py-16 px-4" id='subscribe-section'>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-white text-2xl md:text-[30px] font-semibold mb-4">
           Subscribe For Healthy Updates
@@ -22,7 +22,7 @@ export default function NewsletterSubscription() {
         {/* Decorative underline */}
         <div className="flex justify-center mb-12">
           <div className="flex items-center gap-2">
-            <div className="h-0.5 w-2xs bg-gray-300 relative before:h-0.5 before:w-24 before:bg-amber-600 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:m-auto before:z-50"></div>
+            <div className="new-border h-0.5 w-2xs bg-gray-300 relative before:h-0.5 before:w-24 before:bg-amber-600 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:m-auto before:z-50"></div>
             {/* <div className="h-0.5 w-16 bg-[#f27d27]"></div>
             <div className="h-0.5 w-16 bg-gray-300"></div> */}
           </div>
