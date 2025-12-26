@@ -198,12 +198,12 @@ export default function HealthiansOTP() {
             <div className="text-center mb-6">
               {timer > 0 ? (
                 <p className="text-gray-600">
-                  Get OTP again in <span className="font-semibold text-teal-600">{timer} seconds</span>
+                  Get OTP again in <span className="font-semibold [#00368C]">{timer} seconds</span>
                 </p>
               ) : (
                 <button
                   onClick={handleResend}
-                  className="text-teal-600 font-semibold hover:text-teal-700 underline"
+                  className="[#00368C] font-semibold hover:text-teal-700 underline"
                 >
                   Resend OTP
                 </button>

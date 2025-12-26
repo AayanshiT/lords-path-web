@@ -1,6 +1,6 @@
 export default function HealthiansHero() {
     return (
-        <section className="bg-[#00a0a8] py-14 px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#00368C] py-14 px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-center mb-10 text-[rgb(255,255,255)] ">
                 The Excellence of{" "}
                 <span className="text-[#fcbe57]">Healthians Labs</span>

@@ -8,7 +8,7 @@ export default function HealthCheckupJourney() {
         {/* Heading */}
         <div className="mb-12 text-center">
           <p className="text-2xl font-medium text-[#303437]">Your Healthians</p>
-          <h2 className="text-3xl font-semibold text-[#00a0a8]">
+          <h2 className="text-3xl font-semibold text-[#00368C]">
             Health Checkup Journey
           </h2>
           <div className="mx-auto mt-4 h-[2px] w-80 bg-[linear-gradient(to_right,#fff,#fd9927,#fff)]" />

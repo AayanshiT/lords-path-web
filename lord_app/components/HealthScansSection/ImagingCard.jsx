@@ -5,7 +5,7 @@ export default function ImagingCard({ data }) {
       <img
         src={data.image}
         alt={data.title}
-        className="w-full h-48 object-cover border-b border-[#00A0A8]"
+        className="w-full h-48 object-cover border-b border-[#00368C]"
       />
 
       {/* Content */}
@@ -16,7 +16,7 @@ export default function ImagingCard({ data }) {
 
         <p className="text-sm mb-3">
          
-          <span className="font-medium font-['Poppins',sans-serif] text-[#00A0A8] text-[20px]">
+          <span className="font-medium font-['Poppins',sans-serif] text-[#00368C] text-[20px]">
             Starting @  <span className=" line-through mr-2">
             ₹{data.oldPrice}
           </span> ₹{data.price}

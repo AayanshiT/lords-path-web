@@ -20,7 +20,7 @@ export default function HealthAdvisorBar() {
   return (
     <div className="fixed w-6xl m-auto bottom-0 left-0 right-0 z-50 shadow-lg">
       {/* Main bar */}
-      <div className="bg-[#00a0a8] px-4 py-1 md:py-2 rounded-t-xl relative">
+      <div className="bg-[#00368C] px-4 py-1 md:py-2 rounded-t-xl relative">
         <div className="max-[85rem] mx-auto flex flex-col items-center justify-between gap-2">
           {/* Left side - Text */}
           <div className="flex  items-center gap-1">

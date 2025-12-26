@@ -10,7 +10,7 @@ export default function SmartReportSection() {
           <div className="lg:col-span-5 col-span-1 text-center lg:text-left">
             <div className="space-y-5">
               {/* Main Heading */}
-              <h3 className="text-[32px] font-bold text-[#1a9ca6] leading-tight">
+              <h3 className="text-[32px] font-bold text-[#00368C] leading-tight">
                 Healthians Smart Report
               </h3>
 
@@ -21,7 +21,7 @@ export default function SmartReportSection() {
               </h5>
 
               {/* Secondary Heading */}
-              <h6 className="text-[25px] text-[#1a9ca6] font-semibold mt-2.5">
+              <h6 className="text-[25px] text-[#00368C] font-semibold mt-2.5">
                 Consolidated Health<br className="hidden sm:block" />
                 <span className="sm:hidden"> </span>History Report
               </h6>

@@ -4,7 +4,7 @@ export function TestCard({ data }) {
         {/* <div> */}
           <div className="flex justify-between items-start">
             <h3 className="p-5 font-semibold text-gray-800">{data.title}</h3>
-            <div className="test-count text-teal-600 flex flex-col items-center w-[80px] h-[60px] text-[24px] font-semibold px-3 py-1 ">
+            <div className="test-count [#E8EEFF] flex flex-col items-center w-[80px] h-[60px] text-[24px] font-semibold px-3 py-1 ">
               {data.testCount} <span className="text-xs text-[16px] font-medium">Tests</span>
             </div>
           </div>
@@ -16,9 +16,9 @@ export function TestCard({ data }) {
           </p>
   
           <div className="text-xs text-gray-500 flex justify-between mb-2 ">
-            <span className="tracking-[0.01em] text-center text-[#00a0a8] font-medium leading-[18px] text-[13px]"><a href="#">+ Know more</a></span>
+            <span className="tracking-[0.01em] text-center text-[#00368C] font-medium leading-[18px] text-[13px]"><a href="#">+ Know more</a></span>
             {/* <span>Report in {data.reportTime}</span> */}
-            <select className="border-none outline-none text-[13px] text-[#333] h-[36px] flex items-center justify-between px-[15px] py-[6px] rounded-[10px] cursor-pointer bg-[#e0f6f6] w-auto mr-[6px] text-center leading-[21px] border border-[#e0f6f6]
+            <select className="border-none outline-none text-[13px] text-[#333] h-[36px] flex items-center justify-between px-[15px] py-[6px] rounded-[10px] cursor-pointer bg-[#E8EEFF] w-auto mr-[6px] text-center leading-[21px] border border-[#e0f6f6]
 ">
               <option value="gurgaon">2 member</option>
               <option value="delhi">1 member</option>
@@ -49,10 +49,10 @@ export function TestCard({ data }) {
           </div>
         {/* </div> */}
   
-        <div className="bg-[#E1FEFF] p-2">
+        <div className="bg-[#E8EEFF] p-2">
           <div className="flex justify-between items-center">
             <div className="ml-3">
-              <span className="text-[18px] font-semibold text-[#007d83]">
+              <span className="text-[18px] font-semibold text-[#00368C]">
                 ₹{data.price} <span className="text-[10px]">Per Person</span>
               </span>
               
@@ -66,7 +66,7 @@ export function TestCard({ data }) {
               </div>
             </div>
   
-            <button className="bg-[#00a0a8] text-white px-8 py-2 rounded-lg text-sm hover:bg-teal-700 transition">
+            <button className="bg-[#00368C] text-white px-8 py-2 rounded-lg text-sm hover:bg-blue-700 transition">
               Book Now →
             </button>
           </div>

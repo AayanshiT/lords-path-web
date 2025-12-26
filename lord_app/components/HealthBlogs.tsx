@@ -41,7 +41,7 @@ export default function HealthBlogs() {
     <section className="w-full bg-[#fafafa] py-6 blogs-section">
       <div className="mx-auto max-[85rem] px-6">
         {/* Heading */}
-        <h2 className="mb-12 text-center text-3xl font-semibold text-[#1a9ca6]">
+        <h2 className="mb-12 text-center text-3xl font-semibold text-[#00368C]">
           Health Blogs & Articles
         </h2>
 
@@ -79,7 +79,7 @@ export default function HealthBlogs() {
 
                 {/* Content */}
                 <div className="p-5 group">
-                  <h3 className="text-base font-medium text-[#333]  group-hover:text-[#1a9ca6] transition-colors duration-300">
+                  <h3 className="text-base font-medium text-[#333]  group-hover:text-[#00368C] transition-colors duration-300">
                     {blog.title}
                   </h3>
                 </div>

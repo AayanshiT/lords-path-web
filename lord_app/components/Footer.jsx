@@ -45,25 +45,25 @@ export default function Footer() {
           </h4>
 
           <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-[14px] text-[#848484]">
-            <Link className=" hover:text-[#00a0a8]" href="#">About Us</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Our Labs</Link>
+            <Link className=" hover:text-[#00368C]" href="#">About Us</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Our Labs</Link>
 
-            <Link className=" hover:text-[#00a0a8]" href="#">Media</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Contact Us</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Career</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Blog</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Media</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Contact Us</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Career</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Blog</Link>
 
-            <Link className=" hover:text-[#00a0a8]" href="#">Money Back Policy</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Investors</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Money Back Policy</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Investors</Link>
 
-            <Link className=" hover:text-[#00a0a8]" href="#">Query/Complaints</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Scan Lab</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Query/Complaints</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Scan Lab</Link>
 
-            <Link className=" hover:text-[#00a0a8]" href="#">Our Corporate Clients</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">FAQ</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Our Corporate Clients</Link>
+            <Link className=" hover:text-[#00368C]" href="#">FAQ</Link>
 
-            <Link className=" hover:text-[#00a0a8]" href="#">Rating & Reviews</Link>
-            <Link className=" hover:text-[#00a0a8]" href="#">Become Business Partner</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Rating & Reviews</Link>
+            <Link className=" hover:text-[#00368C]" href="#">Become Business Partner</Link>
           </div>
         </div>
 
@@ -112,10 +112,10 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="border-t bg-[#f8f8f8] border-gray-200 py-3 text-center text-sm text-gray-600">
         © 2025 Lordspath.com  |{" "}
-        <Link className=" hover:text-[#00a0a8]" href="#">Terms & Conditions</Link>  |{" "}
-        <Link className=" hover:text-[#00a0a8]" href="#">Privacy Policy</Link>  |{" "}
-        <Link className=" hover:text-[#00a0a8]" href="#">Statutory Compliance</Link>  |{" "}
-        <Link className=" hover:text-[#00a0a8]" href="#">Programs & Policies</Link>
+        <Link className=" hover:text-[#00368C]" href="#">Terms & Conditions</Link>  |{" "}
+        <Link className=" hover:text-[#00368C]" href="#">Privacy Policy</Link>  |{" "}
+        <Link className=" hover:text-[#00368C]" href="#">Statutory Compliance</Link>  |{" "}
+        <Link className=" hover:text-[#00368C]" href="#">Programs & Policies</Link>
       </div>
     </footer>
     {/* <bottom/> */}
