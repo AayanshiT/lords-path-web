@@ -3,7 +3,7 @@ export default function HealthiansHero() {
         <section className="bg-[#00368C] py-14 px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-center mb-10 text-[rgb(255,255,255)] ">
                 The Excellence of{" "}
-                <span className="text-[#fcbe57]">Healthians Labs</span>
+                <span className="text-[#FF3B3B]">Healthians Labs</span>
             </h1>
             <div className="max-w-5xl mx-auto">
 
