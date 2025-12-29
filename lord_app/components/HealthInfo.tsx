@@ -52,7 +52,7 @@ export default function HealthInfoSection() {
                 Uncover potential health risks and get custom test
                 recommendation based on your lifestyle and habits.
               </p>
-              <button onClick={() => router.push("/health-questions")}
+              <button onClick={() => router.push("/health-score")}
               className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] hover:cursor-pointer text-white font-semibold px-5 py-3 rounded-xl w-fit">
                 Check your health score →
               </button>
