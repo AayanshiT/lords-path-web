@@ -41,11 +41,7 @@ async function jsonRpcRequest<T>(
 // Odoo Login (Typed)
 // -----------------------------
 export async function odooLogin(): Promise<number> {
-  return await jsonRpcRequest<number>("common", "login", [
-    DB,
-    USER,
-    PASSWORD,
-  ]);
+  return await jsonRpcRequest<number>("common", "login", [DB, USER, PASSWORD]);
 }
 
 // -----------------------------
@@ -74,12 +70,17 @@ export async function odooSearchRead(
   ]);
 }
 
-export async function odooCreateUsers(values: Record<string, any>): Promise<number> {
+export async function odooCreateUsers(
+  values: Record<string, any>
+): Promise<number> {
   try {
     const uid = await odooLogin();
     console.log("Logged in with UID:", uid);
 
-    console.log("Attempting to create user with values:", JSON.stringify(values, null, 2));
+    console.log(
+      "Attempting to create user with values:",
+      JSON.stringify(values, null, 2)
+    );
 
     const result = await jsonRpcRequest<any>("object", "execute_kw", [
       DB,
@@ -87,8 +88,8 @@ export async function odooCreateUsers(values: Record<string, any>): Promise<numb
       PASSWORD,
       "res.users",
       "create",
-      [values],  // This wraps values in an array
-      {}  // Empty options dict
+      [values], // This wraps values in an array
+      {}, // Empty options dict
     ]);
 
     console.log("Odoo create users raw result:", result);
@@ -102,7 +103,7 @@ export async function odooCreateUsers(values: Record<string, any>): Promise<numb
   } catch (error) {
     console.error("Error creating user:", error);
 
-    if (error && typeof error === 'object' && 'data' in error) {
+    if (error && typeof error === "object" && "data" in error) {
       console.error("Error data:", JSON.stringify(error.data, null, 2));
     }
 
@@ -146,7 +147,7 @@ export async function checkUserCreationPermission(): Promise<boolean> {
       "res.users",
       "check_access_rights",
       ["create"],
-      { raise_exception: false }
+      { raise_exception: false },
     ]);
 
     console.log("User creation permission:", hasAccess);
@@ -159,23 +160,17 @@ export async function checkUserCreationPermission(): Promise<boolean> {
 export async function fetchLabTests(): Promise<OdooRecord[]> {
   const domain = [
     ["sale_ok", "=", true],
-    ["active", "=", true]
+    ["active", "=", true],
   ];
 
-  const fields = [
-    "id",
-    "name",
-    "list_price",
-    "type"
-  ];
+  const fields = ["id", "name", "list_price", "type"];
 
   return await odooSearchRead(
-    "product.template",   // 🔑 main model
+    "product.template", // 🔑 main model
     domain,
     fields
   );
 }
-
 
 export async function fetchLabTestsPaginated(
   offset = 0,
@@ -189,15 +184,49 @@ export async function fetchLabTestsPaginated(
     PASSWORD,
     "product.template",
     "search_read",
-    [[
-      ["sale_ok", "=", true],
-      ["active", "=", true]
-    ]],
+    [
+      [
+        ["sale_ok", "=", true],
+        ["active", "=", true],
+      ],
+    ],
     {
       fields: ["id", "name", "list_price", "type"],
       offset,
       limit,
-      order: "name asc"
-    }
+      order: "name asc",
+    },
   ]);
 }
+
+// export async function fetchCityList(): Promise<OdooRecord[]> {
+//   const domain = [
+//     ["is_city", "=", true],
+//     ["active", "=", true],
+//   ];
+//   const fields = ["id", "name"];
+//   return await odooSearchRead("res.country.state.city", domain, fields);
+// }
+
+
+export async function fetchCities() {
+  const uid = await odooLogin();
+
+  return await jsonRpcRequest("object", "execute_kw", [
+    DB,
+    uid,
+    PASSWORD,
+    "res.country.state.city",
+    "search_read",
+    [
+      [
+        ["state_id", "!=", false],
+      ],
+    ],
+    {
+      fields: ["id", "name", "state_id"],
+      order: "name asc",
+    },
+  ]);
+}
+

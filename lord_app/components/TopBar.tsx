@@ -1,7 +1,42 @@
+'use client';
+// import "server-only";
 import Link from 'next/link';
 import { FaMapMarkerAlt, FaPhoneAlt, FaUser } from "react-icons/fa";
+// import { fetchCityList } from "@/app/lib/oddo";
+import { useEffect, useState } from 'react';
+import { OdooRecord } from '@/app/lib/oddo';
 
 export default function TopBar() {
+  const [cities, setCities] = useState<{ id: number; name: string }[]>([]);
+
+  useEffect(() => {
+    async function fetchCities() {
+      try {
+        const res = await fetch("/api/cities");
+        const json = await res.json();
+
+        if (!json.success || !Array.isArray(json.data)) {
+          console.error("Invalid city API response:", json);
+          setCities([]);
+          return;
+        }
+
+        const cityData = json.data.map((item: any) => ({
+          id: item.id,
+          name: String(item.name),
+        }));
+
+        setCities(cityData);
+      } catch (error) {
+        console.error("Error fetching city list:", error);
+        setCities([]);
+      }
+    }
+
+    fetchCities();
+  }, []);
+
+
   return (
     <div className="w-full bg-white">
       <div className="max-w-[85rem] mx-auto flex items-center justify-between py-2 px-4">
@@ -9,7 +44,7 @@ export default function TopBar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <a href="/">
-          <img src="/lords_path_logo.png" alt="Logo" className="h-16" />
+            <img src="/lords_path_logo.png" alt="Logo" className="h-16" />
           </a>
         </div>
 
@@ -20,9 +55,9 @@ export default function TopBar() {
             <div className="flex flex-col items-center">
               <span className="text-[12px] font-normal text-[#6b6b6b]">Your Location</span>
               <select className="border-none outline-none bg-transparent text-sm">
-                <option value="gurgaon">Gurgaon</option>
-                <option value="delhi">Delhi</option>
-                <option value="noida">Noida</option>
+                {cities.map((city) => (
+                  <option key={city.id} value={city.name}>{city.name}</option>
+                ))}
               </select>
             </div>
           </div>

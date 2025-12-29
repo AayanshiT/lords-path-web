@@ -61,8 +61,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import { useRouter } from "next/navigation";
 
 import ImagingCard from "./ImagingCard";
@@ -117,7 +115,7 @@ export default function HealthScansSection() {
   if (loading) {
     return (
       <section className="py-16 text-center">
-        Loading health scans...
+        Loading Lab Tests...
       </section>
     );
   }
