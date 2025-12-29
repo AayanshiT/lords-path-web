@@ -1,7 +1,11 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { Phone, CheckCircle, Clock, FileText, Headphones } from "lucide-react";
 import Link from "next/link";
 
 export default function HealthInfoSection() {
+  const router = useRouter();
+
   return (
     <section className="max-w-[85rem] mx-auto bg-white">
       {/* Top Cards */}
@@ -48,7 +52,8 @@ export default function HealthInfoSection() {
                 Uncover potential health risks and get custom test
                 recommendation based on your lifestyle and habits.
               </p>
-              <button className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] hover:cursor-pointer text-white font-semibold px-5 py-3 rounded-xl w-fit">
+              <button onClick={() => router.push("/health-questions")}
+              className="mt-5 inline-flex items-center gap-2 bg-[#FF3B3B] hover:bg-[#00368C] hover:cursor-pointer text-white font-semibold px-5 py-3 rounded-xl w-fit">
                 Check your health score →
               </button>
             </div>
