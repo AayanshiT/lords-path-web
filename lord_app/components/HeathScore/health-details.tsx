@@ -19,6 +19,7 @@ export default function MemberCard({ member }: { member: Member }) {
             <p className="font-semibold">{member.name}</p>
             <p className="text-sm text-gray-500">
               {member.gender} / {member.age} Years
+              
             </p>
           </div>
         </div>

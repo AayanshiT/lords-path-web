@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
 import React from 'react';
-import HealthFormSection from './health-form';
 import MemberCard from './health-details';
 import SimpleMemberForm from './health-form';
 import { useRouter } from "next/navigation";
+import OrgansList from './health-organs';
+
 
 interface Member {
     id: string;
@@ -16,7 +17,10 @@ interface Member {
 }
 
 export default function HealthKarmaAssessment() {
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true);
+    const [memberData, setMemberData] = useState<any>(null);
+    const [showOrgans, setShowOrgans] = useState(false);
+
     const router = useRouter();
     const member: Member = {
         id: '1',
@@ -68,28 +72,52 @@ export default function HealthKarmaAssessment() {
                     </div>
 
                     {/* Right Section */}
+
                     <div className="bg-white p-6 rounded-xl">
-                        <h2 className="font-bold text-xl mb-4">
+                        <h2 className="font-semibold text-xl mb-4">
                             Choose the member
                         </h2>
 
-                        {!showForm && <MemberCard member={member} />}
+                        {/* STEP 1: FORM */}
+                        {showForm && (
+                            <SimpleMemberForm
+                                onSuccess={(data) => {
+                                    setMemberData(data);
+                                    setShowForm(false);
+                                }}
+                            />
+                        )}
 
-                        {showForm && <SimpleMemberForm />}
+                        {/* STEP 2: CARD + CONTINUE */}
+                        {!showForm && memberData && !showOrgans && (
+                            <>
+                                <MemberCard
+                                    member={{
+                                        avatar:
+                                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+                                        name: memberData.name,
+                                        gender: "Female",
+                                        age: Number(memberData.age),
+                                        score: 0,
+                                    }}
+                                />
 
-                        <button
-                            onClick={() => setShowForm(true)}
-                            className="underline text-sm mb-4"
-                        >
-                            For someone else
-                        </button>
+                                <button
+                                    onClick={() => setShowOrgans(true)}
+                                    className="w-full bg-gray-200 py-3 rounded mt-4"
+                                >
+                                    Continue →
+                                </button>
+                            </>
 
-                        <button
-                            onClick={() => setShowForm(false)}
-                            className="w-full bg-gray-200 py-3 rounded">
-                            Continue →
-                        </button>
+
+                        )}
+                        {showOrgans && (
+                            <OrgansList />
+                        )}
+
                     </div>
+
                 </div>
             </div>
         </div>

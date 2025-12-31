@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 
+type Props = {
+  onSuccess: (data: any) => void;
+};
+
 type FormData = {
   name: string;
   age: string;
@@ -9,7 +13,7 @@ type FormData = {
   height: string;
 };
 
-export default function SimpleMemberForm() {
+export default function SimpleMemberForm({ onSuccess }: Props) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     age: '',
@@ -22,10 +26,28 @@ export default function SimpleMemberForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+
+    try {
+      const res = await fetch("/api/partner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        onSuccess(formData); // 🔥 parent ko data bheja
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Submit error:", error);
+    }
   };
+
 
   return (
     <form
@@ -76,7 +98,7 @@ export default function SimpleMemberForm() {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+        className="w-full bg-[#00368C] hover:bg-blue-900 text-white font-semibold py-3 rounded-lg transition"
       >
         Save & Continue
       </button>

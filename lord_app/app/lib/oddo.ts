@@ -37,16 +37,16 @@ async function jsonRpcRequest<T>(
   return data.result;
 }
 
-// -----------------------------
+
 // Odoo Login (Typed)
-// -----------------------------
+
 export async function odooLogin(): Promise<number> {
   return await jsonRpcRequest<number>("common", "login", [DB, USER, PASSWORD]);
 }
 
-// -----------------------------
+
 // Search Read (Typed)
-// -----------------------------
+
 export interface OdooRecord {
   id: number;
   [key: string]: any;
@@ -110,9 +110,8 @@ export async function odooCreateUsers(
     throw error;
   }
 }
-// -----------------------------
+
 // Update users in Odoo
-// -----------------------------
 export async function odooExecuteUpdateUsers(
   id: number,
   values: { [key: string]: any }
@@ -172,6 +171,7 @@ export async function fetchLabTests(): Promise<OdooRecord[]> {
   );
 }
 
+//lab tests paginated fetch
 export async function fetchLabTestsPaginated(
   offset = 0,
   limit = 80
@@ -199,16 +199,7 @@ export async function fetchLabTestsPaginated(
   ]);
 }
 
-// export async function fetchCityList(): Promise<OdooRecord[]> {
-//   const domain = [
-//     ["is_city", "=", true],
-//     ["active", "=", true],
-//   ];
-//   const fields = ["id", "name"];
-//   return await odooSearchRead("res.country.state.city", domain, fields);
-// }
-
-
+// cities fetch
 export async function fetchCities() {
   const uid = await odooLogin();
 
@@ -230,3 +221,84 @@ export async function fetchCities() {
   ]);
 }
 
+// Create partner in Odoo (form submission)
+
+export async function odooCreatePartner(values: Record<string, any>): Promise<number> {
+  try {
+    const uid = await odooLogin();
+
+    const result = await jsonRpcRequest<number>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "res.partner",   
+      "create",
+      [values],
+      {},
+    ]);
+
+    if (!result) {
+      throw new Error("Partner creation failed");
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Odoo create partner error:", error);
+    throw error;
+  }
+}
+
+// export async function fetchOrgans(): Promise<OdooRecord[]>{
+//  const uid = await odooLogin();
+
+//   const organs = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
+//     DB,
+//     uid,
+//     PASSWORD,
+//     "body.organ",
+//     "search_read",
+//     [
+//       [
+//         ["active", "=", true],
+//       ],
+//     ],
+//     {
+//       fields: ["id", "name", ],
+//       order: "name asc",
+//     },
+//   ]);
+//   console.log("Fetched organs:", organs);
+//   return organs;
+ 
+
+// }
+
+
+export async function fetchOrgans(): Promise<OdooRecord[]> {
+  try {
+    const uid = await odooLogin();
+    console.log("Logged in UID:", uid);
+
+    const records = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "body.organ",
+      "search_read",
+      [
+        [],
+      ],
+      {
+        fields: ["id", "body_organ"],  // ✅ REQUIRED
+        order: "body_organ asc",
+      },
+    ]);
+
+    console.log("Raw records from Odoo:", records);
+    return records;
+
+  } catch (error) {
+    console.error("Error fetching organs:", error);
+    throw error;
+  }
+}
