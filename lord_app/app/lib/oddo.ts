@@ -37,13 +37,11 @@ async function jsonRpcRequest<T>(
   return data.result;
 }
 
-
 // Odoo Login (Typed)
 
 export async function odooLogin(): Promise<number> {
   return await jsonRpcRequest<number>("common", "login", [DB, USER, PASSWORD]);
 }
-
 
 // Search Read (Typed)
 
@@ -209,11 +207,7 @@ export async function fetchCities() {
     PASSWORD,
     "res.country.state.city",
     "search_read",
-    [
-      [
-        ["state_id", "!=", false],
-      ],
-    ],
+    [[["state_id", "!=", false]]],
     {
       fields: ["id", "name", "state_id"],
       order: "name asc",
@@ -223,7 +217,9 @@ export async function fetchCities() {
 
 // Create partner in Odoo (form submission)
 
-export async function odooCreatePartner(values: Record<string, any>): Promise<number> {
+export async function odooCreatePartner(
+  values: Record<string, any>
+): Promise<number> {
   try {
     const uid = await odooLogin();
 
@@ -231,7 +227,7 @@ export async function odooCreatePartner(values: Record<string, any>): Promise<nu
       DB,
       uid,
       PASSWORD,
-      "res.partner",   
+      "res.partner",
       "create",
       [values],
       {},
@@ -269,64 +265,52 @@ export async function odooCreatePartner(values: Record<string, any>): Promise<nu
 //   ]);
 //   console.log("Fetched organs:", organs);
 //   return organs;
- 
 
 // }
-
 
 export async function fetchOrgans(): Promise<OdooRecord[]> {
   try {
     const uid = await odooLogin();
-    console.log("Logged in UID:", uid);
-
+    // console.log("Logged in UID:", uid);
     const records = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
       DB,
       uid,
       PASSWORD,
       "body.organ",
       "search_read",
-      [
-        [],
-      ],
+      [[]],
       {
-        fields: ["id", "body_organ"],  // ✅ REQUIRED
+        fields: ["id", "body_organ"], // ✅ REQUIRED
         order: "body_organ asc",
       },
     ]);
 
     // console.log("Raw records from Odoo:", records);
     return records;
-
   } catch (error) {
     console.error("Error fetching organs:", error);
     throw error;
   }
 }
 
+// Fetch survey questions based on organId
 export async function fetchSurveyQuestions(organId: number) {
-  const uid = await odooLogin();
-
-  const question = await jsonRpcRequest(
-    "object",
-    "execute_kw",
-    [
+  try {
+    const uid = await odooLogin();
+    const questions = await jsonRpcRequest("object", "execute_kw", [
       DB,
       uid,
       PASSWORD,
       "health.survey.quertion",
       "search_read",
-      [
-        [
-          ["organ_id", "=", organId], 
-        ],
-      ],
+      [[["organ_id", "=", organId]]],
       {
-        fields: ["organ_id", ],
-        order: "sequence asc",
+        fields: ["id", "name", "organ_id"],
       },
-    ]
-  );
-  console.log("Fetched questions:", question);
-  return question;
-  
+    ]);
+    return questions;
+  } catch (error) {
+    console.error("Error fetching organs:", error);
+    throw error;
+  }
 }
