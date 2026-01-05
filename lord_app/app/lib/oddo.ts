@@ -2,7 +2,7 @@
 // Odoo API Config
 // -----------------------------
 const ODOO_URL = "https://lordspatherp.nians.in/jsonrpc";
-const DB = "odoo19";
+const DB = "odoo19_test";
 const USER = "admin";
 const PASSWORD = "admin";
 
@@ -294,11 +294,39 @@ export async function fetchOrgans(): Promise<OdooRecord[]> {
       },
     ]);
 
-    console.log("Raw records from Odoo:", records);
+    // console.log("Raw records from Odoo:", records);
     return records;
 
   } catch (error) {
     console.error("Error fetching organs:", error);
     throw error;
   }
+}
+
+export async function fetchSurveyQuestions(organId: number) {
+  const uid = await odooLogin();
+
+  const question = await jsonRpcRequest(
+    "object",
+    "execute_kw",
+    [
+      DB,
+      uid,
+      PASSWORD,
+      "health.survey.quertion",
+      "search_read",
+      [
+        [
+          ["organ_id", "=", organId], 
+        ],
+      ],
+      {
+        fields: ["organ_id", ],
+        order: "sequence asc",
+      },
+    ]
+  );
+  console.log("Fetched questions:", question);
+  return question;
+  
 }

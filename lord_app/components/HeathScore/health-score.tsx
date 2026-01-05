@@ -20,6 +20,7 @@ export default function HealthKarmaAssessment() {
     const [showForm, setShowForm] = useState(true);
     const [memberData, setMemberData] = useState<any>(null);
     const [showOrgans, setShowOrgans] = useState(false);
+    const [selectedOrganId, setSelectedOrganId] = useState<number | null>(null);
 
     const router = useRouter();
     const member: Member = {
