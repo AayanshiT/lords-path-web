@@ -47,27 +47,18 @@ function ResultsScreen({
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-        {/* Trophy Icon */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-gradient-to-br from-yellow-400 to-orange-500 p-6 rounded-full">
-            <Trophy className="w-16 h-16 text-white" />
-          </div>
-        </div>
-
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-4">
+        <h1 className="text-4xl md:text-3xl font-bold text-center text-gray-800 mb-4">
           Assessment Complete!
         </h1>
 
         {/* Score Display */}
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 mb-6">
+        <div className="bg-[#00368C] rounded-2xl p-4 mb-6">
           <div className="text-center">
             <p className="text-white text-lg mb-2">Your Score</p>
             <div className="text-6xl md:text-7xl font-bold text-white mb-2">
-              {score}<span className="text-4xl">/{total}</span>
-            </div>
-            <div className="text-2xl font-semibold text-white">
-              {percentage}%
+              {/* {score}<span className="text-4xl">/{total}</span> */}
+               {percentage}%
             </div>
           </div>
         </div>
@@ -86,34 +77,25 @@ function ResultsScreen({
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div className="bg-green-50 rounded-xl p-4 text-center">
-            <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <p className="text-3xl font-bold text-green-700">{total - score}</p>
-            <p className="text-sm text-gray-600">Negative</p>
-          </div>
-          <div className="bg-red-50 rounded-xl p-4 text-center">
-            <XCircle className="w-8 h-8 text-red-600 mx-auto mb-2" />
-            <p className="text-3xl font-bold text-red-700">{score}</p>
-            <p className="text-sm text-gray-600">Positive</p>
-          </div>
-        </div>
-
-        {/* Action Button */}
-        <button
+        <div className="grid grid-cols-2 gap-1">
+          <button
           onClick={onRestart}
-          className="w-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+          className="w-full bg-[#00368C] text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
         >
           <RotateCcw className="w-5 h-5" />
           Take Assessment Again
         </button>
         <button
           onClick={() => window.location.href = '/'}
-          className="w-1/2 bg-[#4B5563] text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+          className="w-full bg-[#FF3B3B] text-white py-4 rounded-xl font-semibold text-lg hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
         >
           <RotateCcw className="w-5 h-5" />
-           Back to Home
+          Back to Home
         </button>
+        </div>
+
+        {/* Action Button */}
+        
 
       </div>
     </div>
@@ -141,13 +123,13 @@ function QuestionScreen({
             <span className="text-sm font-medium text-gray-600">
               Question {currentIndex + 1} of {total}
             </span>
-            <span className="text-sm font-medium text-blue-600">
+            <span className="text-sm font-medium text-[#FF3B3B]">
               {Math.round(((currentIndex + 1) / total) * 100)}%
             </span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
             <div
-              className="bg-gradient-to-r from-blue-500 to-purple-600 h-full transition-all duration-500 ease-out rounded-full"
+              className="bg-[#00368C] h-full transition-all duration-500 ease-out rounded-full"
               style={{ width: `${((currentIndex + 1) / total) * 100}%` }}
             />
           </div>
@@ -155,28 +137,37 @@ function QuestionScreen({
 
         {/* Question */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center leading-tight">
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-800 text-center leading-tight">
             {question}
           </h2>
         </div>
 
         {/* Answer Buttons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <button
             onClick={() => onAnswer("yes")}
-            className="group relative bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-6 px-8 rounded-2xl font-semibold text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="group relative bg-gradient-to-br from-green-500 to-green-600
+      hover:from-green-600 hover:to-green-700
+      text-white py-4 px-4 rounded-lg
+      font-medium text-xl
+      transition-all duration-200 shadow hover:shadow-md"
           >
-            <CheckCircle className="w-6 h-6 inline-block mr-2 group-hover:scale-110 transition-transform" />
+            <CheckCircle className="w-4 h-4 inline-block mr-1.5" />
             Yes
           </button>
+
           <button
             onClick={() => onAnswer("no")}
-            className="group relative bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-6 px-8 rounded-2xl font-semibold text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="group relative bg-[#FF3B3B] hover:bg-red-600
+      text-white py-4 px-4 rounded-lg
+      font-medium text-xl
+      transition-all duration-200 shadow hover:shadow-md"
           >
-            <XCircle className="w-6 h-6 inline-block mr-2 group-hover:scale-110 transition-transform" />
+            <XCircle className="w-4 h-4 inline-block mr-1.5" />
             No
           </button>
         </div>
+
       </div>
     </div>
   );
@@ -265,7 +256,7 @@ export default function OrganQuestionPage() {
       </div>
     );
   }
-
+  
   // Show results
   if (showResults) {
     const yesCount = answers.filter((a) => a.answer === "yes").length;

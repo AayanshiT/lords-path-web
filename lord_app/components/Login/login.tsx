@@ -10,6 +10,10 @@ export default function HealthiansLogin() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showOTP, setShowOTP] = useState(false);
     const router = useRouter();
+    const [generatedOTP, setGeneratedOTP] = useState("");
+
+
+    
 
     const slides = [
         {
@@ -34,14 +38,23 @@ export default function HealthiansLogin() {
         }
     ];
 
-    //   const handleLogin = () => {
-    //     if (mobileNumber.length === 10) {
-    //       console.log('Logging in with:', mobileNumber);
-    //       setShowOTP(true); // show OTP component
-    //     } else {
-    //       alert('Please enter a valid 10-digit mobile number');
-    //     }
-    //   };
+    const generateOTP = () => {
+        return Math.floor(100000 + Math.random() * 900000).toString();
+    };
+
+    const handleLogin = () => {
+        if (mobileNumber.length !== 10) {
+            alert("Enter valid mobile number");
+            return;
+        }
+
+        const otp = generateOTP();
+        console.log("Generated OTP:", otp); // demo purpose
+
+        setGeneratedOTP(otp);
+        setShowOTP(true);
+    };
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -92,7 +105,11 @@ export default function HealthiansLogin() {
                     {/* Right Side - Login Form */}
                     <div className="p-12 flex flex-col justify-center">
                         {showOTP ? (
-                            <HealthiansOTP phone={mobileNumber} onBack={() => setShowOTP(false)} />
+                            <HealthiansOTP
+                                phone={mobileNumber}
+                                generatedOTP={generatedOTP}
+                                onBack={() => setShowOTP(false)}
+                            />
                         ) : (
                             <>
                                 <div className="mb-8">
@@ -118,7 +135,8 @@ export default function HealthiansLogin() {
                                         </div>
                                     </div>
                                     <button
-                                        onClick={() => router.push("/login/otp")}
+                                        // onClick={() => router.push("/login/otp")}
+                                        onClick={handleLogin}
                                         className="w-full bg-[#FF3B3B] text-white py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                     >
                                         Login
