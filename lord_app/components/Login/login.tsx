@@ -12,9 +12,6 @@ export default function HealthiansLogin() {
     const router = useRouter();
     const [generatedOTP, setGeneratedOTP] = useState("");
 
-
-    
-
     const slides = [
         {
             title: 'Convenient',
@@ -134,6 +131,7 @@ export default function HealthiansLogin() {
                                             />
                                         </div>
                                     </div>
+
                                     <button
                                         // onClick={() => router.push("/login/otp")}
                                         onClick={handleLogin}
