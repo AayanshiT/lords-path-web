@@ -85,12 +85,12 @@ export default function OrganQuestionPage() {
   // ✅ RENDER
   return (
     <>
-      {/* <OrganQuestionPage/> */}
+
       <HealthQuestion
-        question={currentQuestion.question}
-        options={OPTIONS}
-        onSubmit={handleContinue}
-        organId={organId}
+        // question={currentQuestion.question}
+        // options={OPTIONS}
+        // onSubmit={handleContinue}
+        // organId={organId}
       />
     </>
 

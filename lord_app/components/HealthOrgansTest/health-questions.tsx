@@ -10,6 +10,14 @@ type Question = {
   options: Array<{ id: "yes" | "no"; label: string }>;
 };
 
+/* ---------- QUESTION SCREEN ---------- */
+type QuestionScreenProps = {
+  question: string;
+  currentIndex: number;
+  total: number;
+  onAnswer: (answer: "yes" | "no") => void;
+};
+
 // ✅ RESULTS SCREEN COMPONENT
 function ResultsScreen({
   score,
