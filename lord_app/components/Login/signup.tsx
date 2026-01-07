@@ -1,21 +1,22 @@
 "use client";
 
+import { useRouter } from 'next/dist/client/components/navigation';
 import { useState } from 'react';
-import { useSearchParams, useRouter } from "next/navigation";
+// import { useSearchParams, useRouter } from "next/navigation";
 
 
 export default function MedicalFormComponent() {
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
     const router = useRouter();
-    const phone = searchParams.get("phone");
-    console.log("Phone from URL:", phone);
+    // const phone = searchParams.get("phone");
+    // console.log("Phone from URL:", phone);
 
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         dateOfBirth: '',
         age: '',
-        phone: phone || '',
+        // phone: phone || '',
         gender: '',
         referralCode: ''
     });
