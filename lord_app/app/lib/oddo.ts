@@ -84,7 +84,7 @@ export async function odooCreateUsers(
       DB,
       uid,
       PASSWORD,
-      "res.users",
+      "res.partner",
       "create",
       [values], // This wraps values in an array
       {}, // Empty options dict
@@ -244,29 +244,7 @@ export async function odooCreatePartner(
   }
 }
 
-// export async function fetchOrgans(): Promise<OdooRecord[]>{
-//  const uid = await odooLogin();
-
-//   const organs = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
-//     DB,
-//     uid,
-//     PASSWORD,
-//     "body.organ",
-//     "search_read",
-//     [
-//       [
-//         ["active", "=", true],
-//       ],
-//     ],
-//     {
-//       fields: ["id", "name", ],
-//       order: "name asc",
-//     },
-//   ]);
-//   console.log("Fetched organs:", organs);
-//   return organs;
-
-// }
+// Fetch body organs
 
 export async function fetchOrgans(): Promise<OdooRecord[]> {
   try {
@@ -314,3 +292,6 @@ export async function fetchSurveyQuestions(organId: number) {
     throw error;
   }
 }
+
+
+

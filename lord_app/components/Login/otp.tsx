@@ -1,9 +1,7 @@
 'use client';
-
 import { useState, useRef, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
-import router from 'next/dist/shared/lib/router/router';
-import { useRouter } from 'next/dist/client/components/navigation';
+import { useRouter } from "next/navigation";
+
 
 // Define props interface
 interface HealthiansOTPProps {
@@ -81,17 +79,55 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
   //   }
   // };
 
-  const handleSubmit = () => {
-    const enteredOtp = otp.join('');
+  // const handleSubmit = () => {
+  //   const enteredOtp = otp.join('');
 
-    if (enteredOtp === generatedOTP) {
-      alert('OTP Verified ✅ Login Success');
-      router.push('/');
-    } else {
-      alert('Invalid OTP ❌');
+  //   if (enteredOtp === generatedOTP) {
+  //     alert('OTP Verified ✅ Login Success');
+  //     router.push('/');
+  //   } else {
+  //     alert('Invalid OTP ❌');
+  //   }
+  // };
+
+  const handleSubmit = async () => {
+    const enteredOtp = otp.join("");
+
+    // 1️⃣ OTP check (frontend only)
+    if (enteredOtp !== generatedOTP) {
+      alert("Invalid OTP ❌");
+      return;
+    }
+    try {
+      // 2️⃣ Call backend to check user exist or not
+      const res = await fetch("/api/check-user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ phone }),
+      });
+      
+
+      if (!res.ok) {
+        throw new Error("API failed");
+      }
+
+      const data: { exists: boolean } = await res.json();
+      console.log("User existence:", data.exists);
+      console.log("User ", res);
+
+      // 3️⃣ Route based on existence
+      if (data.exists) {
+        router.push("/");
+      } else {
+        router.push(`/signup`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
     }
   };
-
 
   const handleResend = () => {
     setTimer(28);
@@ -129,7 +165,7 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
           {otp.map((digit, index) => (
             <input
               key={index}
-              ref={(el:any) => (inputRefs.current[index] = el)}
+              ref={(el: any) => (inputRefs.current[index] = el)}
               value={digit}
               onChange={(e) => handleChange(index, e.target.value)}
               onKeyDown={(e) => handleKeyDown(index, e)}
