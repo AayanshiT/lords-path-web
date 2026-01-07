@@ -122,7 +122,7 @@ export async function odooExecuteUpdateUsers(
       DB,
       uid,
       PASSWORD,
-      "res.users",
+      "res.partner",
       "write",
       [[id], values], // first argument: array of IDs, second: values to update
     ]);
@@ -141,7 +141,7 @@ export async function checkUserCreationPermission(): Promise<boolean> {
       DB,
       uid,
       PASSWORD,
-      "res.users",
+      "res.partner",
       "check_access_rights",
       ["create"],
       { raise_exception: false },
