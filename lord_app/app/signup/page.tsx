@@ -1,19 +1,20 @@
-import Login from '@/components/Login/login';
-import TopBar from '@/components/TopBar';
-import Footer from '@/components/Footer';
-import FooterSection from '@/components/FooterSection';
-import Bottom from '@/components/bottom';
-import Signup from '@/components/Login/signup';
+import { Suspense } from "react";
+import TopBar from "@/components/TopBar";
+import Footer from "@/components/Footer";
+import FooterSection from "@/components/FooterSection";
+import Bottom from "@/components/bottom";
+import Signup from "@/components/Login/signup";
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <>
       <TopBar />
-      <Signup/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Signup />
+      </Suspense>
       <FooterSection />
       <Footer />
       <Bottom />
     </>
-
   );
 }

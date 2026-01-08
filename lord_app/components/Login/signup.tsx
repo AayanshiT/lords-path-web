@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from 'next/dist/client/components/navigation';
+import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import { useSearchParams } from "next/navigation";
 
