@@ -294,4 +294,199 @@ export async function fetchSurveyQuestions(organId: number) {
 }
 
 
+// Fetch lab packages with enriched test names
+export async function fetchLabPackages() {
+  const uid = await odooLogin();
 
+  // Fetch packages
+  const packages = await jsonRpcRequest<any[]>("object", "execute_kw", [
+    DB,
+    uid,
+    PASSWORD,
+    "lp.lab.test.package",
+    "search_read",
+    [[]],
+    {
+      fields: ["id", "name", "price", "test_ids", "display_name"],
+    },
+  ]);
+
+  if (packages.length === 0) return [];
+
+  // Collect all unique test_ids
+  const allTestIds = Array.from(
+    new Set(packages.flatMap((pkg) => pkg.test_ids || []))
+  );
+
+  let testNameMap: Record<number, string> = {};
+
+  if (allTestIds.length > 0) {
+    // Fetch test names
+    const tests = await jsonRpcRequest<any[]>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "product.template",
+      "read",
+      [allTestIds],
+      { fields: ["id", "name", "display_name"] },
+    ]);
+
+    testNameMap = tests.reduce((map, test) => {
+      map[test.id] = test.display_name || test.name || `Test ID ${test.id}`;
+      return map;
+    }, {} as Record<number, string>);
+  }
+
+  // Enrich packages
+  const enrichedPackages = packages.map((pkg) => ({
+    id: pkg.id,
+    name: pkg.name || pkg.display_name || "Unnamed Package",
+    price: pkg.price || 0,
+    test_ids: pkg.test_ids || [],
+    included_tests: (pkg.test_ids || []).map(
+      (id: number) => testNameMap[id] || `Test ID ${id}`
+    ),
+  }));
+
+  return enrichedPackages;
+}
+
+
+// Fetch testimonials
+export async function fetchTestimonials(): Promise<OdooRecord[]> {
+  const uid = await odooLogin();
+
+  const res = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
+    DB,
+    uid,
+    PASSWORD,
+    "lab.testimonial",
+    "search_read",
+    [[]],
+    {},
+  ]);
+
+  console.log("Fetched testimonials:", res);
+  return res;
+}
+
+
+export async function fetchCompanies(): Promise<OdooRecord[]> {
+  const uid = await odooLogin();
+
+  const res = await jsonRpcRequest<OdooRecord[]>(
+    "object",
+    "execute_kw",
+    [
+      DB,
+      uid,
+      PASSWORD,
+      "res.partner",
+      "search_read",
+      [
+        [["category_id", "=", "LABS"]],
+      ],
+      {
+        fields: [
+          "name",
+          "street",
+          "street2",
+          "city",
+          "state_id",
+          "zip",
+          "country_id",
+        ],
+      },
+    ]
+  );
+
+  return res;
+}
+
+// -----------------------------
+// Create Appointment in Odoo
+// -----------------------------
+export async function odooExecuteCreateAppointment(
+  values: Record<string, any>
+): Promise<number> {
+  try {
+    const uid = await odooLogin();
+
+    const result = await jsonRpcRequest<number>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "lab.appointment", // 👈 CONFIRM MODEL NAME
+      "create",
+      [values],
+    ]);
+
+    if (!result) {
+      throw new Error("Appointment creation failed");
+    }
+
+    return result;
+  } catch (error: any) {
+    console.error("Odoo create appointment error:", error?.data || error);
+    throw error;
+  }
+}
+
+
+// -----------------------------
+// Update Appointment in Odoo
+// -----------------------------
+export async function odooExecuteUpdateAppointment(
+  id: number,
+  values: { [key: string]: any }
+): Promise<boolean> {
+  try {
+    const uid = await odooLogin();
+
+    const result = await jsonRpcRequest<boolean>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "lp.appointment",
+      "write",
+      [[id], values],
+    ]);
+
+    return result;
+  } catch (error) {
+    console.error("Odoo update appointment error:", error);
+    throw error;
+  }
+}
+
+// -----------------------------
+// Post message on Appointment
+// -----------------------------
+export async function odooExecutePostAppointmentMessage(
+  appointmentId: number,
+  message: string
+): Promise<boolean> {
+  try {
+    const uid = await odooLogin();
+
+    return await jsonRpcRequest<boolean>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "lp.appointment",
+      "message_post",
+      [
+        [appointmentId],
+        {
+          body: message,
+          message_type: "comment",
+          subtype_xmlid: "mail.mt_note",
+        },
+      ],
+    ]);
+  } catch (error) {
+    console.error("Odoo appointment message error:", error);
+    throw error;
+  }
+}
