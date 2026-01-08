@@ -107,7 +107,6 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
         },
         body: JSON.stringify({ phone }),
       });
-      
 
       if (!res.ok) {
         throw new Error("API failed");
@@ -118,11 +117,18 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
       console.log("User ", res);
 
       // 3️⃣ Route based on existence
+      // if (data.exists) {
+      //   router.push("/");
+      // } else {
+      //   router.push(`/signup`);
+      // }
+
       if (data.exists) {
         router.push("/");
       } else {
-        router.push(`/signup`);
+        router.push(`/signup?phone=${encodeURIComponent(phone)}`);
       }
+
     } catch (error) {
       console.error(error);
       alert("Something went wrong. Please try again.");

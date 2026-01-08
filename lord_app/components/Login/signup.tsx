@@ -2,14 +2,14 @@
 
 import { useRouter } from 'next/dist/client/components/navigation';
 import { useState } from 'react';
-// import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 
 export default function MedicalFormComponent() {
-    // const searchParams = useSearchParams();
+    const searchParams = useSearchParams();
     const router = useRouter();
-    // const phone = searchParams.get("phone");
-    // console.log("Phone from URL:", phone);
+    const phone = searchParams.get("phone");
+    console.log("Phone from URL:", phone);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -59,7 +59,7 @@ export default function MedicalFormComponent() {
                 body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
-                    phone:'+919576012345',
+                    phone: "91+",
                     // gender: formData.gender,
                     // dob: formData.dateOfBirth,
                 }),
