@@ -90,6 +90,7 @@ export default function TestsSection() {
               <SwiperSlide key={item.id}>
                 <TestCard
                   data={{
+                    id: item.id,
                     title: item.name,
                     testCount: item.included_tests?.length || 0,
                     description:

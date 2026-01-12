@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 
 export function TestCard({ data }) {
+  // console.log("TestCard data:", data);
   const router = useRouter();
 
   return (
@@ -98,7 +99,7 @@ export function TestCard({ data }) {
           </div>
 
           <button
-            onClick={() => router.push("/checkout")}
+            onClick={() => router.push(`/checkout?packageId=${data.id}`)}
             className="bg-[#00368C] text-white px-8 py-2 rounded-lg text-sm hover:bg-[#0f49a7] transition"
           >
             Book Now →
