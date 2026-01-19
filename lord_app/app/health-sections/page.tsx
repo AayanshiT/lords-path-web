@@ -51,8 +51,9 @@ export default function HealthScansPage() {
 
   if (loading) {
     return (
-      <div className="py-20 text-center">
-        Loading all health scans...
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-4"></div>
+        <p className="text-xl font-semibold text-gray-700">Loading questions...</p>
       </div>
     );
   }
