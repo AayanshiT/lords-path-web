@@ -1,6 +1,9 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
+// import { User } from 'lucide-react';
+
 
 
 // Define props interface
@@ -18,6 +21,7 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
   const [whatsappAlerts, setWhatsappAlerts] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const router = useRouter();
+  const { setUser } = useUser();
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const slides = [
@@ -90,50 +94,97 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
   //   }
   // };
 
+  // const handleSubmit = async () => {
+  //   const enteredOtp = otp.join("");
+
+  //   // 1️⃣ OTP check (frontend only)
+  //   if (enteredOtp !== generatedOTP) {
+  //     alert("Invalid OTP ❌");
+  //     return;
+  //   }
+  //   try {
+  //     // 2️⃣ Call backend to check user exist or not
+  //     const res = await fetch("/api/check-user", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ phone }),
+  //     });
+
+  //     if (!res.ok) {
+  //       throw new Error("API failed");
+  //     }
+
+  //     const data: { exists: boolean } = await res.json();
+  //     console.log("User existence:", data.exists);
+  //     console.log("User ", res);
+
+  //     // 3️⃣ Route based on existence
+  //     // if (data.exists) {
+  //     //   router.push("/");
+  //     // } else {
+  //     //   router.push(`/signup`);
+  //     // }
+
+  //     if (data.exists) {
+  //       router.push("/");
+  //     } else {
+  //       router.push(`/signup?phone=${encodeURIComponent(phone)}`);
+  //     }
+
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert("Something went wrong. Please try again.");
+  //   }
+  // };
+
   const handleSubmit = async () => {
     const enteredOtp = otp.join("");
 
-    // 1️⃣ OTP check (frontend only)
     if (enteredOtp !== generatedOTP) {
-      alert("Invalid OTP ❌");
+      alert("Invalid OTP");
       return;
     }
+
     try {
-      // 2️⃣ Call backend to check user exist or not
       const res = await fetch("/api/check-user", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),
       });
 
-      if (!res.ok) {
-        throw new Error("API failed");
-      }
+      const data = await res.json();
+      console.log("check-user response:", data);
 
-      const data: { exists: boolean } = await res.json();
-      console.log("User existence:", data.exists);
-      console.log("User ", res);
+      // ✅ CASE 1: Existing user → backend sent full user
+      if (data.exists && data.user) {
+        setUser({
+          id: data.user.id,
+          // partner_id: data.partner_id,
+          name: data.user.name,
+          email: data.user.email,
+          phone: data.user.phone,
+        });
+        
 
-      // 3️⃣ Route based on existence
-      // if (data.exists) {
-      //   router.push("/");
-      // } else {
-      //   router.push(`/signup`);
-      // }
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+        }
 
-      if (data.exists) {
         router.push("/");
-      } else {
-        router.push(`/signup?phone=${encodeURIComponent(phone)}`);
+        return;
       }
 
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Please try again.");
+      // ✅ CASE 2: New user → go to signup
+      router.push(`/signup?phone=${encodeURIComponent(phone)}`);
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
     }
   };
+
 
   const handleResend = () => {
     setTimer(28);
@@ -154,7 +205,7 @@ export default function HealthiansOTP({ phone, generatedOTP, onBack }: Healthian
           Please enter verification code (OTP) sent to
         </p>
         <p className="text-center text-gray-900 font-semibold text-lg">
-          {phone}
+          91+{phone}
         </p>
 
         <button

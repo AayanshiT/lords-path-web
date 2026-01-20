@@ -18,7 +18,7 @@ interface JsonRpcResponse<T> {
 async function jsonRpcRequest<T>(
   service: string,
   method: string,
-  params: any[]
+  params: any[],
 ): Promise<T> {
   const body = {
     jsonrpc: "2.0",
@@ -53,7 +53,7 @@ export interface OdooRecord {
 export async function odooSearchRead(
   model: string,
   domain: any[] = [],
-  fields: string[] = []
+  fields: string[] = [],
 ): Promise<OdooRecord[]> {
   const uid = await odooLogin();
 
@@ -69,7 +69,7 @@ export async function odooSearchRead(
 }
 
 export async function odooCreateUsers(
-  values: Record<string, any>
+  values: Record<string, any>,
 ): Promise<number> {
   try {
     const uid = await odooLogin();
@@ -77,7 +77,7 @@ export async function odooCreateUsers(
 
     console.log(
       "Attempting to create user with values:",
-      JSON.stringify(values, null, 2)
+      JSON.stringify(values, null, 2),
     );
 
     const result = await jsonRpcRequest<any>("object", "execute_kw", [
@@ -112,7 +112,7 @@ export async function odooCreateUsers(
 // Update users in Odoo
 export async function odooExecuteUpdateUsers(
   id: number,
-  values: { [key: string]: any }
+  values: { [key: string]: any },
 ): Promise<boolean> {
   try {
     const uid = await odooLogin();
@@ -165,14 +165,14 @@ export async function fetchLabTests(): Promise<OdooRecord[]> {
   return await odooSearchRead(
     "product.template", // 🔑 main model
     domain,
-    fields
+    fields,
   );
 }
 
 //lab tests paginated fetch
 export async function fetchLabTestsPaginated(
   offset = 0,
-  limit = 80
+  limit = 80,
 ): Promise<OdooRecord[]> {
   const uid = await odooLogin();
 
@@ -218,7 +218,7 @@ export async function fetchCities() {
 // Create partner in Odoo (form submission)
 
 export async function odooCreatePartner(
-  values: Record<string, any>
+  values: Record<string, any>,
 ): Promise<number> {
   try {
     const uid = await odooLogin();
@@ -293,7 +293,6 @@ export async function fetchSurveyQuestions(organId: number) {
   }
 }
 
-
 // Fetch lab packages with enriched test names
 export async function fetchLabPackages() {
   const uid = await odooLogin();
@@ -315,7 +314,7 @@ export async function fetchLabPackages() {
 
   // Collect all unique test_ids
   const allTestIds = Array.from(
-    new Set(packages.flatMap((pkg) => pkg.test_ids || []))
+    new Set(packages.flatMap((pkg) => pkg.test_ids || [])),
   );
 
   let testNameMap: Record<number, string> = {};
@@ -332,10 +331,13 @@ export async function fetchLabPackages() {
       { fields: ["id", "name", "display_name"] },
     ]);
 
-    testNameMap = tests.reduce((map, test) => {
-      map[test.id] = test.display_name || test.name || `Test ID ${test.id}`;
-      return map;
-    }, {} as Record<number, string>);
+    testNameMap = tests.reduce(
+      (map, test) => {
+        map[test.id] = test.display_name || test.name || `Test ID ${test.id}`;
+        return map;
+      },
+      {} as Record<number, string>,
+    );
   }
 
   // Enrich packages
@@ -345,13 +347,12 @@ export async function fetchLabPackages() {
     price: pkg.price || 0,
     test_ids: pkg.test_ids || [],
     included_tests: (pkg.test_ids || []).map(
-      (id: number) => testNameMap[id] || `Test ID ${id}`
+      (id: number) => testNameMap[id] || `Test ID ${id}`,
     ),
   }));
 
   return enrichedPackages;
 }
-
 
 // Fetch testimonials
 export async function fetchTestimonials(): Promise<OdooRecord[]> {
@@ -371,35 +372,28 @@ export async function fetchTestimonials(): Promise<OdooRecord[]> {
   return res;
 }
 
-
 export async function fetchCompanies(): Promise<OdooRecord[]> {
   const uid = await odooLogin();
 
-  const res = await jsonRpcRequest<OdooRecord[]>(
-    "object",
-    "execute_kw",
-    [
-      DB,
-      uid,
-      PASSWORD,
-      "res.partner",
-      "search_read",
-      [
-        [["category_id", "=", "LABS"]],
+  const res = await jsonRpcRequest<OdooRecord[]>("object", "execute_kw", [
+    DB,
+    uid,
+    PASSWORD,
+    "res.partner",
+    "search_read",
+    [[["category_id", "=", "LABS"]]],
+    {
+      fields: [
+        "name",
+        "street",
+        "street2",
+        "city",
+        "state_id",
+        "zip",
+        "country_id",
       ],
-      {
-        fields: [
-          "name",
-          "street",
-          "street2",
-          "city",
-          "state_id",
-          "zip",
-          "country_id",
-        ],
-      },
-    ]
-  );
+    },
+  ]);
 
   return res;
 }
@@ -408,7 +402,7 @@ export async function fetchCompanies(): Promise<OdooRecord[]> {
 // Create Appointment in Odoo
 // -----------------------------
 export async function odooExecuteCreateAppointment(
-  values: Record<string, any>
+  values: Record<string, any>,
 ): Promise<number> {
   try {
     const uid = await odooLogin();
@@ -433,13 +427,12 @@ export async function odooExecuteCreateAppointment(
   }
 }
 
-
 // -----------------------------
 // Update Appointment in Odoo
 // -----------------------------
 export async function odooExecuteUpdateAppointment(
   id: number,
-  values: { [key: string]: any }
+  values: { [key: string]: any },
 ): Promise<boolean> {
   try {
     const uid = await odooLogin();
@@ -465,7 +458,7 @@ export async function odooExecuteUpdateAppointment(
 // -----------------------------
 export async function odooExecutePostAppointmentMessage(
   appointmentId: number,
-  message: string
+  message: string,
 ): Promise<boolean> {
   try {
     const uid = await odooLogin();
@@ -488,5 +481,78 @@ export async function odooExecutePostAppointmentMessage(
   } catch (error) {
     console.error("Odoo appointment message error:", error);
     throw error;
+  }
+}
+
+// create contanct member
+export async function odooCreateContact(
+  values: Record<string, any>,
+): Promise<number> {
+  try {
+    const uid = await odooLogin();
+
+    const result = await jsonRpcRequest<any>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "res.partner", // Use res.partner for contacts
+      "create",
+      [values],
+      {},
+    ]);
+
+    if (!result) {
+      throw new Error("Contact creation failed");
+    }
+
+    return result; // returns the new partner ID
+  } catch (error) {
+    console.error("Error creating contact:", error);
+    throw error;
+  }
+}
+
+// fetch contacts
+
+export async function odooFetchChildContacts(parentId: number): Promise<any[]> {
+  try {
+    const uid = await odooLogin();
+
+    // First: Get child_ids from the parent partner
+    const parentResult = await jsonRpcRequest<any>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "res.partner",
+      "read",
+      [parentId],
+      { fields: ["child_ids"] },
+    ]);
+
+    if (
+      !parentResult ||
+      !parentResult[0]?.child_ids ||
+      parentResult[0].child_ids.length === 0
+    ) {
+      return []; // No children
+    }
+
+    const childIds = parentResult[0].child_ids;
+
+    // Second: Read details of all child contacts
+    const children = await jsonRpcRequest<any>("object", "execute_kw", [
+      DB,
+      uid,
+      PASSWORD,
+      "res.partner",
+      "read",
+      [childIds],
+      { fields: ["name", "email", "phone", "image_1920"] }, // optional: add image if you want avatars from Odoo
+    ]);
+
+    return children || [];
+  } catch (error) {
+    console.error("Error fetching child contacts:", error);
+    throw error; // Let the caller handle it (e.g., show alert)
   }
 }

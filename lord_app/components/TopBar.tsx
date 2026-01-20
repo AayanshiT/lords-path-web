@@ -2,18 +2,19 @@
 // import "server-only";
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaPhoneAlt, FaUser } from "react-icons/fa";
-// import { fetchCityList } from "@/app/lib/oddo";
+import { FaMapMarkerAlt, FaPhoneAlt, FaUser, FaChevronDown } from "react-icons/fa";
+import { useUser } from "@/context/UserContext";
 import { useEffect, useState } from 'react';
 import { OdooRecord } from '@/app/lib/oddo';
+
 
 export default function TopBar() {
   const [cities, setCities] = useState<{ id: number; name: string }[]>([]);
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-
-
+  const { user, logout } = useUser();
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const city = e.target.value;
@@ -104,7 +105,7 @@ export default function TopBar() {
                 >
                   <span>{selectedCity || "Select city"}</span>
                   <span className="text-xs"><ChevronDown /></span>
-                  
+
                 </div>
 
                 {/* Dropdown */}
@@ -148,11 +149,53 @@ export default function TopBar() {
               </div>
             </div>
           </div>
+{/* USER INFO  */}
 
-          <Link href="/login" className="svg-style flex items-center gap-1 cursor-pointer">
-            <FaUser />
-            <span className="text-[13px] font-medium text-[#000]">Login / Signup</span>
-          </Link>
+          {!user ? (
+            <Link
+              href="/login"
+              className="svg-style flex items-center gap-1 cursor-pointer"
+            >
+              <FaUser />
+              <span className="text-[13px] font-medium text-[#000]">
+                Login / Signup
+              </span>
+            </Link>
+          ) : (
+            <div className="relative">
+              {/* USER NAME */}
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <FaUser />
+                <span className="text-[13px] font-medium text-[#000]">
+                  Hi, {user.name}
+                </span>
+                <FaChevronDown className="text-[10px]" />
+              </button>
+
+              {/* DROPDOWN */}
+              {userMenuOpen && (
+                <div className="absolute right-0 mt-2 w-36 bg-white rounded-md shadow-lg z-50">
+                  <Link
+                    href="/user-profile"
+                    className="block px-4 py-2 text-[13px] hover:bg-gray-100"
+                  >
+                    Profile
+                  </Link>
+
+                  <button
+                    onClick={logout}
+                    className="w-full text-left px-4 py-2 text-[13px] text-red-500 hover:bg-gray-100"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
 
           <div className="svg-style flex items-center gap-1">
             <FaPhoneAlt />

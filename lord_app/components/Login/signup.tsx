@@ -3,11 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import { useSearchParams } from "next/navigation";
+import { useUser } from "@/context/UserContext";
 
 
 export default function MedicalFormComponent() {
     const searchParams = useSearchParams();
     const router = useRouter();
+    const { setUser } = useUser();
     const phone = searchParams.get("phone");
     console.log("Phone from URL:", phone);
 
@@ -59,11 +61,14 @@ export default function MedicalFormComponent() {
                 body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
-                    phone: "91+",
+                    phone: phone ? `+91${phone}` : "",
                     // gender: formData.gender,
                     // dob: formData.dateOfBirth,
                 }),
+
             });
+            console.log("res", res)
+
 
             const data = await res.json();
             console.log("Signup response:", data);
@@ -72,6 +77,16 @@ export default function MedicalFormComponent() {
                 alert("Signup failed");
                 return;
             }
+
+            const userData= {
+                id: data.userId,
+                name: formData.name,
+                email: formData.email,
+                phone: phone ? `+91${phone}` : "",
+            };
+
+            setUser(userData); 
+            localStorage.setItem("token", data.token);
 
             alert("Signup successful ✅");
             router.push("/"); // or /home

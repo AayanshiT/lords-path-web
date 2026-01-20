@@ -32,7 +32,7 @@ export default function HeroSlider() {
     try {
       setLoading(true);
 
-      const res = await fetch(`/api/lab-tests?limit=50`);
+      const res = await fetch(`/api/lab-tests`);
       const json = await res.json();
 
       const filteredResults = (json.data || []).filter((item: any) =>

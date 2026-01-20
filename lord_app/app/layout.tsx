@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { UserProvider } from "@/context/UserContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,7 +11,7 @@ const poppins = Poppins({
 export const metadata = {
   title: "Lords Path - Home Health Checkup Tests & Packages",
   icons: {
-    icon: "/lordspath_flaticon.png", 
+    icon: "/lordspath_flaticon.png",
   },
 };
 
@@ -21,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body>{children}</body>
+      <body><UserProvider>
+        {children}
+      </UserProvider></body>
     </html>
   );
 }
