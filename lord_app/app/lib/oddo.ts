@@ -484,7 +484,90 @@ export async function odooExecutePostAppointmentMessage(
   }
 }
 
-// create contanct member
+export async function fetchLabAppointments(customer_id: number
+): Promise<OdooRecord[]> {
+  const uid = await odooLogin();
+
+  const fields: string[] = [
+    "patient_name",
+    "type",
+    "vendor_id",              // [id, display_name]
+    "customer_id",            // [id, display_name] - patient as res.partner
+    "start_time",
+    "end_time",
+    "payment_type",
+    "payment_status",
+    // Fetch key fields from lines directly (Odoo supports this in search_read)
+    "test_line_ids",          // Will give array of IDs
+  ];
+
+  // Enhanced fields to pull line details directly (recommended)
+  const lineFields = [
+    "test_line_ids.display_name",
+    "test_line_ids.test_code",
+    "test_line_ids.qty",
+    "test_line_ids.unit_price",
+    "test_line_ids.subtotal",
+    // Add more like "test_line_ids.product_id" if needed
+  ];
+
+
+
+  const res = await jsonRpcRequest<OdooRecord[]>(
+    "object",
+    "execute_kw",
+    [
+      DB,
+      uid,
+      PASSWORD,
+      "ip_appointment",
+      "search_read",
+      [],
+      {
+        "customer_id": customer_id
+      },
+    ]
+  );
+  console.log('ip_appointment', res)
+  // Transform the flat relational data into nested test_lines
+  const appointments = res.map((appointment: any) => {
+    const testLines: any[] = [];
+
+    // If no line data, skip
+    if (appointment.test_line_ids && appointment.test_line_ids.length > 0) {
+      const lineCount = appointment.test_line_ids.length;
+
+      for (let i = 0; i < lineCount; i++) {
+        testLines.push({
+          id: appointment.test_line_ids[i],
+          display_name: appointment["test_line_ids.display_name"]?.[i] || false,
+          test_code: appointment["test_line_ids.test_code"]?.[i] || false,
+          qty: appointment["test_line_ids.qty"]?.[i] || 1,
+          unit_price: appointment["test_line_ids.unit_price"]?.[i] || 0,
+          subtotal: appointment["test_line_ids.subtotal"]?.[i] || 0,
+        });
+      }
+    }
+
+    // Clean up the appointment object
+    delete appointment.test_line_ids;
+    delete appointment["test_line_ids.display_name"];
+    delete appointment["test_line_ids.test_code"];
+    delete appointment["test_line_ids.qty"];
+    delete appointment["test_line_ids.unit_price"];
+    delete appointment["test_line_ids.subtotal"];
+
+    return {
+      ...appointment,
+      test_lines: testLines,
+    };
+  });
+
+  return appointments;
+}
+
+
+// create contact member
 export async function odooCreateContact(
   values: Record<string, any>,
 ): Promise<number> {
@@ -556,3 +639,4 @@ export async function odooFetchChildContacts(parentId: number): Promise<any[]> {
     throw error; // Let the caller handle it (e.g., show alert)
   }
 }
+

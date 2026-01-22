@@ -3,18 +3,90 @@
 import { User, Plus, CheckCircle } from 'lucide-react';
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useUser } from "@/context/UserContext";
+import AddMemberModal from '@/components/Userprofile/addmember';
+import AddressSection from "@/components/CheckoutPage/AdressSection";
 
 
 export default function CheckoutPage() {
+
+  const { user } = useUser();
   const [selectedMembers, setSelectedMembers] = useState(2);
-  const [members, setMembers] = useState([
-    { id: 1, name: 'Aayanshi Sharma', gender: 'Female', age: "24", selected: true }
-  ]);
+  const [addressData, setAddressData] = useState<any>(null);
+
+  // const [members, setMembers] = useState([
+  //   { id: 1, name: 'Aayanshi Sharma', gender: 'Female', age: "24", selected: true }
+  // ]);
+  // const [members, setMembers] = useState<any[]>([]);
+  const [members, setMembers] = useState<any[]>([]);
+  const [currentStep, setCurrentStep] = useState(1); // 1 = members, 2 = address
   const searchParams = useSearchParams();
   const packageId = searchParams.get("packageId");
-
   const [packageDetails, setPackageDetails] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleMember = (id: number) => {
+    setMembers(prev => {
+      const selectedCount = prev.filter(m => m.selected).length;
+
+      return prev.map(m => {
+        if (m.id === id) {
+          // if (!m.selected && selectedCount >= 1) {
+          //   alert("You can select only 2 members");
+          //   return m;
+          // }
+          return { ...m, selected: !m.selected };
+        }
+        return m;
+      });
+    });
+  };
+
+
+  const handleNext = () => {
+    const selected = members.filter(m => m.selected);
+
+    if (selected.length < 1) {
+      alert("Please select at least 1 member");
+      return;
+    }
+
+    setCurrentStep(2);
+  };
+
+  const handleAddMember = async (formData: any) => {
+    const res = await fetch("/api/user/members", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_id: user?.id,
+        ...formData,
+      }),
+    });
+
+    const data = await res.json();
+
+    setMembers(prev => [...prev, { ...data.member, selected: false }]);
+  };
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    fetch(`/api/user/members?user_id=${user.id}`)
+      .then(res => res.json())
+      .then(data => {
+        setMembers(
+          data.members.map((m: any) => ({ ...m, selected: false }))
+        );
+      });
+  }, [user?.id]);
+
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     if (!packageId) return;
@@ -44,6 +116,29 @@ export default function CheckoutPage() {
   }, [packageId]);
 
 
+  useEffect(() => {
+    if (!user?.id) return;
+
+    const fetchMembers = async () => {
+      try {
+        const res = await fetch(`/api/user/members?user_id=${user.id}`);
+        const data = await res.json();
+
+        // selected default false
+        const formatted = (data.members || []).map((m: any) => ({
+          ...m,
+          selected: false,
+        }));
+
+        setMembers(formatted);
+      } catch (err) {
+        console.error("Failed to fetch members", err);
+      }
+    };
+
+    fetchMembers();
+  }, [user]);
+
 
   // const packageDetails = {
   //   name: ' Winter Wellness Package - Male',
@@ -63,7 +158,6 @@ export default function CheckoutPage() {
     };
     setMembers([...members, newMember]);
   };
-
 
   const totalPrice = packageDetails?.price || 0;
   const pricePerPerson =
@@ -92,7 +186,10 @@ export default function CheckoutPage() {
               {/* <div className="w-8 h-8 bg-white rounded flex items-center justify-center font-semibold" style={{ color: '#00368C' }}>
                 1
               </div> */}
-              <h2 className="text-lg font-semibold">Aayanshi Sharma | +91 911111111</h2>
+              <h2 className="text-lg font-semibold">
+                {isClient && user ? `${user.name} | ${user.phone}` : "Loading..."}
+              </h2>
+
             </div>
           </div>
 
@@ -104,6 +201,7 @@ export default function CheckoutPage() {
               </div>
               <h2 className="text-lg font-semibold">Select Package Members</h2>
             </div>
+
 
             <div className="p-6 space-y-6">
               {/* Group Complete Badge */}
@@ -152,9 +250,10 @@ export default function CheckoutPage() {
               </div> */}
 
               {/* Family Members List */}
+
               <div>
                 <h3 className="font-semibold text-gray-800 mb-4">
-                  Family Member (Choose 2 members)
+                  Family Member (Choose members)
                 </h3>
 
                 <div className="space-y-3">
@@ -168,32 +267,36 @@ export default function CheckoutPage() {
                           <User className="w-5 h-5 text-gray-500" />
                         </div>
                         <div>
-                          <div className="font-medium">{member.name || 'Add Member'}</div>
-                          {member.gender && member.age && (
-                            <div className="text-sm text-gray-500">
-                              Self {member.gender}, {member.age} yrs.
-                            </div>
-                          )}
+                          <div className="font-medium">{member.name}</div>
+                          <div className="text-sm text-gray-500">{member.phone}</div>
                         </div>
                       </div>
+
                       <input
                         type="checkbox"
                         checked={member.selected}
-                        onChange={() => { }}
-                        className="w-5 h-5 rounded border-gray-300"
+                        onChange={() => toggleMember(member.id)}
+                        className="w-5 h-5"
                       />
+
                     </div>
                   ))}
+
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="flex gap-4">
-                <button className="px-8 py-3 bg-[#FF3B3B] hover:bg-red-600 text-white font-semibold rounded-lg transition">
+                <button
+                  onClick={handleNext}
+                  className="px-8 py-3 bg-[#FF3B3B] text-white rounded-lg"
+                >
                   Next
                 </button>
+
                 <button
-                  onClick={addMember}
+                  // onClick={addMember}
+                  onClick={() => setShowForm(true)}
                   className="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-lg transition flex items-center gap-2"
                 >
                   <Plus className="w-5 h-5" />
@@ -205,104 +308,114 @@ export default function CheckoutPage() {
 
 
           {/* Step 3: Address */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="bg-[#00368C] text-white px-6 py-4 flex items-center gap-3">
-              <div className="w-8 h-8 bg-white text-[#00368C] rounded flex items-center justify-center font-semibold">
-                2
-              </div>
-              <h2 className="text-lg font-semibold">Add Sample Collection Address, Date & Time</h2>
+          {currentStep === 2 && (
 
-            </div>
+            // <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            //   <div className="bg-[#00368C] text-white px-6 py-4 flex items-center gap-3">
+            //     <div className="w-8 h-8 bg-white text-[#00368C] rounded flex items-center justify-center font-semibold">
+            //       2
+            //     </div>
+            //     <h2 className="text-lg font-semibold">Add Sample Collection Address, Date & Time</h2>
 
-            <div className="p-8 space-y-3">
-              <input
-                type="text"
-                placeholder="Street Address"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-              />
+            //   </div>
 
-              <input
-                type="text"
-                placeholder="Street Address 2 (Optional)"
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-              />
+            //   <div className="p-8 space-y-3">
+            //     <input
+            //       type="text"
+            //       placeholder="Street Address"
+            //       className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //     />
 
-              <div className="grid grid-cols-2 gap-3">
-                <input
-                  type="text"
-                  placeholder="City"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                />
+            //     <input
+            //       type="text"
+            //       placeholder="Street Address 2 (Optional)"
+            //       className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //     />
 
-                <input
-                  type="text"
-                  placeholder="State"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                />
-              </div>
+            //     <div className="grid grid-cols-2 gap-3">
+            //       <input
+            //         type="text"
+            //         placeholder="City"
+            //         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //       />
 
-              <div className="grid grid-cols-2 gap-3">
-                <input
-                  type="text"
-                  placeholder="ZIP Code"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                />
+            //       <input
+            //         type="text"
+            //         placeholder="State"
+            //         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //       />
+            //     </div>
 
-                <input
-                  type="text"
-                  placeholder="Country"
-                  defaultValue="India"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                />
-              </div>
+            //     <div className="grid grid-cols-2 gap-3">
+            //       <input
+            //         type="text"
+            //         placeholder="ZIP Code"
+            //         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //       />
 
-              {/* Date & Time Selection */}
-              <div className="pt-6 border-t border-gray-200 space-y-4">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Choose Date & Time for Home Sample Collection
-                  <span className="text-red-500">*</span>
-                </h3>
+            //       <input
+            //         type="text"
+            //         placeholder="Country"
+            //         defaultValue="India"
+            //         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //       />
+            //     </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Date */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-600 mb-1">
-                      Select sample collection date
-                    </label>
-                    <input
-                      type="date"
-                      className="w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                    />
-                  </div>
+            //     {/* Date & Time Selection */}
+            //     <div className="pt-6 border-t border-gray-200 space-y-4">
+            //       <h3 className="text-lg font-semibold text-gray-800">
+            //         Choose Date & Time for Home Sample Collection
+            //         <span className="text-red-500">*</span>
+            //       </h3>
 
-                  {/* Time */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-600 mb-1">
-                      Select collection time
-                    </label>
-                    <select
-                      className="w-full px-3 py-2 border rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00368C]"
-                    >
-                      <option value="">Select time slot</option>
-                      <option>06:00 AM - 07:00 AM</option>
-                      <option>07:00 AM - 08:00 AM</option>
-                      <option>08:00 AM - 09:00 AM</option>
-                      <option>09:00 AM - 10:00 AM</option>
-                      <option>10:00 AM - 11:00 AM</option>
-                    </select>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  className="w-full py-2 rounded-lg bg-[#FF3B3B] hover:bg-red-600 text-white font-semibold transition"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+            //       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            //         {/* Date */}
+            //         <div>
+            //           <label className="block text-sm font-medium text-gray-600 mb-1">
+            //             Select sample collection date
+            //           </label>
+            //           <input
+            //             type="date"
+            //             className="w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //           />
+            //         </div>
 
-          </div>
+            //         {/* Time */}
+            //         <div>
+            //           <label className="block text-sm font-medium text-gray-600 mb-1">
+            //             Select collection time
+            //           </label>
+            //           <select
+            //             className="w-full px-3 py-2 border rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00368C]"
+            //           >
+            //             <option value="">Select time slot</option>
+            //             <option>06:00 AM - 07:00 AM</option>
+            //             <option>07:00 AM - 08:00 AM</option>
+            //             <option>08:00 AM - 09:00 AM</option>
+            //             <option>09:00 AM - 10:00 AM</option>
+            //             <option>10:00 AM - 11:00 AM</option>
+            //           </select>
+            //         </div>
+            //       </div>
+            //       <button
+            //         type="button"
+            //         className="w-full py-2 rounded-lg bg-[#FF3B3B] hover:bg-red-600 text-white font-semibold transition"
+            //       >
+            //         Next
+            //       </button>
+            //     </div>
+            //   </div>
 
+            // </div>
+            <AddressSection
+              onNext={(address) => {
+                setAddressData(address);
+                console.log("Address saved:", address);
+                
+              }}
+            />
+
+          )}
         </div>
 
         {/* Sidebar - Package Summary */}
@@ -391,7 +504,19 @@ export default function CheckoutPage() {
             </div>
           </div>
         </div>
+
       </div>
+      {/* Add Member Form Modal */}
+      {showForm && (
+        <AddMemberModal
+          onClose={() => setShowForm(false)}
+          onAdd={(data) => {
+            handleAddMember(data);
+            setShowForm(false);
+          }}
+        />
+      )}
+
     </div>
   );
 }

@@ -39,6 +39,17 @@ export default function UserProfile() {
     }, [user]);
 
 
+    useEffect(() => {
+        if (!user?.id) return;
+
+        fetch(`/api/user/members?user_id=${user.id}`)
+            .then(res => res.json())
+            .then(data => setMembers(data.members || []))
+            .catch(console.error);
+    }, [user]);
+
+
+
     if (!user) return <p className="text-center mt-10">Loading...</p>;
 
     /* Handle input */
@@ -49,7 +60,7 @@ export default function UserProfile() {
     /* Save profile */
     const handleSave = async () => {
         try {
-            const res = await fetch("/api/user/userprofile", {
+            const res = await fetch("/api/user/user-profile", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -85,26 +96,20 @@ export default function UserProfile() {
     };
 
     const handleAddMember = async (member: any) => {
-        try {
-            const res = await fetch("/api/user/members", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    user_id: user.id,
-                    ...member, // name, email, phone
-                }),
-            });
+        const res = await fetch("/api/user/members", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                user_id: user.id,
+                ...member,
+            }),
+        });
 
-            const data = await res.json();
+        const data = await res.json();
 
-            if (!res.ok) throw new Error(data.message || "Failed to add member");
-
-            // Add member to local state
-            setMembers((prev) => [...prev, data.member]);
-        } catch (error) {
-            console.error("Add member failed:", error);
-        }
+        setMembers(prev => [...prev, data.member]); // 👈 ab object milega
     };
+
 
 
     return (
@@ -206,7 +211,7 @@ export default function UserProfile() {
                 {showMemberModal && (
                     <AddMemberModal
                         onClose={() => setShowMemberModal(false)}
-                        onAdd={(member) => setMembers((prev) => [...prev, member])}
+                        onAdd={handleAddMember}
                     />
                 )}
             </div>
