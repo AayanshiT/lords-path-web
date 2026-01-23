@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { UserProvider } from "@/context/UserContext";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,6 +9,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
+
 export const metadata = {
   title: "Lords Path - Home Health Checkup Tests & Packages",
   icons: {
@@ -22,9 +24,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body><UserProvider>
-        {children}
-      </UserProvider></body>
-    </html>
+      <body>
+        {/* ✅ Razorpay Script */}
+        <Script
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          strategy="afterInteractive"
+        />
+
+        <UserProvider>
+          {children}
+        </UserProvider>
+      </body>
+    </html>                           
   );
 }

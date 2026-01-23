@@ -71,6 +71,85 @@ export default function CheckoutPage() {
     setMembers(prev => [...prev, { ...data.member, selected: false }]);
   };
 
+
+  const handlePayNow = async () => {
+    try {
+      if (!packageDetails) {
+        alert("Package not loaded");
+        return;
+      }
+
+      const selectedMembers = members.filter(m => m.selected);
+      if (selectedMembers.length === 0) {
+        alert("Select at least one member");
+        return;
+      }
+
+      if (!addressData) {
+        alert("Please add address");
+        return;
+      }
+
+      // 🔹 ORDER CREATE (backend se)
+      const res = await fetch("/api/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: packageDetails.price, // ₹
+        }),
+      });
+
+      const order = await res.json();
+
+      // 🔹 Razorpay options (WEB FLOW)
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
+        amount: order.amount,
+        currency: "INR",
+        name: "Checkout Payment",
+        description: packageDetails.name,
+        order_id: order.id,
+
+        prefill: {
+          name: user?.name,
+          contact: user?.phone,
+        },
+
+        handler: function (response: any) {
+          console.log("SUCCESS ✅", response);
+
+          /*
+            response = {
+              razorpay_payment_id,
+              razorpay_order_id,
+              razorpay_signature
+            }
+          */
+
+          alert("Payment Successful");
+          // yahin backend verify / save order call karna hota hai
+        },
+
+        theme: { color: "#00368C" },
+      };
+
+      const rzp = new (window as any).Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      console.error(err);
+      alert("Payment failed");
+    }
+  };
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     if (!user?.id) return;
 
@@ -411,7 +490,7 @@ export default function CheckoutPage() {
               onNext={(address) => {
                 setAddressData(address);
                 console.log("Address saved:", address);
-                
+
               }}
             />
 
@@ -487,6 +566,7 @@ export default function CheckoutPage() {
 
               <button
                 type="button"
+                onClick={handlePayNow}
                 className="w-full py-3 rounded-lg border border-red-500 text-red-600 font-semibold hover:bg-red-50 transition"
               >
                 Pay Now
