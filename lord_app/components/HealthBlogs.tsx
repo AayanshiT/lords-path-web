@@ -4,85 +4,105 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-type Blog = {
+
+type Testimonial = {
   id: number;
-  title: string;
+  name: string;
+  city: string;
+  review: string;
   image: string;
 };
 
-const blogs: Blog[] = [
+const testimonials: Testimonial[] = [
   {
     id: 1,
-    title: "Mind Blowing Benefits of Kegel Exercise for Men and Women",
-    image: "/blogs/blog1.webp",
+    name: "PRIYA S.",
+    city: "Pune",
+    review:
+      "Loved The Convenience! Booked From Home, Got Reports The Same Evening.",
+    image: "/user1.jpg",
   },
   {
     id: 2,
-    title: "8 Amazing Benefits of Eating Groundnuts Daily Amazing Benefits of Eating",
-    image: "/blogs/blogs2.webp",
+    name: "ROHIT K.",
+    city: "Delhi",
+    review:
+      "Accurate Results, Easy-To-Use App, And Great Support Team.",
+    image: "/user2.jpg",
   },
   {
     id: 3,
-    title:
-      "Breathe Better: How to Protect Your Health from the Impact of Air Pollution?",
-    image: "/blogs/blog6.webp",
+    name: "ANANYA M.",
+    city: "Mumbai",
+    review:
+      "Seamless Experience From Booking To Reports. LadsPath Has Made Diagnostics Effortless.",
+    image: "/user3.jpg",
   },
   {
     id: 4,
-    title:
-      "Top 10 Real Health Benefits of Giloy You Should Know About",
-    image: "/blogs/blog3.webp",
+    name: "VIKAS R.",
+    city: "Hyderabad",
+    review:
+      "Got My Blood Test Done At Home In Just One Click. Highly Professional And Punctual Team.",
+    image: "/user4.jpg",
   },
-  
 ];
 
-export default function HealthBlogs() {
+export default function PatientsTrust() {
   return (
-    <section className="bg-[#fafafa] py-6 blogs-section">
+    <section className="bg-[#f4f6f9] py-12">
       <div className="max-w-[85rem] mx-auto px-6">
-        {/* Heading */}
-        <h2 className="mb-12 text-center text-3xl font-semibold text-[#00368C]">
-          Health Blogs & Articles
+        <h2 className="mb-10 text-center text-3xl font-semibold text-[#00368C]">
+          Patient's Trust
         </h2>
 
-        {/* Swiper */}
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000 }}
           spaceBetween={24}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
-          className="!pb-12"
+          className="!pb-14"
         >
-          {blogs.map((blog, index) => (
-            <SwiperSlide key={`${blog.id}-${index}`}>
-              <div className="h-full rounded-xl border bg-white shadow-sm transition hover:shadow-md">
-                {/* Image */}
-                <div className="relative h-52 w-full overflow-hidden rounded-t-xl">
-                  <Image 
-                    src={blog.image}
-                    alt={blog.title}
-                    fill
-                    className="object-cover p-3 rounded-2xl"
-                  />
+          {testimonials.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div className="rounded-2xl bg-[#0B3D91] p-6 text-white shadow-lg h-full">
+                
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
                 </div>
 
-                {/* Content */}
-                <div className="p-5 group">
-                  <h3 className="text-base font-medium text-[#333]  group-hover:text-[#00368C] transition-colors duration-300">
-                    {blog.title}
-                  </h3>
+                {/* Review Text */}
+                <p className="text-sm leading-relaxed mb-6 opacity-90">
+                  "{item.review}"
+                </p>
+
+                {/* User Info */}
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-sm tracking-wide">
+                      {item.name}
+                    </h4>
+                    <p className="text-xs opacity-80">{item.city}</p>
+                  </div>
                 </div>
+
               </div>
             </SwiperSlide>
           ))}

@@ -31,14 +31,13 @@ export default function Home() {
       {/* <ServiceCard /> */}
       <CenterSwiperSection />
       <TestsSection />
-      <HealthScansSection />
       <HealthCard />
+      <HealthScansSection />
       <Phonesection />
       <ImageSection />
-      <MobileSection />
+      {/* <MobileSection /> */}
       <MidSection />
       {/* <LabTests /> */}
-      
       {/* <HealthiansReviews /> */}
       <AwardCards />
       <HealthBlogs />

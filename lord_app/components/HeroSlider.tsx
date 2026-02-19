@@ -125,10 +125,10 @@ export default function HeroSlider() {
       >
         <div className="ml-12 text-white max-w-lg">
           <h1 className="text-4xl font-bold">
-            CXO Super Speciality Health Screening Package
+            Health Always Comes First
           </h1>
           <p className="mt-4 text-lg">
-            Total Tests: <b>320</b> | At Just <b>₹7999</b>
+            Your <b>Health</b> | Your <b>Tests</b>
           </p>
 
           <button className="mt-6 mb-4 bg-white text-black px-6 py-3 rounded-lg font-semibold">

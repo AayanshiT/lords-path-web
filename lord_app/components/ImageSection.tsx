@@ -7,7 +7,7 @@ export default function HealthCheckupJourney() {
 
         {/* Heading */}
         <div className="mb-12 text-center">
-          <p className="text-2xl font-medium text-[#303437]">Your Healthians</p>
+          <p className="text-2xl font-medium text-[#303437]">Your Lordspath</p>
           <h2 className="text-3xl font-semibold text-[#00368C]">
             Health Checkup Journey
           </h2>
@@ -18,9 +18,9 @@ export default function HealthCheckupJourney() {
         {/* Full-width Journey Image */}
         <div className="flex justify-center">
           <Image
-            src="/photo.png"
+            src="/mainbanner.png"
             alt="Health Checkup Journey"
-            width={1200}
+            width={2000}
             height={300}
             className="w-full max-w-6xl object-contain"
             priority

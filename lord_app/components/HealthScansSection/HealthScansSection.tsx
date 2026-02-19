@@ -125,7 +125,7 @@ export default function HealthScansSection() {
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
         <h2 className="section-heading text-center text-2xl font-semibold text-[#00368C] mb-10">
-          Health Scans & Imaging Tests
+          Complete Organ Care
         </h2>
 
         <div className="max-w-6xl mx-auto relative">

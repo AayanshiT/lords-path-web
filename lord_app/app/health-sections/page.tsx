@@ -64,7 +64,7 @@ export default function HealthScansPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-2xl font-semibold text-center mb-10 text-[#00368C]">
-            All Health Scans & Imaging Tests
+            Complete Organ Care
           </h1>
 
           <div className="grid grid-cols-3 gap-6">

@@ -6,9 +6,9 @@ export default function CenterSwiperSection() {
   return (
     <section className="center-swiper-section relative w-full max-w-6xl m-auto py-16 bg-white overflow-hidden">
       {/* LEFT WHITE FADE */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-40 bg-linear-to-r from-white to-transparent z-10" />
+      {/* <div className="pointer-events-none absolute left-0 top-0 h-full w-40 bg-linear-to-r from-white to-transparent z-10" /> */}
       {/* RIGHT WHITE FADE */}
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-linear-to-l from-white to-transparent z-10" />
+      {/* <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-linear-to-l from-white to-transparent z-10" /> */}
       {/* Swiper Container */}
       <div className="w-full max-w-6xl mx-auto relative">
       <Swiper
@@ -28,27 +28,27 @@ export default function CenterSwiperSection() {
           <SwiperSlide>
              <div
             className="h-[200px] rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('https://helma.healthians.com/stationery/banners/167_1076.webp')" }}
+            style={{ backgroundImage: "url('/banner1.png')" }}
           />
           </SwiperSlide>
           {/* Slide 2 */}
           <SwiperSlide>
              <div
             className="h-[200px] rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('https://helma.healthians.com/stationery/banners/138_115.webp')" }}
+            style={{ backgroundImage: "url('/banner2.png')" }}
           />
           </SwiperSlide>
           <SwiperSlide>
              <div
             className="h-[200px] rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('https://helma.healthians.com/stationery/banners/167_1076.webp')" }}
+            style={{ backgroundImage: "url('/banner3.png')" }}
           />
           </SwiperSlide>
           {/* Slide 3 */}
           <SwiperSlide>
               <div
             className="h-[200px] rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('https://helma.healthians.com/stationery/banners/146_8725.webp')" }}
+            style={{ backgroundImage: "url('/banner4.png')" }}
           />
           </SwiperSlide>
         </Swiper>

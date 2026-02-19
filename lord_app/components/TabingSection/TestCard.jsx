@@ -22,11 +22,11 @@ export function TestCard({ data }) {
           <span className="text-black cursor-pointer"> ...more</span>
         </p>
 
-        <div className="text-xs text-gray-500 flex justify-between mb-2 ">
+        {/* <div className="text-xs text-gray-500 flex justify-between mb-2 ">
           <span className="tracking-[0.01em] text-center text-[#00368C] font-medium leading-[18px] text-[13px]">
             <a href="#">+ Know more</a>
           </span>
-          {/* <span>Report in {data.reportTime}</span> */}
+          <span>Report in {data.reportTime}</span>
           <select
             className="border-none outline-none text-[13px] text-[#333] h-[36px] flex items-center justify-between px-[15px] py-[6px] rounded-[10px] cursor-pointer bg-[#f1f7ff] w-auto mr-[6px] text-center leading-[21px] border border-[#e0f6f6]
 "
@@ -35,9 +35,9 @@ export function TestCard({ data }) {
             <option value="delhi">1 member</option>
             <option value="noida">3 member</option>
           </select>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <p
             className="multidiscounttext py-2 text-center ml-0 text-[11px] font-medium text-[#393939] mb-0 tracking-[-0.3px] px-[10px] py-[6px] border-t border-b border-dashed border-[#b9b9b9] mt-[5px]
 "
@@ -77,7 +77,7 @@ export function TestCard({ data }) {
               <span className="text-[#858585]">Reports within 21 Hours</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* </div> */}
 

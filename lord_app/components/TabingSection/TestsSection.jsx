@@ -37,7 +37,7 @@ export default function TestsSection() {
       <div className="max-[85rem] mx-auto px-4">
         {/* Heading */}
         <h2 className="section-heading text-center text-2xl font-semibold [#00368C] mb-6">
-          Tests in Gurgaon
+          Care for every stage of life
         </h2>
 
         {/* Tabs */}
