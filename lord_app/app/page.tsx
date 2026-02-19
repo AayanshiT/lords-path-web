@@ -27,8 +27,8 @@ export default function Home() {
       <TopBar />
       <MainNavbar />
       <HeroSlider />
-      <ServiceCard />
       <HealthInfoSection />
+      {/* <ServiceCard /> */}
       <CenterSwiperSection />
       <TestsSection />
       <HealthScansSection />
@@ -38,7 +38,7 @@ export default function Home() {
       <MobileSection />
       <MidSection />
       {/* <LabTests /> */}
-      <HealthiansReviews />
+      {/* <HealthiansReviews /> */}
       <AwardCards />
       <HealthBlogs />
       <FooterSection />

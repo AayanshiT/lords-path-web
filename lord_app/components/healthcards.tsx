@@ -114,72 +114,72 @@ export default function HealthRiskSwiper() {
         {/* Heading */}
         <h2 className="section-heading text-2xl font-[800] text-center text-[#00368C] mb-8">
           Health Risk
-        </h2> 
+        </h2>
 
-<div className="relative max-w-6xl mx-auto">
-        {/* Swiper */}
-        <Swiper
-          modules={[Navigation]}
-          navigation={{
-            prevEl: ".swiper-button-prev3",
-            nextEl: ".swiper-button-next3",
-          }} 
-          // pagination={{ clickable: true }}
-          spaceBetween={20}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {healthRisks.map((risk) => (
-            <SwiperSlide key={risk.id} className="h-full">
-              <div className="bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.12)] my-3 transition p-10 h-full flex flex-col items-center text-center border">
-                {/* Icon / Link */}
-                <Link href={risk.href}>
-                  <Image
-                    src={risk.icon}
-                    alt={risk.title}
-                    width={100}
-                    height={100}
-                    className="mx-auto mb-2 object-contain cursor-pointer"
-                  />
-                </Link>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Swiper */}
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              prevEl: ".swiper-button-prev3",
+              nextEl: ".swiper-button-next3",
+            }}
+            // pagination={{ clickable: true }}
+            spaceBetween={20}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {healthRisks.map((risk) => (
+              <SwiperSlide key={risk.id} className="h-full">
+                <div className="bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.12)] my-3 transition p-10 h-full flex flex-col items-center text-center border">
+                  {/* Icon / Link */}
+                  <Link href={risk.href}>
+                    <Image
+                      src={risk.icon}
+                      alt={risk.title}
+                      width={100}
+                      height={100}
+                      className="mx-auto mb-2 object-contain cursor-pointer"
+                    />
+                  </Link>
 
-                {/* Title */}
-                <h3
-                  className="text-[24px] font-semibold mb-2"
-                  style={{ color: "#00368C" }}
-                >
-                  {risk.title}
-                </h3>
+                  {/* Title */}
+                  <h3
+                    className="text-[24px] font-semibold mb-2"
+                    style={{ color: "#00368C" }}
+                  >
+                    {risk.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-black text-[14px] leading-[20px] mb-4 line-clamp-3">
-                  {risk.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-black text-[14px] leading-[20px] mb-4 line-clamp-3">
+                    {risk.description}
+                  </p>
 
-                {/* CTA */}
-                <button
-                  className="mt-auto text-sm hover:underline text-[#00368C] font-poppins font-semibold text-[16px]"
-                  style={{ color: "#00368C"  }}
-                >
-                  View More
-                </button>
-              </div>
-            </SwiperSlide>
-          ))}
-          
-        </Swiper>
-        <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
-          ‹
-        </button>
+                  {/* CTA */}
+                  <button
+                    className="mt-auto text-sm hover:underline text-[#00368C] font-poppins font-semibold text-[16px]"
+                    style={{ color: "#00368C" }}
+                  >
+                    View More
+                  </button>
+                </div>
+              </SwiperSlide>
+            ))}
 
-        <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
-          ›
-        </button>
+          </Swiper>
+          <button className="swiper-button-prev3  absolute left-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+            ‹
+          </button>
+
+          <button className="swiper-button-next3  absolute right-[200px] top-1/2 -translate-y-1/2 z-20 bg-[#FF3B3B] text-white shadow-md w-[30px] h-[30px] rounded-full flex items-center justify-center">
+            ›
+          </button>
         </div>
-         
+
 
         {/* View All */}
         <div className="flex justify-center mt-12">

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
+import banner from "../public/banners/banner1.png";
 
 // import "./global.css";
 // import "swiper/css";
@@ -115,56 +116,60 @@ export default function HeroSlider() {
               )}
             </div>
           )}
-
-
         </div>
       </div>
 
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000 }}
-        pagination={{ clickable: true }}
-        loop
+      <div
+        className="h-112.5 rounded-xl bg-cover bg-center flex items-center"
+        style={{ backgroundImage: `url(${banner.src})` }}
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div
-            className="h-112.5 rounded-xl bg-cover bg-center flex items-center"
-            style={{
-              backgroundImage:
-                "url('/cxo_banner_web.webp')",
-            }}
-          >
-            {/* <div className="ml-12 text-white max-w-lg">
-              <h1 className="text-4xl font-bold">
-                CXO Super Speciality Health Screening Package
-              </h1>
-              <p className="mt-4 text-lg">
-                Total Tests: <b>320</b> | At Just <b>₹7999</b>
-              </p>
+        <div className="ml-12 text-white max-w-lg">
+          <h1 className="text-4xl font-bold">
+            CXO Super Speciality Health Screening Package
+          </h1>
+          <p className="mt-4 text-lg">
+            Total Tests: <b>320</b> | At Just <b>₹7999</b>
+          </p>
 
-              <button className="mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold">
-                Book Now →
-              </button>
-            </div> */}
-          </div>
-        </SwiperSlide>
+          <button className="mt-6 mb-4 bg-white text-black px-6 py-3 rounded-lg font-semibold">
+            Book Now →
+          </button>
+        </div>
+      </div>
+      {/*
+      
+<Swiper
+  modules={[Autoplay, Pagination]}
+  autoplay={{ delay: 4000 }}
+  pagination={{ clickable: true }}
+  loop
+>
+  <SwiperSlide>
+    <div
+      className="h-112.5 rounded-xl bg-cover bg-center flex items-center"
+      style={{
+        backgroundImage: "url('/cxo_banner_web.webp')",
+      }}
+    >
+    </div>
+  </SwiperSlide>
 
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div
-            className="h-112.5 rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('/b_5.webp')" }}
-          />
-        </SwiperSlide>
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div
-            className="h-112.5 rounded-xl bg-cover bg-center"
-            style={{ backgroundImage: "url('/fi_new_1.webp')" }}
-          />
-        </SwiperSlide>
-      </Swiper>
+  <SwiperSlide>
+    <div
+      className="h-112.5 rounded-xl bg-cover bg-center"
+      style={{ backgroundImage: "url('/b_5.webp')" }}
+    />
+  </SwiperSlide>
+
+  <SwiperSlide>
+    <div
+      className="h-112.5 rounded-xl bg-cover bg-center"
+      style={{ backgroundImage: "url('/fi_new_1.webp')" }}
+    />
+  </SwiperSlide>
+</Swiper>
+*/}
+
     </div>
   );
 }
