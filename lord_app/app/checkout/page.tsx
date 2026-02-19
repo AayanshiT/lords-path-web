@@ -6,6 +6,7 @@ import FooterSection from '@/components/FooterSection';
 import Bottom from '@/components/bottom';
 
 
+
 export default function LoginPage() {
   return (
     <>
